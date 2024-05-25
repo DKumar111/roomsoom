@@ -54,9 +54,9 @@
             <div class="Header_navlinks__vW8HS">
                 <div class="Header_links__Sm49Z">
                     <ul class="Header_ullinks__V1SBq" id="Header_ullinks__V1SBqAasd">
-                        <li class="btn select Header_hasChildren__rMIjs ">
+                        <li class=" select Header_hasChildren__rMIjs ">
                             <p class="Header_cityNAme__Cs_WE" id="fetch_value">
-                                <a href="properties.php">All Property</a>
+                                <a  href="properties.php">All Property</a>
                                 <!-- <img alt="housr coliving"
                                     srcset="https://housr.in/_next/static/media/DownArrowGrey.02340a5c.svg 1x, https://housr.in/_next/static/media/DownArrowGrey.02340a5c.svg 2x"
                                     src="https://housr.in/_next/static/media/DownArrowGrey.02340a5c.svg" width="20"
@@ -92,16 +92,16 @@
                                 </ul> -->
 
                         </li>
-                        <li class="btn"><a href="privileges.php">
+                        <li class=""><a  href="privileges.php">
                                 <p>Privileges<span class="Header_line__mjz8n"></span></p>
                             </a></li>
-                        <li class="btn"><a href="howtobook.php">
+                        <li class=""><a  href="howtobook.php">
                                 <p>How to book<span class="Header_line__mjz8n"></span></p>
                             </a></li>
-                        <li class="btn"><a href="blog.php">
+                        <li class=""><a  href="blog.php">
                                 <p>Blog<span class="Header_line__mjz8n"></span></p>
                             </a></li>
-                        <li class="btn"><a href="about.php">
+                        <li class=""><a  href="about.php">
                                 <p class="Header_activTrue__TuZRY">About Us<span class="Header_line__mjz8n"></span></p>
                             </a></li>
                         <li class="Header_cta__n6O_m">call us on<br><a href="tel:+918810107070">+91 8810107070</a></li>

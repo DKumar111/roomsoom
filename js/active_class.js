@@ -10,15 +10,15 @@ for (let i = 0; i < btns1.length; i++) {
   
   btns1[i].addEventListener("click", function(e) {
   //  e.preventDefault(e);
-    var current = document.getElementsByClassName("");
+    var current = document.getElementsByClassName("nav__active");
 
     // If there's no active class
     if (current.length > 0) {
   
-      current[0].className = current[0].className.replace(" ", "");
+      current[0].className = current[0].className.replace(" nav__active", "");
     }
     // Add the active class to the current/clicked button
-    this.className += " ";
+    this.className += " nav__active";
   });
 }
 

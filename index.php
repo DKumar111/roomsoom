@@ -22,7 +22,7 @@ session_start();
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- ===/FONTAWESOME CDN=== -->
 
-   
+
     
 
     <!-- =======GOOGLE FONT CDN======= -->
@@ -1165,13 +1165,30 @@ session_start();
         <script src="js/cityCardSlide.js"></script>
         <script src="js/collapsiblFAQ.js"></script>
         <script src="js/explore_tab.js"></script>
-        <script src="js/active_class.js"></script>
+        <!-- <script src="js/active_class.js"></script> -->
         <script src="js/login_info_popup.js"></script>
 
         <!-- =======BOOTSTRAP JS CDN========== -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+
+
+<script>
+$(document).ready(function() { 
+   $(".Header_ullinks__V1SBq li").click(function(event) { 
+     
+      $(".Header_ullinks__V1SBq li ").removeClass("nav__active"); //Remove any "active" class 
+      $("li", this).addClass("nav__active"); //Add "active" class to selected tab // 
+      // $(activeTab).show(); //Fade in the active content 
+ });
+});
+</script>
 
 </body>
 

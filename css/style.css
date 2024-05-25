@@ -565,10 +565,9 @@ margin-left: 1rem;
   align-items: center;
 }
 
-/* .nav__active, .nav_btn:hover{
+.nav__active, .btn:hover{
   background-color: rgb(252, 97, 97);
-
-} */
+}
 
 
 
