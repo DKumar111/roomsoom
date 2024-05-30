@@ -5410,6 +5410,13 @@ li {
   .content_mainCont__xmz_n
   .content_content__HcMmG
   .content_heading__x5_Hn
+   {
+  padding-left: 3rem;
+}
+.content_container__LwrrU
+  .content_mainCont__xmz_n
+  .content_content__HcMmG
+  .content_heading__x5_Hn
   h3 {
   width: 80%;
   color: #3c3c3c;
@@ -5787,6 +5794,7 @@ li {
   .content_mainCont__xmz_n
   .content_content__HcMmG .mobile_collapsible_tab{
     display: block;
+    margin: 0 3rem;
   }
 
 }
@@ -11060,7 +11068,7 @@ li {
 
 .stats_container__z9TFt .stats_statsMain__7UdvF .stats_bed__aVyTg,
 .stats_container__z9TFt .stats_statsMain__7UdvF .stats_cities__WFfjG {
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
 @media screen and (max-width: 480px) {
@@ -14722,7 +14730,7 @@ li {
 
 @media screen and (max-width: 480px) {
     .listing_mainCont__mGx_Q .listing_container__P9mcK {
-        margin-top:30px
+        margin-top:56px
     }
 }
 
@@ -16472,6 +16480,26 @@ li {
 
     .modal-content .book_now_form{
       width: 100%;
+    }
+
+    .gender__tab{
+      position: absolute;
+  top: 1rem;
+  z-index: 1;
+  padding: 0rem 1rem;
+    }
+
+    .wrapper i:last-child{
+      display: none;
+    }
+
+    .wrapper i:first-child{
+      display: none;
+    }
+
+    .city_wise_search_section{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
     }
   }
 

@@ -15,6 +15,13 @@ session_start();
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/propertyCardSlide.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ===FONTAWESOME CDN=== -->
@@ -22,6 +29,12 @@ session_start();
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- ===/FONTAWESOME CDN=== -->
+
+    <!-- jquery ui css -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+
+    <!-- ========BOOTSTRAP CSS CDN======  -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 
     <!-- =======GOOGLE FONT CDN======= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +54,7 @@ session_start();
     <?php  include './header_footer/header.php' ;      ?>
     <!-- ===== /HEADER SECTION ===== -->
 
-    <div class="wrapperTop">
+    <!-- <div class="wrapperTop"> -->
 
 
         <div class="listing_mainCont__mGx_Q">
@@ -55,114 +68,6 @@ session_start();
                             never fails to impress. And with Roomsoom’s beautiful, convenient living spaces, you
                             can enjoy it all!.</p>
                     </div>
-                    <!-- <div class="listing_propertyListingFilterWrap__BZk1N">
-                        <div class="listing_sidebar__hWf_t">
-                            <div class="listing_cityWrap__rgiBQ">
-                                <div class="form_groups">
-                                    <div class=" css-b62m3t-container"><span id="react-select-38-live-region"
-                                            class="css-7pg0cj-a11yText"></span><span aria-live="polite"
-                                            aria-atomic="false" aria-relevant="additions text"
-                                            class="css-7pg0cj-a11yText"></span>
-                                        <div class="head-select-search__control css-1s2u09g-control">
-                                            <div
-                                                class="head-select-search__value-container head-select-search__value-container--has-value css-1d8n9bt">
-                                                <div class="head-select-search__single-value css-qc6sy-singleValue">City
-                                                    </div>
-                                                <div class="head-select-search__input-container css-ackcql"
-                                                    data-value=""><input class="head-select-search__input"
-                                                        autocapitalize="none" autocomplete="off" autocorrect="off"
-                                                        id="react-select-38-input" spellcheck="false" tabindex="0"
-                                                        type="text" aria-autocomplete="list" aria-expanded="false"
-                                                        aria-haspopup="true" role="combobox" value=""
-                                                        style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;">
-                                                </div>
-                                            </div>
-                                            <div class="head-select-search__indicators css-1wy0on6"><span
-                                                    class="head-select-search__indicator-separator css-1okebmr-indicatorSeparator"></span>
-                                                <div class="head-select-search__indicator head-select-search__dropdown-indicator css-tlfecz-indicatorContainer"
-                                                    aria-hidden="true"><svg height="20" width="20" viewBox="0 0 20 20"
-                                                        aria-hidden="true" focusable="false" class="css-8mmkcg">
-                                                        <path
-                                                            d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                                        </path>
-                                                    </svg></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="listing_cityWrap__rgiBQ">
-                                <div class="form_groups">
-                                    <div class=" css-b62m3t-container"><span id="react-select-39-live-region"
-                                            class="css-7pg0cj-a11yText"></span><span aria-live="polite"
-                                            aria-atomic="false" aria-relevant="additions text"
-                                            class="css-7pg0cj-a11yText"></span>
-                                        <div class="head-select-search__control css-1s2u09g-control">
-                                            <div
-                                                class="head-select-search__value-container head-select-search__value-container--has-value css-1d8n9bt">
-                                                <div class="head-select-search__single-value css-qc6sy-singleValue">
-                                                    Locality</div>
-                                                <div class="head-select-search__input-container css-ackcql"
-                                                    data-value=""><input class="head-select-search__input"
-                                                        autocapitalize="none" autocomplete="off" autocorrect="off"
-                                                        id="react-select-39-input" spellcheck="false" tabindex="0"
-                                                        type="text" aria-autocomplete="list" aria-expanded="false"
-                                                        aria-haspopup="true" role="combobox" value=""
-                                                        style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;">
-                                                </div>
-                                            </div>
-                                            <div class="head-select-search__indicators css-1wy0on6"><span
-                                                    class="head-select-search__indicator-separator css-1okebmr-indicatorSeparator"></span>
-                                                <div class="head-select-search__indicator head-select-search__dropdown-indicator css-tlfecz-indicatorContainer"
-                                                    aria-hidden="true"><svg height="20" width="20" viewBox="0 0 20 20"
-                                                        aria-hidden="true" focusable="false" class="css-8mmkcg">
-                                                        <path
-                                                            d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                                        </path>
-                                                    </svg></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="listing_cityWrap__rgiBQ">
-                                <div class="form_groups">
-                                    <div class=" css-b62m3t-container"><span id="react-select-40-live-region"
-                                            class="css-7pg0cj-a11yText"></span><span aria-live="polite"
-                                            aria-atomic="false" aria-relevant="additions text"
-                                            class="css-7pg0cj-a11yText"></span>
-                                        <div class="head-select-search__control css-1s2u09g-control">
-                                            <div
-                                                class="head-select-search__value-container head-select-search__value-container--has-value css-1d8n9bt">
-                                                <div class="head-select-search__single-value css-qc6sy-singleValue">
-                                                    Property Type</div>
-                                                <div class="head-select-search__input-container css-ackcql"
-                                                    data-value=""><input class="head-select-search__input"
-                                                        autocapitalize="none" autocomplete="off" autocorrect="off"
-                                                        id="react-select-40-input" spellcheck="false" tabindex="0"
-                                                        type="text" aria-autocomplete="list" aria-expanded="false"
-                                                        aria-haspopup="true" role="combobox" value=""
-                                                        style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;">
-                                                </div>
-                                            </div>
-                                            <div class="head-select-search__indicators css-1wy0on6"><span
-                                                    class="head-select-search__indicator-separator css-1okebmr-indicatorSeparator"></span>
-                                                <div class="head-select-search__indicator head-select-search__dropdown-indicator css-tlfecz-indicatorContainer"
-                                                    aria-hidden="true"><svg height="20" width="20" viewBox="0 0 20 20"
-                                                        aria-hidden="true" focusable="false" class="css-8mmkcg">
-                                                        <path
-                                                            d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                                        </path>
-                                                    </svg></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="listing_searchButtonWrap__EzZKq"><button class="listing_mainBtn__myddz">Find my
-                                    Roomsoom</button></div>
-                        </div>
-                    </div> -->
                     <div class="listing_property_filter  ">
                         <div class="listing_property_filter_heading">
                             <h4 style="color:white;">Search By Location</h4>
@@ -184,20 +89,7 @@ session_start();
             </div>
             <div class="listing_floatingBtn__fLL3K">
                 <div class="listing_filtersBtns__Aw1Ux">
-                    <!-- <button>
-                        <p>Filter <span><img alt="filter"
-                                    srcset="/_next/static/media/Filter.cd942981.svg 1x, /_next/static/media/Filter.cd942981.svg 2x"
-                                    src="/_next/static/media/Filter.cd942981.svg" width="20" height="20"
-                                    decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></span>
-                        </p>
-                    </button>
-                    <button>
-                        <p>Sort By <span><img alt="sort"
-                                    srcset="	https://housr.in/_next/static/media/Sort.71b8b782.svg 1x, 	https://housr.in/_next/static/media/Sort.71b8b782.svg 2x"
-                                    src="	https://housr.in/_next/static/media/Sort.71b8b782.svg" width="20" height="20"
-                                    decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></span>
-                        </p>
-                    </button> -->
+                    
                     <div class="listing_property_filter  ">
                         <div class="listing_property_filter_heading">
                             <h4 style="color:white;">Search By Location</h4>
@@ -219,35 +111,18 @@ session_start();
             </div>
             <div class="listing_navigation__Wwevg">
                 <div class="listing_left__b5p23">
-                    <!-- <p class="breadcrumb"><span class="breadcrumb-item"><a href="/">Home</a></span><span
-                            class="breadcrumb-item"><span></span></span></p> -->
-                    <!-- <h5>8+ Stays Available Now</h5> -->
+                 
                 </div>
                 <div class="listing_right__KSxXz">
-                    <!-- <div class="dropdown">
-                        <button class="dropbtn">
-                            <p>Sort by <img alt="sort"
-                                    srcset="	https://housr.in/_next/static/media/Sort.71b8b782.svg 1x, 	https://housr.in/_next/static/media/Sort.71b8b782.svg 2x"
-                                    src="	https://housr.in/_next/static/media/Sort.71b8b782.svg" width="20" height="20"
-                                    decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></p>
-                        </button>
-                        <div class="dropdown-content">
-                            <form action="" method="post" class=" ">
-                                <p>Low to High</p>
-                            <p>High to Low</p>
-                               
-                            </form>
+                
+                    <div id="slider-wrap">
+                        <div>
+                            <label>Price Between:</label>
+                            <span id="price"></span>
                         </div>
-                    </div> -->
-                    <form class="num_filter_form" action="" method="post">
-                        <input class="input_num_field" type="text" name="start_price"
-                            value="<?php if(isset($_POST['start_price'])){echo $_POST['start_price']; } ?>"
-                            placeholder="Enter Start Price" id="">
-                        <input class="input_num_field" type="text" name="end_price"
-                            value="<?php if(isset($_POST['end_price'])){echo $_POST['end_price']; } ?>"
-                            placeholder="Enter end Price" id="">
-                        <input class="input_submit_field" type="submit" name="filter_by_price" value="Filter">
-                    </form>
+                        <div id="slider-range"></div>
+                    </div>
+                
                 </div>
             </div>
 
@@ -256,98 +131,8 @@ session_start();
 
 
                     <?php  
-                    if(isset($_POST['start_price']) && isset($_POST['end_price'])){
-                            $start_price = $_POST['start_price'];
-                            $end_price = $_POST['end_price'];
-
-                            $filter_sql = "SELECT * FROM `properties` WHERE solo_room_price BETWEEN $start_price AND $end_price";
-                            $filter_result = mysqli_query($conn, $filter_sql);
-                            $filter_num_row = mysqli_num_rows($filter_result);
-
-                            if($filter_num_row==0){
-                                echo "<h2 class='zero_properties'>Zero Result Found</h2>";
-                            }
-
-                            while($row = mysqli_fetch_assoc($filter_result)){
-                                $s_id = $row['s_id'];
-                                $city = $row['city'];
-                                $locality = $row['locality'];
-                                $property_type = $row['property_type'];
-                                $twin_sharing_price = $row['twin_sharing_price'];
-                                $solo_room_price = $row['solo_room_price'];
-                                $property_image = $row['property_image'];
-
-                                 echo "
-                                 <div class='listing_colLayout__IVj18'>
-                                 <div class='card_containerGrid__KnWKY card_container__i1o_z' id='onlyHide'>                    
-                                  <div class='card_cardMain__HVzkv'>
-                                  <div class='propThum'>
-                                      <div class='slick-slider slick-initialized' dir='ltr'>
-                                                
-                                          <div class='slick-list'>
-                                              <div class='slick-track'
-                                                  style='width: 2212px; opacity: 1; transform: translate3d(-948px, 0px, 0px);'>
-                                                  <div data-index='-1' tabindex='-1' class='slick-slide slick-cloned'
-                                                      aria-hidden='true' style='width: 316px;'>
-                                                      <div>
-                                                          <div class='card_thumbnail__iAMJV' tabindex='-1'
-                                                              style='width: 100%; display: inline-block;'>
-                                                              <div class='card_upcoming__ezcIg'>
-                                                                  
-                                                              </div><a
-                                                                  href='property_details.php?property_id=$s_id'><img
-                                                                      alt='$city'
-                                                                     
-                                                    src='asset/property_image/$property_image'
-                                                    width='600' height='600' decoding='async'
-                                                    data-nimg='1' loading='lazy' style=''></a>
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                        </div>
-                       
-                       
-                    </div>
-                </div>
-                <div class='textMain'><a href=''>
-                        <div class='card_propName__G6qT3'>
-                            <h2>Roomsoom $locality, $city</h2>
-                            <div class='card_city__IHjt6'>
-                                <h4><img alt='locationpin'
-                                       
-                                        src='./asset/images/locationicon.svg' width='15'
-                                        height='15' decoding='async' data-nimg='1' loading='lazy'
-                                        style='color: transparent;'>$locality, </h4>
-                                        
-                                                   </div>
-                                               </div>
-                                               <div class='card_priceMain__09p_D'>
-                                                   <div class='card_priceCard__pJnps'>
-                                                       <h4>twin Sharing</h4>
-                                                       <h5><span class='card_start__0HNld'>Starting at </span> Rs.
-                                                       $twin_sharing_price<span>/mo*</span></h5>
-                                                   </div>
-                                                   <div class='card_priceCard__pJnps'>
-                                                       <h4>solo Room</h4>
-                                                       <h5><span class='card_start__0HNld'>Starting at </span> Rs.
-                                                       $solo_room_price<span>/mo*</span></h5>
-                                                   </div>
-                                               </div>
-                                           </a></div>
-                                         </div>
-                                         </div>
-                                         </div>
-                                         ";
-                            }
-
-                    }else{
-                        get_properties();
-                    }
-                        
+                    get_properties();
                     ?>
-                </div>
             </div>
             <div class="listing_filterPhone__Fcmrh">
                 <div class="listing_sidemeunbox__PQyTf">
@@ -480,7 +265,6 @@ session_start();
                             <h3>Exploring the World of Roomsoom Coliving</h3>
                         </div>
 
-                        <!-- VERTICLE TAB -->
                         <div class="verticle_tab">
                             <div class="tab">
                                 <button class="tablinks" onclick="openCity(event, 'overview')"
@@ -661,7 +445,7 @@ session_start();
                                     future, one community at a time.</p>
                             </div>
                         </div>
-                        <!-- /VERTICLE TAB -->
+
                         <div class="mobile_collapsible_tab">
                             <button type="button" class="collapsible">Overview</button>
                             <div class="content">
@@ -896,6 +680,10 @@ session_start();
 
             </div>
         </div>
+
+        <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px"
+                class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
+
         <!-- ===== FOOTER SECTION ===== -->
         <?php  include './header_footer/footer.php' ;      ?>
         <!-- ===== /FOOTER SECTION ===== -->
@@ -910,6 +698,15 @@ session_start();
         <script src="js/properties.js"></script>
         <script src="js/active_class.js"></script>
         <script src="js/login_info_popup.js"></script>
+        <script src="js/property_card_slide.js"></script>
+        <script src="js/range-slider.js"></script>
+
+        <!-- jquery -->
+        <script src="js/jquery-1.12.4.min.js"></script>
+        <!-- jquery ui -->
+        <script src="js/jquery-ui-1.12.1.min.js"></script>
+
+       
 
         <!-- =======BOOTSTRAP JS CDN========== -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -917,6 +714,21 @@ session_start();
         </script>
 
 
+        <script>
+        $(function() {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [75, 300],
+                slide: function(event, ui) {
+                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                }
+            });
+            $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+                " - $" + $("#slider-range").slider("values", 1));
+        });
+        </script>
 </body>
 
 </html>

@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.profile_main_section{
+    width: 100%;
+    height: 100vh;
+    padding-top: 8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}
+.profile_main_section .profile_left_section{
+    background-color: #F8F8F8;
+    width: 20%;
+    height: 95%;
+    border: 1px solid #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+}
+.profile_main_section .profile_left_section h4{
+    margin: 0 auto;
+   
+}
+.profile_main_section .profile_left_section .link_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 2rem;
+}
+.profile_main_section .profile_left_section .link_section button{
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+}
+.profile_main_section .profile_left_section .link_section button:hover{
+    background-color: #ddd;
+}
+.profile_main_section .profile_left_section .link_section button.active{
+    background-color: #ccc;
+}
+
+.profile_main_section .profile_right_section{
+    width: 80%;
+    height: 95%;
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table{
+    width: 100%;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 1px solid rgb(175, 175, 175);
+    border-collapse: collapse;
+    /* padding: 0.5rem 1rem; */
+  }
+  
+
+@media screen and (min-width:220px) and (max-width: 420px){
+    .profile_main_section{
+        width: 100%;
+        padding-top: 16rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile_main_section .profile_left_section{
+        width: 100%;
+        display: flex;
+    }
+    .profile_main_section .profile_left_section .left_user_img_name img{
+        width: 90%;
+        height: 80%;
+    }
+    .profile_main_section .profile_left_section .link_section{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 1rem;
+        gap: 0rem;
+    }
+    .profile_main_section .profile_right_section{
+        width: 100%;
+    }
+    .profile_main_section .profile_right_section .tabcontent{
+        width: 100%;
+        padding: 0;
+    }
+    .profile_main_section .profile_right_section .tabcontent table{
+        width: 100%;
+        overflow-x: scroll;
+        margin: 0 auto;
+    }
+
+    table{
+        overflow-x: auto;
+       
+    }
+
+    table, th, td {
+        border: 1px solid rgb(175, 175, 175);
+        border-collapse: collapse;
+      }
+}

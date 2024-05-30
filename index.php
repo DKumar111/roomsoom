@@ -23,7 +23,7 @@ session_start();
     <!-- ===/FONTAWESOME CDN=== -->
 
 
-    
+
 
     <!-- =======GOOGLE FONT CDN======= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,39 +40,25 @@ session_start();
 
 <body>
     <!-- ===== HEADER SECTION ===== -->
-    <?php  include './header_footer/header.php' ;      ?>
+    <?php  include './header_footer/header.php' ;  ?>
     <!-- ===== /HEADER SECTION ===== -->
 
-    <!-- =====HERO SECTION -->
-    <!-- <div class="hero__wrapper">
-        <div class="hero_left_section">
-            <div class="hero_left_text">
-                <h1>Experience <br> Luxury
-                    <br>
-                    Living at Roomsoom
-                </h1>
-                <div class="hero_Hrline">
-                    <div class="Hr_line"></div>
-                </div>
-                <h2>Rent the best of managed living</h2>
-                <div class="hero_button">
-                    <a href="">
-                        <button>Find my Roomsoom</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="hero_heroImage__qJC5C">
-            <video autoplay="" muted="" loop="" playsinline="" preload="auto">
-                <source src="https://cloudfront.housr.in/webNew.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div> -->
-    <!-- =====/HERO SECTION -->
 
-    <!-- ==========================INDEX MAIN SECTION=================================== -->
 
-    <!-- ==========================INDEX MAIN SECTION=================================== -->
+    <!-- ==========================POPUP ON PAGE LOAD=================================== -->
+    <?php
+    if(!isset($_SESSION['username']))
+    echo '
+    <div class="popup_on_page_load">
+        <button id="close_on_page_load">&times;</button>
+        <p>
+            To Book Room At Roomsoom Please Login
+        </p>
+        <a class="goto" href="login.php">Login</a>
+    </div>
+    ';
+    ?>
+    <!-- ==========================POPUP ON PAGE LOAD ENDS HERE=================================== -->
 
     <div class="wrapperTop">
         <div class="hero_container__w6cIQ">
@@ -133,146 +119,57 @@ session_start();
                         <h2>Here. There. <b>Roomsoom</b> Everywhere!</h2>
                     </div>
                     <div class="card_cardBox__uU7lZ">
-                        <div class="wrapper">
-                            <i id="left" class="fa-solid  fas fa-angle-left"></i>
-                            <ul class="carousel">
-                                <li class="card">
-                                    <div class="card_bg-text">
-                                        <h3>Delhi</h3>
-                                    </div>
-                                    <p class="card__Para">Find your ideal fully-furnished living space </p>
-                                    <div class="img">
-                                        <a href="properties.php">
-                                        <img src="asset/images/delhi.png" alt="" draggable="false">
-                                        </a> 
-                                    </div>
-                                </li>
-                                <li class="card">
-                                    <div class="card_bg-text">
-                                        <h3>Noida</h3>
-                                    </div>
-                                    <p class="card__Para">Find your ideal fully-furnished living space near Cyber City,  etc.</p>
-                                    <div class="img">
-                                        <a href="properties.php">
-                                        <img src="asset/images/noida.png" alt="" draggable="false"> 
-                                        </a>
-                                    </div>
-
-                                    <!-- <span>Noida</span> -->
-                                </li>
-                                <li class="card">
-                                    <div class="card_bg-text">
-                                        <h3>Hyderabad</h3>
-                                    </div>
-                                    <p class="card__Para">Find fully furnished flats and coliving spaces for rent next to Raheja Mindspace
-                                        IT Park, Cyber Pearl, Hi-Tech City, Kondapur, Gachibowli & more.</p>
-                                    <div class="img">
-                                        <a href="properties.php">
-                                        <img src="asset/images/hydrabad.webp" alt="" draggable="false">
-                                        </a>
-                                       
-                                    </div>
-
-                                    <!-- <span>Hyderabad</span> -->
-                                </li>
-                                <li class="card">
-                                    <div class="card_bg-text">
-                                        <h3>Gurgaon</h3>
-                                    </div>
-                                    <p class="card__Para">Get fully-furnished flats and coliving close to DLF Cyber Hub, Golf Course Road,
-                                        Huda City Centre, Sohna Road, Golf Course Extension & more.</p>
-                                    <div class="img">
-                                        <a href="properties.php">
-                                        <img src="asset/images/gurgaon.webp" alt="" draggable="false">
-                                        </a>
-                                    </div>
-
-                                    <!-- <span>Gurgaon</span> -->
-                                </li>
-                                <li class="card">
-                                    <div class="card_bg-text">
-                                        <h3>Bangalore</h3>
-                                    </div>
-                                    <p class="card__Para">Rent furnished apartments near Manyata Tech Park, ITPL, Bagmane Tech Park, HSR
-                                        Layout, Geetanjali Layout, Koramangala etc.</p>
-                                    <div class="img">
-                                        <a href="properties.php">
-                                        <img src="asset/images/banglore.webp" alt="" draggable="false">
-                                        </a>
-                                    </div>
-
-                                    <!-- <span>Bangalore</span> -->
-                                </li>
-                                <li class="card">
-                                    <div class="card_bg-text">
-                                        <h3>Pune</h3>
-                                    </div>
-                                    <p class="card__Para">Rent serviced apartments and luxury coliving near Cybercity Magarpatta, Rajiv
-                                        Gandhi Infotech Park, Balewadi, Wakad & more.</p>
-                                    <div class="img">
-                                        <a href="properties.php">
-                                        <img src="asset/images/pune.webp" alt="" draggable="false"> 
-                                        </a>
-                                    </div>
-
-                                    <!-- <span>Pune</span> -->
-                                </li>
-                            </ul>
-                            <i id="right" class="fa-solid fas fa-angle-right"></i>
+                        <div class="city_wise_search_section">
+                            <div class="city_section">
+                            <a href="search_property.php?city=delhi">
+                                <img width="100px" height="100px" src="asset/images/delhi.png" alt="" draggable="false">
+                            </a>
+                            <span>Delhi</span>
+                            </div>
+                           
+                            <div class="city_section">
+                            <a href="search_property.php?city=noida">
+                                <img width="100px" height="100px" src="asset/images/noida.png" alt="" draggable="false">
+                            </a>
+                            <span>Noida</span>
+                            </div>
+                            
+                            <div class="city_section">
+                            <a href="search_property.php?city=hyderabad">
+                                <img width="100px" height="100px" src="asset/images/hydrabad.webp" alt="" draggable="false">
+                            </a>
+                            <span>Hyderabad</span>
+                            </div>
+                            
+                            <div class="city_section">
+                            <a href="search_property.php?city=gurgaon">
+                                <img width="100px" height="100px" src="asset/images/gurgaon.webp" alt="" draggable="false">
+                            </a>
+                            <span>Gurgaon</span>
+                            </div>
+                            
+                            <div class="city_section">
+                            <a href="search_property.php?city=bangalore">
+                                <img width="100px" height="100px" src="asset/images/banglore.webp" alt="" draggable="false">
+                            </a>
+                            <span>Bangalore</span>
+                            </div>
+                            
+                            <div class="city_section">
+                            <a href="search_property.php?city=pune">
+                                <img width="100px" height="100px" src="asset/images/pune.webp" alt="" draggable="false">
+                            </a>
+                            <span>Pune</span>
+                            </div>
+                            
                         </div>
+                      
                     </div>
                 </div>
             </div>
 
+          
 
-
-
-            <div class="category_container__ZtyK9">
-                <div class="category_catmain__HxBtg">
-                    <div class="category_title__CZJjV">
-                        <h2>Roomsoom</h2>
-                        <h3>Simplify Your Life, Amplify Your Experience.</h3>
-                    </div>
-                    <div class="category_cardMain__nXs1B">
-                        <div class="category_coliving__ADyuA"><a href="">
-                                <div class="category_coimg__by7n_"><img alt="Housr Coliving"
-                                        src="https://housr.in/_next/image?url=https%3A%2F%2Fcloudfront.housr.in%2Fcoliving.jpg&w=1920&q=75"
-                                        width="800" height="800" decoding="async" data-nimg="1" loading="lazy"
-                                        style="color:transparent"></div>
-                                <div class="category_text__4JxVH">
-                                    <h3>Roomsoom Coliving</h3>
-                                    <p>The ideal luxury housing fix for working professionals starting out in a new
-                                        city.
-                                        Live in beautifully designed luxurious rooms that come with abundant amenities
-                                        and
-                                        the added bonus of an exclusive community!</p><span><img alt="right arrow"
-                                            srcset="	https://housr.in/_next/static/media/EastArrow.eca0b8e8.svg 1x, 	https://housr.in/_next/static/media/EastArrow.eca0b8e8.svg 2x"
-                                            src="	https://housr.in/_next/static/media/EastArrow.eca0b8e8.svg" width="25"
-                                            height="25" decoding="async" data-nimg="1" loading="lazy"
-                                            style="color:transparent"></span>
-                                </div>
-                            </a></div>
-                        <div class="category_coliving__ADyuA"><a href="">
-                                <div class="category_coimg__by7n_"><img alt="Housr Homes"
-                                        src="https://housr.in/_next/image?url=https%3A%2F%2Fcloudfront.housr.in%2FHomes.jpg&w=1920&q=75"
-                                        width="800" height="800" decoding="async" data-nimg="1" loading="lazy"
-                                        style="color:transparent"></div>
-                                <div class="category_text__4JxVH">
-                                    <h3>Roomsoom Homes</h3>
-                                    <p>For couples seeking a touch of luxury in a pet-friendly environment, our serviced
-                                        apartments are the perfect choice! With full-stack amenities, an independent
-                                        kitchen, luxurious furnishings, and a welcoming atmosphere for your furry
-                                        friends,
-                                        you'll feel right at home in our apartments.</p><span><img alt="right arrow"
-                                            srcset="	https://housr.in/_next/static/media/EastArrow.eca0b8e8.svg 1x, 	https://housr.in/_next/static/media/EastArrow.eca0b8e8.svg 2x"
-                                            src="	https://housr.in/_next/static/media/EastArrow.eca0b8e8.svg" width="25"
-                                            height="25" decoding="async" data-nimg="1" loading="lazy"
-                                            style="color:transparent"></span>
-                                </div>
-                            </a></div>
-                    </div>
-                </div>
-            </div>
             <div class="amenities_container__FPNLg">
                 <div class="amenities_amenMain__t7XoQ">
                     <div class="amenities_title__apKqn">
@@ -532,7 +429,7 @@ session_start();
                 </div>
             </div>
             <section>
-               
+
             </section>
             <section class="testimonials_containerMain__M_1ES">
                 <div class="testimonials_title__SEhDx">
@@ -763,7 +660,7 @@ session_start();
                             <h3>Exploring the World of Roomsoom Coliving</h3>
                         </div>
 
-                        <!-- VERTICLE TAB -->
+                       
                         <div class="verticle_tab">
                             <div class="tab">
                                 <button class="tablinks" onclick="openCity(event, 'overview')"
@@ -783,7 +680,7 @@ session_start();
 
                             <div id="overview" class="tabcontent">
 
-                                <p>In today's fast-paced world, finding a place to call home that offers both comfort
+                                <p style="width: 70%;">In today's fast-paced world, finding a place to call home that offers both comfort
                                     and
                                     convenience can be a challenge. But with Housr Coliving, the answer is simple. We
                                     provide fully furnished and serviced apartments that make hassle-free living a
@@ -797,7 +694,7 @@ session_start();
 
                             <div id="hasslefree" class="tabcontent">
 
-                                <p>At Housr, we understand that your time is valuable, and the last thing you want to
+                                <p style="width: 70%;">At Housr, we understand that your time is valuable, and the last thing you want to
                                     worry
                                     about is setting up your new apartment. That's why our luxury apartments for rent
                                     are
@@ -819,7 +716,7 @@ session_start();
                             </div>
 
                             <div id="convenience" class="tabcontent">
-                                <p>Coliving with Housr means enjoying a host of amenities that simplify your daily life.
+                                <p style="width: 70%;">Coliving with Housr means enjoying a host of amenities that simplify your daily life.
                                     When you sign up for a Housr stay, you never have to stress about finding a maid,
                                     cook,
                                     or laundry service nearby. Our professional housekeeping services ensure that your
@@ -842,7 +739,7 @@ session_start();
                                     discover the perfect housing solution with ease.</p>
                             </div>
                             <div id="privacy" class="tabcontent">
-                                <p>
+                                <p style="width: 70%;">
                                     One of the unique aspects of Housr Coliving is our ability to strike the perfect
                                     balance
                                     between privacy and community living. Our furnished chic rooms provide the ideal
@@ -865,7 +762,7 @@ session_start();
                                 </p>
                             </div>
                             <div id="benifits" class="tabcontent">
-                                <p>
+                                <p style="width: 70%;">
                                     While the luxury apartments and community events are major attractions, Housr offers
                                     a
                                     range of hidden benefits that make your stay even more delightful. Here are some of
@@ -902,7 +799,7 @@ session_start();
                                 </p>
                             </div>
                             <div id="community" class="tabcontent">
-                                <p>When you choose Housr Luxury Coliving, you're not just renting an apartment; you're
+                                <p style="width: 70%;">When you choose Housr Luxury Coliving, you're not just renting an apartment; you're
                                     becoming part of a vibrant and forward-thinking community. We believe in creating a
                                     space where individuals can thrive, connect, and create lasting memories. <br><br>
 
@@ -929,11 +826,11 @@ session_start();
                                     future, one community at a time.</p>
                             </div>
                         </div>
-                        <!-- /VERTICLE TAB -->
+                       
                         <div class="mobile_collapsible_tab">
                             <button type="button" class="collapsible">Overview</button>
                             <div class="content">
-                                <p>In today's fast-paced world, finding a place to call home that offers both comfort
+                                <p style="width: 70%;">In today's fast-paced world, finding a place to call home that offers both comfort
                                     and
                                     convenience can be a challenge. But with Housr Coliving, the answer is simple. We
                                     provide fully furnished and serviced apartments that make hassle-free living a
@@ -945,7 +842,7 @@ session_start();
                             </div>
                             <button type="button" class="collapsible">Hassle-free Luxur Coliving with Housr</button>
                             <div class="content">
-                                <p>At Housr, we understand that your time is valuable, and the last thing you want to
+                                <p style="width: 70%;">At Housr, we understand that your time is valuable, and the last thing you want to
                                     worry
                                     about is setting up your new apartment. That's why our luxury apartments for rent
                                     are
@@ -968,7 +865,7 @@ session_start();
                             <button type="button" class="collapsible">The Convenience of Luxury Coliving with
                                 Housr</button>
                             <div class="content">
-                                <p>Coliving with Housr means enjoying a host of amenities that simplify your daily life.
+                                <p style="width: 70%;">Coliving with Housr means enjoying a host of amenities that simplify your daily life.
                                     When you sign up for a Housr stay, you never have to stress about finding a maid,
                                     cook,
                                     or laundry service nearby. Our professional housekeeping services ensure that your
@@ -993,7 +890,7 @@ session_start();
                             <button type="button" class="collapsible">The Ideal Blend of Privacy & Socialization at
                                 Housr Luxury Coliving</button>
                             <div class="content">
-                                <p>One of the unique aspects of Housr Coliving is our ability to strike the perfect
+                                <p style="width: 70%;">One of the unique aspects of Housr Coliving is our ability to strike the perfect
                                     balance
                                     between privacy and community living. Our furnished chic rooms provide the ideal
                                     home
@@ -1016,7 +913,7 @@ session_start();
                             <button type="button" class="collapsible">Hidden Benefits of Housr Coliving: More Than Just
                                 a Home</button>
                             <div class="content">
-                                <p>
+                                <p style="width: 70%;">
                                     While the luxury apartments and community events are major attractions, Housr offers
                                     a range of hidden benefits that make your stay even more delightful. Here are some
                                     of them: <br> <br>
@@ -1046,7 +943,7 @@ session_start();
                             </div>
                             <button type="button" class="collapsible">Joining the Housr Coliving Community</button>
                             <div class="content">
-                                <p>
+                                <p style="width: 70%;">
                                     When you choose Housr Luxury Coliving, you're not just renting an apartment; you're
                                     becoming part of a vibrant and forward-thinking community. We believe in creating a
                                     space where individuals can thrive, connect, and create lasting memories. <br><br>
@@ -1152,6 +1049,9 @@ session_start();
             </div>
         </div>
 
+        <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px"
+                class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
+
         <!-- ===== FOOTER SECTION ===== -->
         <?php  include './header_footer/footer.php' ;      ?>
         <!-- ===== /FOOTER SECTION ===== -->
@@ -1167,28 +1067,27 @@ session_start();
         <script src="js/explore_tab.js"></script>
         <!-- <script src="js/active_class.js"></script> -->
         <script src="js/login_info_popup.js"></script>
+        <!-- <script src="js/popupOnPageLoad.js"></script> -->
 
         <!-- =======BOOTSTRAP JS CDN========== -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
 
-<script
-  src="https://code.jquery.com/jquery-3.7.1.js"
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-  crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 
-<script>
-$(document).ready(function() { 
-   $(".Header_ullinks__V1SBq li").click(function(event) { 
-     
-      $(".Header_ullinks__V1SBq li ").removeClass("nav__active"); //Remove any "active" class 
-      $("li", this).addClass("nav__active"); //Add "active" class to selected tab // 
-      // $(activeTab).show(); //Fade in the active content 
- });
-});
-</script>
+        <script>
+        $(document).ready(function() {
+            $(".Header_ullinks__V1SBq li").click(function(event) {
+
+                $(".Header_ullinks__V1SBq li ").removeClass("nav__active"); //Remove any "active" class 
+                $("li", this).addClass("nav__active"); //Add "active" class to selected tab // 
+                // $(activeTab).show(); //Fade in the active content 
+            });
+        });
+        </script>
 
 </body>
 

@@ -15,6 +15,7 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ===FONTAWESOME CDN=== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -62,7 +63,7 @@ session_start();
                             never fails to impress. And with Housr’s beautiful, convenient living spaces, you
                             can enjoy it all!.</p>
                     </div>
-                 
+
                     <div class="listing_property_filter  ">
                         <div class="listing_property_filter_heading">
                             <h4 style="color:white;">Search By Location</h4>
@@ -124,6 +125,16 @@ session_start();
                     <h5>8+ Stays Available Now</h5>
                 </div> -->
                 <div class="listing_right__KSxXz">
+
+                    <!-- FILTER RANGE -->
+                    <!-- <div id="slider-wrap">
+                        <div>
+                            <label>Price Between:</label>
+                            <span id="price"></span>
+                        </div>
+                        <div id="slider-range"></div>
+                    </div> -->
+                    <!-- FILTER RANGE ENDS HERE -->
                     <!-- <div class="dropdown"><button class="dropbtn">
                             <p>Sort by <img alt="sort"
                                     srcset="	https://housr.in/_next/static/media/Sort.71b8b782.svg 1x, 	https://housr.in/_next/static/media/Sort.71b8b782.svg 2x"
@@ -138,7 +149,7 @@ session_start();
                         </div>
                     </div> -->
 
-                    <form action="" method="post">
+                    <!-- <form action="" method="post">
                         <input type="text" name="start_price"
                             value="<?php if(isset($_POST['start_price'])){echo $_POST['start_price']; } ?>"
                             placeholder="Enter Start Price" id="">
@@ -146,7 +157,7 @@ session_start();
                             value="<?php if(isset($_POST['end_price'])){echo $_POST['end_price']; } ?>"
                             placeholder="Enter end Price" id="">
                         <input type="submit" name="filter_by_price" value="Filter">
-                    </form>
+                    </form> -->
                 </div>
             </div>
 
@@ -154,103 +165,14 @@ session_start();
                 <div class="listing_gridlayout__SQwz8" id="all_property">
 
 
-                    <?php  
-                    if(isset($_POST['start_price']) && isset($_POST['end_price'])){
-                            $start_price = $_POST['start_price'];
-                            $end_price = $_POST['end_price'];
-
-                            $filter_sql = "SELECT * FROM `properties` WHERE solo_room_price BETWEEN $start_price AND $end_price";
-                            $filter_result = mysqli_query($conn, $filter_sql);
-                            $filter_num_row = mysqli_num_rows($filter_result);
-
-                            if($filter_num_row==0){
-                                echo "<h2 class='zero_properties'>Zero Result Found</h2>";
-                            }
-
-                            while($row = mysqli_fetch_assoc($filter_result)){
-                                $s_id = $row['s_id'];
-                                $city = $row['city'];
-                                $locality = $row['locality'];
-                                $property_type = $row['property_type'];
-                                $twin_sharing_price = $row['twin_sharing_price'];
-                                $solo_room_price = $row['solo_room_price'];
-                                $property_image = $row['property_image'];
-
-                                 echo "
-                                 <div class='listing_colLayout__IVj18'>
-                                 <div class='card_containerGrid__KnWKY card_container__i1o_z' id='onlyHide'>                    
-                                  <div class='card_cardMain__HVzkv'>
-                                  <div class='propThum'>
-                                      <div class='slick-slider slick-initialized' dir='ltr'>
-                                                
-                                          <div class='slick-list'>
-                                              <div class='slick-track'
-                                                  style='width: 2212px; opacity: 1; transform: translate3d(-948px, 0px, 0px);'>
-                                                  <div data-index='-1' tabindex='-1' class='slick-slide slick-cloned'
-                                                      aria-hidden='true' style='width: 316px;'>
-                                                      <div>
-                                                          <div class='card_thumbnail__iAMJV' tabindex='-1'
-                                                              style='width: 100%; display: inline-block;'>
-                                                              <div class='card_upcoming__ezcIg'>
-                                                                  
-                                                              </div><a
-                                                                  href='property_details.php?property_id=$s_id'><img
-                                                                      alt='$city'
-                                                                     
-                                                    src='asset/property_image/$property_image'
-                                                    width='600' height='600' decoding='async'
-                                                    data-nimg='1' loading='lazy' style=''></a>
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                        </div>
-                       
-                       
-                    </div>
-                </div>
-                <div class='textMain'><a href=''>
-                        <div class='card_propName__G6qT3'>
-                            <h2>Roomsoom $locality, $city</h2>
-                            <div class='card_city__IHjt6'>
-                                <h4><img alt='locationpin'
-                                       
-                                        src='./asset/images/locationicon.svg' width='15'
-                                        height='15' decoding='async' data-nimg='1' loading='lazy'
-                                        style='color: transparent;'>$locality, </h4><span><img
-                                        alt='locationpin'
-                                       
-                                        src='./asset/images/shareicon.svg' width='18'
-                                        height='18' decoding='async' data-nimg='1' loading='lazy'
-                                        style='color: transparent;'> Share</span>
-                                                   </div>
-                                               </div>
-                                               <div class='card_priceMain__09p_D'>
-                                                   <div class='card_priceCard__pJnps'>
-                                                       <h4>twin Sharing</h4>
-                                                       <h5><span class='card_start__0HNld'>Starting at </span> Rs.
-                                                       $twin_sharing_price<span>/mo*</span></h5>
-                                                   </div>
-                                                   <div class='card_priceCard__pJnps'>
-                                                       <h4>solo Room</h4>
-                                                       <h5><span class='card_start__0HNld'>Starting at </span> Rs.
-                                                       $solo_room_price<span>/mo*</span></h5>
-                                                   </div>
-                                               </div>
-                                           </a></div>
-                                         </div>
-                                         </div>
-                                         </div>
-                                         ";
-                            }
-
+                    <?php 
+                    if(isset($_GET['city'])){
+                        search_by_city();
                     }else{
                         get_searched_result();
-                    }
-                        
+                    } 
+                    
                     ?>
-                </div>
             </div>
             <div class="listing_filterPhone__Fcmrh">
                 <div class="listing_sidemeunbox__PQyTf">
@@ -799,6 +721,10 @@ session_start();
 
             </div>
         </div>
+
+        <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px"
+                class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
+
         <!-- ===== FOOTER SECTION ===== -->
         <?php  include './header_footer/footer.php' ;      ?>
         <!-- ===== /FOOTER SECTION ===== -->
@@ -816,10 +742,9 @@ session_start();
         <script src="js/active_class.js"></script>
         <script src="js/login_info_popup.js"></script>
 
+
         <!-- =======BOOTSTRAP JS CDN========== -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        < /body>
-
-        <
-        /html>
+</body>
+</html>

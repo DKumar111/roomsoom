@@ -16,7 +16,7 @@ if(isset($_GET['property_id'])){
     $locality = $row['locality'];
     $property_type = $row['property_type'];
     $property_address = $row['property_address'];
-    $twin_sharing_price = $row['twin_sharing_price'];
+    $gender = $row['gender'];
     $solo_room_price = $row['solo_room_price'];
     $property_image = $row['property_image'];
     $property_image2 = $row['property_image2'];
@@ -226,24 +226,24 @@ if(isset($_GET['property_id'])){
 
                         <!-- Slideshow container -->
                         <div class="slideshow-container">
-
+                            <span class="gender__tab"><?php echo $gender  ?></span>
                             <!-- Full-width images with number and caption text -->
                             <div class="mySlides fade">
-                                <div class="numbertext">1 / 3</div>
+                                <!-- <div class="numbertext">1 / 3</div> -->
                                 <img src="asset/property_image/<?php  echo $property_image ?>"
                                     style="width:100%; height: 100%;">
                                 <!-- <div class="text">Caption Text</div> -->
                             </div>
 
                             <div class="mySlides fade">
-                                <div class="numbertext">2 / 3</div>
+                                <!-- <div class="numbertext">2 / 3</div> -->
                                 <img src="asset/property_image/<?php  echo $property_image2 ?>"
                                     style="width:100%; height: 100%;">
                                 <!-- <div class="text">Caption Two</div> -->
                             </div>
 
                             <div class="mySlides fade">
-                                <div class="numbertext">3 / 3</div>
+                                <!-- <div class="numbertext">3 / 3</div> -->
                                 <img src="asset/property_image/<?php  echo $property_image3 ?>"
                                     style="width:100%; height: 100%;">
                                 <!-- <div class="text">Caption Three</div> -->
@@ -301,51 +301,39 @@ if(isset($_GET['property_id'])){
                                 <span class="close_booking_form">&times;</span>
                                 <div class="book_now_form">
                                     <div class="book_now_form_heading">
-                                        <h2>Enter Your Personal Details</h2>
+                                        <h2>Enter Booking Details</h2>
                                     </div>
-                                    <form class="book_form_area" action="phpScript/booking_now.php?property_id=<?php echo $property_id ?>" method="post">
+                                    <form class="book_form_area"
+                                        action="phpScript/booking_now.php?property_id=<?php echo $property_id ?>"
+                                        method="POST">
                                         <div class="book_now_form_control">
-                                            <label for="email">Enter Your Name: </label>
-                                            <input class="book_now_form_field" type="text" name="name" placeholder="Enter Your Name"
-                                                autocomplete="off" required id="">
+                                            <label for="name">Name: </label>
+                                            <input type="text" class="book_now_form_field" name="name" autocomplete="off" 
+                                            placeholder="Enter your name" required="required" id="">
                                         </div>
                                         <div class="book_now_form_control">
-                                        <label for="age">Choose Your Gender:</label>
-                                            <label for="male">Male</label>
-                                            <input type="radio" name="gender" required value="male" id="male">
-                                            <label for="male">Female</label>
-                                            <input type="radio" name="gender" required value="female" id="female">
-                                            <label for="male">Other</label>
-                                            <input type="radio" name="gender" required value="other" id="other">
+                                            <label for="email">Email:</label>
+                                            <input type="email" class="book_now_form_field" name="email"
+                                                autocomplete="off" placeholder="Enter Your Email" required="required" id="">
                                         </div>
                                         <div class="book_now_form_control">
-                                            <label for="age">Enter Your Age:</label>
-                                            <input type="text" class="book_now_form_field" name="age" autocomplete="off"
-                                                placeholder="Enter Your Age" required id="">
+                                            <label for="email">Select Room Type: </label>
+                                            <select name="room-type" id="room" required="required">
+                                                <option>Choose Type</option>
+                                                <option value="rent">Rent</option>
+                                                <option value="pg">PG</option>
+                                                <option value="family">Family</option>
+                                            </select>
                                         </div>
                                         <div class="book_now_form_control">
-                                            <label for="email">Enter Your Email:</label>
-                                            <input type="email" class="book_now_form_field" name="email" autocomplete="off"
-                                                placeholder="Enter Your Email" required id="">
+                                            <label>Arrival Date: </label>
+                                            <input type="date" name="arr_date" class="date" required="required" id="myDate" onfocus="disablePastDates()">
                                         </div>
-                                        <div class="book_now_form_control">
-                                            <label for="mobile">Enter Your Mobile No.:</label>
-                                            <input type="text" class="book_now_form_field" name="phone" autocomplete="off"
-                                                placeholder="Enter Your Mobile No." required id="">
-                                        </div>
-                                        <div class="book_now_form_control">
-                                            <label for="employee">Choose Your Profession:    </label>
-                                            <label for="employee">Employee</label>
-                                            <input type="radio" name="profession" value="employee" required
-                                                id="employee">
-                                            <label for="student">Student</label>
-                                            <input type="radio" name="profession" value="student" required id="student">
-                                            <label for="family">Family</label>
-                                            <input type="radio" name="profession" value="family" required id="family">
-                                        </div>
-                                        <button class="form_book_Now_Submit_btn" type="submit" name="form_book_Now_Submit_btn">Book Now</button>
+                                        <button class="form_book_Now_Submit_btn" type="submit"
+                                            name="form_book_Now_Submit_btn">Book Now</button>
                                     </form>
                                 </div>
+
                             </div>
 
                         </div>
@@ -354,14 +342,10 @@ if(isset($_GET['property_id'])){
                         <div class="details_priceMainPhone__OCOuq">
                             <h4>Pricing</h4>
                             <div class="details_priceDiv__mMDd0">
-                                <h2>twin Sharing</h2>
-                                <h3>Rs. <?php echo $twin_sharing_price ?><span>/mo*</span></h3>
-                            </div>
-                            <div class="details_priceDiv__mMDd0">
-                                <h2>solo Room</h2>
+                                <h2>Rent Starting at</h2>
                                 <h3>Rs. <?php echo $solo_room_price ?><span>/mo*</span></h3>
                             </div>
-                            <p>*The starting price shown excludes GST. Final prices may vary depending on room
+                            <p>*The starting price shown excludes GST. Final prices maylety depending on room
                                 occupancy, personalised services, and additional features.</p>
                         </div>
                         <div class="details_address__Z4zCU">
@@ -511,15 +495,12 @@ if(isset($_GET['property_id'])){
                 <div class="details_right__NeEnK">
                     <div class="details_priceCont__0ad_h">
                         <div class="details_priceMain__y1MZS">
+
                             <div class="details_priceDiv__mMDd0">
-                                <h2>twin Sharing</h2>
-                                <h3>Rs. <?php echo $twin_sharing_price ?><span>/mo*</span></h3>
-                            </div>
-                            <div class="details_priceDiv__mMDd0">
-                                <h2>solo Room</h2>
+                                <h2>Rent Starting at</h2>
                                 <h3>Rs. <?php echo $solo_room_price ?><span>/mo*</span></h3>
                             </div>
-                            <p>*The starting price shown excludes GST. Final prices may vary depending on room
+                            <p>*The starting price shown excludes GST. Final prices maylety depending on room
                                 occupancy, personalised services, and additional features.</p>
                         </div>
                         <div class="details_signupForm__mFARA">
@@ -590,8 +571,31 @@ if(isset($_GET['property_id'])){
         </div>
 
         <?php      
-}
+            }
        ?>
+
+        <!-- =======NEAR BY PROPERTY SECTION========= -->
+        <div class="card_container__Klf5R">
+            <div class="card_cityMain__lBQrv">
+                <div class="card_title__TdvwU">
+                    <h2>Nearby Properties</h2>
+                </div>
+                <div class="card_cardBox__uU7lZ">
+                    <div class="wrapper">
+                        <i id="left" class="fa-solid  fas fa-angle-left"></i>
+                        <ul class="carousel">
+                            
+                                <?php 
+                                    get_nearby_property();
+                            ?>
+                            
+                        </ul>
+                        <i id="right" class="fa-solid fas fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- =======NEAR BY PROPERTY SECTION ENDS HERE========= -->
 
         <section class="testimonials_containerMain__M_1ES">
             <div class="testimonials_title__SEhDx">
@@ -762,16 +766,6 @@ if(isset($_GET['property_id'])){
                         </div>
                     </div>
                 </div>
-                <!-- <div class="testimonials_icons__g8EhO"><span><img class="testim__left__arrow" alt="left"
-                                    srcset="https://housr.in/_next/static/media/Expand_left.87a2448c.svg 1x, https://housr.in/_next/static/media/Expand_left.87a2448c.svg 2x"
-                                    src="https://housr.in/_next/static/media/Expand_left.87a2448c.svg" width="24"
-                                    height="24" decoding="async" data-nimg="1" loading="lazy"
-                                    style="color:transparent"></span><span><img class="testim__right__arrow" alt="right"
-                                    srcset="https://housr.in/_next/static/media/Expand_right.a41c922f.svg 1x, https://housr.in/_next/static/media/Expand_right.a41c922f.svg 2x"
-                                    src="https://housr.in/_next/static/media/Expand_right.a41c922f.svg" width="24"
-                                    height="24" decoding="async" data-nimg="1" loading="lazy"
-                                    style="color:transparent"></span>
-                        </div> -->
             </div>
         </section>
         <div class="connect_container__bcQb3">
@@ -813,6 +807,9 @@ if(isset($_GET['property_id'])){
         </div>
     </div>
 
+    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px"
+            class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
+
     <!-- ===== FOOTER SECTION ===== -->
     <?php  include './header_footer/footer.php' ; ?>
     <!-- ===== /FOOTER SECTION ===== -->
@@ -830,6 +827,7 @@ if(isset($_GET['property_id'])){
     <script src="js/active_class.js"></script>
     <script src="js/bookNowPopup.js"></script>
     <script src="js/login_info_popup.js"></script>
+    <script src="js/near-by-card-slide.js"></script>
 
     <!-- =======BOOTSTRAP JS CDN========== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -838,9 +836,9 @@ if(isset($_GET['property_id'])){
 
     <script>
     function myFunction() {
-        var dots = document.getElementById("dots");
-        var moreText = document.getElementById("more");
-        var btnText = document.getElementById("myBtn");
+       let dots = document.getElementById("dots");
+       let moreText = document.getElementById("more");
+       let btnText = document.getElementById("myBtn");
 
         if (dots.style.display === "none") {
             dots.style.display = "inline";
@@ -852,8 +850,21 @@ if(isset($_GET['property_id'])){
             moreText.style.display = "inline";
         }
     }
+
+   
+function disablePastDates() {
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+
+  today = yyyy + '-' + mm + '-' + dd;
+  document.getElementById("myDate").setAttribute("min", today);
+}
+
+
     </script>
 
 </body>
-</html>
 
+</html>

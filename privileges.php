@@ -359,29 +359,11 @@ session_start();
                     </div>
                 </div>
             </div>
-            <!-- <div class="privileges_appEnabled__1lsry">
-                <div class="privileges_appMain__kdoLf">
-                    <div class="privileges_appImage__tmThp"><img alt="App enabled Housr"
-                           
-                            src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fphone.e29396af.png&w=640&q=75"
-                            width="274" height="559" decoding="async" data-nimg="1" loading="lazy"
-                            style="color:transparent"></div>
-                    <div class="privileges_appCont__WE4kU">
-                        <h2>App Enabled Living</h2>
-                        <p>So why settle for anything less? Come experience the ultimate in luxury coliving at Roomsoom,
-                            and discover a world of
-                         <b>convenience</b>, <b>comfort</b>, and <b>indulgence</b>.
-                        </p><a href="/luxury-rentals"><button>
-                                <p>Find my Roomsoom</p>
-                            </button></a>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     <!-- ===================PRIVILEGES MAIN SECTION ENDS HERE========================= -->
 
-
+    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px" class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
 
     <!-- =====FOOTER====== -->
     <?php include './header_footer/footer.php'  ?>
