@@ -27,7 +27,7 @@
                     width: 100% !important;
                 }
                 .heading{
-                    margin-top: 5rem !important;
+                    margin-top: -2rem !important;
                 }
             }
         </style>

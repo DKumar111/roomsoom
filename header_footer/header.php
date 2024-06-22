@@ -1,6 +1,7 @@
-
-
-
+<!-- <div style="z-index:10;" class="testing_mode">
+    <h2>Website is in testing mode</h2>
+</div>
+<br> <br> -->
 <div class="Header_container__C_MY0">
     <div>
         <div class="Header_headerContainer__5aj_6">
@@ -12,54 +13,18 @@
             <div class="Header_navlinks__vW8HS">
                 <div class="Header_links__Sm49Z">
                     <ul class="Header_ullinks__V1SBq" id="Header_ullinks__V1SBqAasd">
+                        <li class=""><a href="index.php">
+                                <p>Home<span class="Header_line__mjz8n"></span></p>
+                            </a></li>
                         <li class=" select Header_hasChildren__rMIjs ">
                             <p class="Header_cityNAme__Cs_WE" id="fetch_value">
-                                <a class="text-decoration-none"  href="properties.php">All Property</a>
-                                <!-- <img alt="housr coliving"
-                                    srcset="https://housr.in/_next/static/media/DownArrowGrey.02340a5c.svg 1x, https://housr.in/_next/static/media/DownArrowGrey.02340a5c.svg 2x"
-                                    src="https://housr.in/_next/static/media/DownArrowGrey.02340a5c.svg" width="20"
-                                    height="20" decoding="async" data-nimg="1" class="Header_svg__77EI_" loading="lazy"
-                                    style="color:transparent"> -->
+                                <a class="text-decoration-none" href="properties.php">All Property</a>
                             </p>
-                            <!-- <ul class="Header_subparent__L3nAB " id="fetch_value">
-                                    
-                                    <li class="Header_childrenli__awXTw " ><a
-                                            href="properties.php?gurgaon" onclick="showData(this.value)">
-                                            <p>Gurgaon</p>
-                                        </a></li>
-                                    <li class="Header_childrenli__awXTw " ><a
-                                            href="properties.php?hyderabad" onclick="showData(this.value)">
-                                            <p>Hyderabad</p>
-                                        </a></li>
-                                    <li class="Header_childrenli__awXTw " ><a
-                                            href="properties.php?pune" onclick="showData(this.value)">
-                                            <p>Pune</p>
-                                        </a></li>
-                                    <li class="Header_childrenli__awXTw " ><a
-                                            href="properties.php?banglore" onclick="showData(this.value)">
-                                            <p>Bangalore</p>
-                                        </a></li>
-                                    <li class="Header_childrenli__awXTw "  id="labelNew1"><a
-                                            href="properties.php?noida" onclick="showData(this.value)">
-                                            <p>Noida</p>
-                                        </a></li>
-                                    <li class="Header_childrenli__awXTw "  id="labelNew1"><a
-                                            href="properties.php?delhi" onclick="showData(this.value)">
-                                            <p>Delhi</p>
-                                        </a></li>
-                                </ul> -->
-
                         </li>
-                        <li class=""><a  href="privileges.php">
-                                <p>Privileges<span class="Header_line__mjz8n"></span></p>
-                            </a></li>
-                        <li class=""><a  href="howtobook.php">
+                        <li class=""><a href="howtobook.php">
                                 <p>How to book<span class="Header_line__mjz8n"></span></p>
                             </a></li>
-                        <li class=""><a  href="blog.php">
-                                <p>Blog<span class="Header_line__mjz8n"></span></p>
-                            </a></li>
-                        <li class=""><a  href="about.php">
+                        <li class=""><a href="about.php">
                                 <p class="Header_activTrue__TuZRY">About Us<span class="Header_line__mjz8n"></span></p>
                             </a></li>
                         <li class="Header_cta__n6O_m">call us on<br><a href="tel:+918810107070">+91 8810107070</a></li>
@@ -72,19 +37,19 @@
                         <?php 
                             if(!isset($_SESSION['username'])){  
                                 echo '
-                        <li style="margin-right: -1rem;" class="Header_btnMain__yY24_">
+                        <li style="/*margin-right: -1rem;*/" class="Header_btnMain__yY24_">
                             <a  href="login.php">
                                 <p style="font-size: 1rem;">Login</p>
                             </a>
                         </li>
-                        <li style="margin-right: -2.5rem;" class="Header_btnMain__yY24_">
+                        <li style="/*margin-right: -2.5rem;*/" class="Header_btnMain__yY24_">
                             <a href="register.php">
-                                <p style="font-size: 1rem;">Register</p>
+                                <p style="font-size: 1rem;">SignUp</p>
                             </a>
                         </li>';
                             }else{
                                 echo '
-                                <li style="margin-right: -1rem;" class="Header_btnMain__yY24_">
+                                <li style="/*margin-right: -1rem;*/" class="Header_btnMain__yY24_">
                             <a  >
                                 <p onclick="openForm()" id="clickme" style="font-size: 1rem;">'. $_SESSION['username'].'</p>
                             </a>
@@ -103,25 +68,24 @@
                     </ul>
                 </div>
             </div>
-            <!-- MOBILE NAVIGATION -->
+
+
             <div class="mobileSide_nav" id="mobile_side_nav">
                 <div class="mobileSide_nav_links">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <a class="mb_nav_btn " href="index.php">Home</a>
                     <a class="mb_nav_btn " href="properties.php">All Properties</a>
-                    <a class="mb_nav_btn " href="privileges.php">Privileges</a>
+                    <!-- <a class="mb_nav_btn " href="privileges.php">Privileges</a> -->
                     <a class="mb_nav_btn " href="howtobook.php">How to book</a>
-                    <a class="mb_nav_btn " href="blog.php">Blog</a>
+                    <!-- <a class="mb_nav_btn " href="blog.php">Blog</a> -->
                     <a class="mb_nav_btn " href="about.php">About Us</a>
                 </div>
                 <div class="" style="position: absolute; top: 1rem; right: 0rem; display: flex;">
-                    <!-- <a style="font-size: 1rem;" class="login_register_btns" href="login.php">Login</a>
-                    <a style="font-size: 1rem;" class="login_register_btns" href="register.php">Registre</a> -->
                     <?php 
                             if(!isset($_SESSION['username'])){  
                                 echo '
-                                <a style="font-size: 1rem;" class="login_register_btns" href="login.php">Login</a>
-                                <a style="font-size: 1rem;" class="login_register_btns" href="register.php">Registre</a>
+                                <a style="font-size: 1rem; font-weight: 700; border-bottom:none;" class="login_register_btns" href="login.php">Login</a>
+                                <a style="font-size: 1rem; font-weight: 700; padding-right:3.5rem;padding-left: 0 !important; border-bottom:none;" class="login_register_btns" href="register.php">SignUp</a>
                                 ';
                             }else{
                                 echo '
@@ -133,7 +97,6 @@
                 </div>
             </div>
 
-            <!-- /MOBILE NAVIGATION -->
         </div>
 
         <div class="Header_conSideBar__FF5_Z" id="Header__Request-Call">
@@ -207,9 +170,9 @@
             <div class="login_info_user_name">
                 Hi, <?php echo $_SESSION['username']  ?>
             </div>
-            <div class="user_propfile">
+            <!-- <div class="user_propfile">
                 <a href="user_profile.php">View Profile</a>
-            </div>
+            </div> -->
             <div class="login_info_logout_btn">
                 <a href="logout.php">Logout</a>
             </div>

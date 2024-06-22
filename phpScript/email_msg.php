@@ -2,8 +2,9 @@
 include 'dbconnect.php';
 
 if(isset($_POST['send_message'])){
-    $subject = "Message form Roomsoom website";
+    $subject = "Enquiry Message form Roomsoom website";
     $name = $_POST['name'];
+    $email = $_POST['email'];
     $phone = $_POST['phone'];
     $message = $_POST['message'];
 
@@ -21,6 +22,7 @@ if(isset($_POST['send_message'])){
 
    $headers = [
     'Name' =>  $name,
+    'Email' =>  $email,
     'Phone Number' => $phone,
     'Message' => $message
 ];
@@ -37,8 +39,8 @@ $headers = implode("\r\n", $headers);
     // "\r\n Message: " . $message . "\r\n";
 
     mail($toEmail, $subject, $name, $headers);
-        echo "<script>alert('Your have recieved your message successfully!.')</script>";
-        echo "<script>window.open('../index.php','_self')</script>";
+        echo "<script>alert('We have recieved your message successfully!.')</script>";
+        echo "<script>window.open('../contact.php','_self')</script>";
         
 }
 ?>

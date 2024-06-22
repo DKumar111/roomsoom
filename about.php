@@ -100,8 +100,8 @@ session_start();
                 <div class="founders_da__mdjto">
                     <div class="founders_daImage__mxlsq"><img alt="Nitin Aggarwal"
             
-                            src=""
-                            width="486" height="420" decoding="async" data-nimg="1" loading="lazy"
+                            src="asset/images/f1_img.png"
+                             decoding="async" data-nimg="1" loading="lazy"
                             style="color: transparent;"></div>
                     <div class="founders_text__cVLOI">
                         <h2>Nitin Aggrawal</h2>
@@ -111,8 +111,8 @@ session_start();
                 <div class="founders_da__mdjto">
                     <div class="founders_daImage__mxlsq"><img alt="Kalpesh Mehta"
                            
-                            src=""
-                            width="500" height="299" decoding="async" data-nimg="1" loading="lazy"
+                            src="asset/images/f_img.png"
+                            decoding="async" data-nimg="1" loading="lazy"
                             style="color: transparent;"></div>
                     <div class="founders_text__cVLOI">
                         <h2></h2>
@@ -139,7 +139,7 @@ session_start();
                         </div>
                         <div class="founders_foundImg__gIzBz"><img alt="founderImage"
                                
-                                src=""
+                                src="asset/images/f1_img.png"
                                 width="518" height="518" decoding="async" data-nimg="1" loading="lazy"
                                 style="color: transparent;"></div>
                     </div>
@@ -357,7 +357,7 @@ session_start();
     <!-- ========ABOUT ROOMSOOM SECTION ENDS HERE========= -->
 
 
-    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px" class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
+    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img  class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
 
 
     <!-- =====FOOTER====== -->

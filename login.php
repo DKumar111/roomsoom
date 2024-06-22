@@ -30,10 +30,10 @@ body{
 }
 .background{
     width: 430px;
-    height: 430px;
+    height: 350px;
     position: absolute;
     transform: translate(-50%,-50%);
-    left: 50%;
+    left: 30%;
     top: 50%;
 }
 .background .shape{
@@ -158,14 +158,14 @@ button{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
+    margin-bottom: 2rem;
 }
 }
 
     </style>
 </head>
 
-<body style=" background-color:"
-    class="d-flex flex-column  justify-content-center align-items-center">
+<body >
     <a style="position: absolute; left: 1rem; top: 1rem;" class="text-decoration-none px-3 py-2 bg-danger border rounded-1  text-white" href="index.php">HOME</a>
     <!-- <div class="text-black m-5 mt-0 fw-bold fs-5 border-bottom shadow p-2 border-4   ">
         <h3>Roomsoom Login</h3>
@@ -192,8 +192,8 @@ button{
 
     <!-- STYLED LOGIN FORM -->
     <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+        <!-- <div class="shape"></div>
+        <div class="shape"></div> -->
     </div>
     <form action="" method="POST">
         <h3>Login Here</h3>
@@ -207,10 +207,6 @@ button{
         <button name="login">Log In</button>
         <a style="font-size: 0.7rem;" href="forgot-password.php">Forgot Password</a>
         <div><p style="font-size: 0.7rem;">Don't have an account ? <a href="register.php">Register</a></p></div>
-        <!-- <div class="social">
-          <div class="go"><i class="fab fa-google"></i>  Google</div>
-          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-        </div> -->
     </form>
     <!-- STYLED LOGIN FORM END HERE -->
 
@@ -236,6 +232,7 @@ if(isset($_POST['login'])){
     $user_id = $row_data['user_id'];
     $user_name = $row_data['username'];
     $user_email = $row_data['email'];
+    $user_mobile = $row_data['mobile_number'];
     // $rowData = mysqli_fetch_assoc($rowCount);
 
 
@@ -243,6 +240,8 @@ if(isset($_POST['login'])){
         $_SESSION['username'] = $user_name;
         $_SESSION['email'] = $useremail;
         $_SESSION['user_id'] = $user_id;
+        $_SESSION['mobile_number'] = $user_mobile;
+        $_SESSION['login'] = true;
         // echo $_SESSION['user_id'];
         if($rowCount==1){
             echo "<script>alert('Login successful')</script>";

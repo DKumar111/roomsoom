@@ -36,8 +36,8 @@ session_start();
         <button type="submit" name="reset__password" class="shadow btn btn-danger border-0 px-4 py-2">Reset Password</button>
         <div id="emailHelp" class="form-text fw-semibold ">Don't have an account? <a class="text-black"
                 href="register.php">Register</a></div>
-        <div id="emailHelp" class="form-text fw-semibold "><a class="text-black"
-                href="forgot-password.php">Forgot Password?</a></div>
+        <!-- <div id="emailHelp" class="form-text fw-semibold "><a class="text-black"
+                href="forgot-password.php">Forgot Password?</a></div> -->
     </form>
 
     

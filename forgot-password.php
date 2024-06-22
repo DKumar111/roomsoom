@@ -58,6 +58,9 @@ if(isset($_POST['reset'])){
     $user_name = $row['username'];
     $email = $row['email'];
 
+    $from = "contact@roomsoom.com";
+    $reply_to = "noreply@roomsoom.com";
+
     $subject = "Roomsoom Website - Reset Password";
     $message = "";
     ob_start();

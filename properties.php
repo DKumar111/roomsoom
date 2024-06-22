@@ -16,12 +16,12 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/propertyCardSlide.css">
-
+    <!-- JQUERY LINK FOR FILTER SLIDER RANGE -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <!-- JQUERY LINK FOR FILTER SLIDER RANGE ENDS HERE-->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ===FONTAWESOME CDN=== -->
@@ -32,9 +32,6 @@ session_start();
 
     <!-- jquery ui css -->
     <link rel="stylesheet" href="css/jquery-ui.min.css">
-
-    <!-- ========BOOTSTRAP CSS CDN======  -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 
     <!-- =======GOOGLE FONT CDN======= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,6 +44,17 @@ session_start();
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     </style>
 
+    <!-- jQuery CDN FOR datepicker -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+
+    <!-- CSS CDN -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
+
+    <!-- datetimepicker jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+    </script>
 </head>
 
 <body>
@@ -57,82 +65,78 @@ session_start();
     <!-- <div class="wrapperTop"> -->
 
 
-        <div class="listing_mainCont__mGx_Q">
-            <div class="listing_propertyListingHeaderStrip__xBAGY">
-                <div class="listing_containerFilter__Hf7fG">
-                    <div class="listing_filterText__NBMu3">
-                        <?php  if(isset($_GET['']))  ?>
-                        <p class="listing_fitBtn__F6dJr"><span>All Properties</span></p>
-                        <h2> Properties</h2>
-                        <p>Between the old-world charm, mind-blowing cuisines and thriving IT industry, the city of
-                            never fails to impress. And with Roomsoom’s beautiful, convenient living spaces, you
-                            can enjoy it all!.</p>
-                    </div>
-                    <div class="listing_property_filter  ">
-                        <div class="listing_property_filter_heading">
-                            <h4 style="color:white;">Search By Location</h4>
-                        </div>
-                        <form action="search_property.php" method="get">
-                            <select name="city" id="">
-                                <option value="">Choose City</option>
-                                <option value="delhi">Delhi</option>
-                                <option value="noida">Noida</option>
-                                <option value="gurgaon">Gurgaon</option>
-                                <option value="pune">Pune</option>
-                                <option value="banglore">Banglore</option>
-                                <option value="hyderabad">Hyderabad</option>
-                            </select>
-                            <input type="submit" name="search_property" value="Search">
-                        </form>
-                    </div>
+    <div class="listing_mainCont__mGx_Q">
+        <div class="listing_navigation__Wwevg">
+            <div class="listing_left__b5p23">
+                <div id="joining_Date" class="multifilter_option">
+                    <!-- <p id="txtdate">Joining Date</p><span><i class="fa-solid fa-calendar-day" onclick="setDatepicker(this)"></i></span> -->
+                    <input type="text" name="joining_date" class="datetimepicker" id="input_joining_Date"
+                        value="Joining Date" placeholder="Joining Date"><i class="fa-solid fa-calendar-day"></i>
+                </div>
+                <div class="">
+                    <select name="gender" onchange="showUser(this.value)" class="multifilter_option" id="gender_option">
+                        <option>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="unisex">Unisex</option>
+                    </select>
+                </div>
+
+                <div class="">
+                    <select name="amenities" onchange="ShowAmenities(this.value)" id="amenities_option"
+                        class="multifilter_option">
+                        <option hidden>Amenities</option>
+                        <option disabled value="ac">AC</option>
+                        <option disabled value="fridge">Fridge</option>
+                        <option disabled value="gym">Gym</option>
+                        <option disabled value="parking">Parking</option>
+                        <option disabled value="power backup">Power Backup</option>
+                    </select>
+                </div>
+
+                <div class="">
+                    <select name="locality" id="locality_option" class="multifilter_option"
+                        onchange="ShowLocality(this.value)">
+                        <option>Locality</option>
+                        <option value="Noida Sector 1">Noida Sector 1</option>
+                        <option value="Noida Sector 2">Noida Sector 2</option>
+                        <option value="Noida Sector 3">Noida Sector 3</option>
+                        <option value="Noida Sector 4">Noida Sector 4</option>
+                        <option value="Noida Sector 5">Noida Sector 5</option>
+                        <option value="Noida Sector 6">Noida Sector 6</option>
+                        <option value="Noida Sector 7">Noida Sector 7</option>
+                        <option value="Noida Sector 8">Noida Sector 8</option>
+                        <option value="Noida Sector 9">Noida Sector 9</option>
+                        <option value="Noida Sector 10">Noida Sector 10 </option>
+                    </select>
+                </div>
+                <div id="search" class="search">
+                    <form action="" method="post">
+                        <input type="search" name="search" autocomplete="off" id="Property__search"
+                            placeholder="Search By City">
+                    </form>
                 </div>
             </div>
-            <div class="listing_floatingBtn__fLL3K">
-                <div class="listing_filtersBtns__Aw1Ux">
-                    
-                    <div class="listing_property_filter  ">
-                        <div class="listing_property_filter_heading">
-                            <h4 style="color:white;">Search By Location</h4>
-                        </div>
-                        <form class="filter_form" action="search_property.php" method="get">
-                            <select class="filter_select_option" name="city" id="">
-                                <option value="">Choose City</option>
-                                <option value="delhi">Delhi</option>
-                                <option value="noida">Noida</option>
-                                <option value="gurgaon">Gurgaon</option>
-                                <option value="pune">Pune</option>
-                                <option value="banglore">Banglore</option>
-                                <option value="hyderabad">Hyderabad</option>
-                            </select>
-                            <input type="submit" name="search_property" value="Search">
-                        </form>
+            <div class="listing_right__KSxXz">
+
+                <div id="slider-wrap">
+                    <div>
+                        <label>Price Between:</label>
+                        <span id="price"></span>
                     </div>
+                    <div id="slider-range"></div>
                 </div>
+
             </div>
-            <div class="listing_navigation__Wwevg">
-                <div class="listing_left__b5p23">
-                 
-                </div>
-                <div class="listing_right__KSxXz">
-                
-                    <div id="slider-wrap">
-                        <div>
-                            <label>Price Between:</label>
-                            <span id="price"></span>
-                        </div>
-                        <div id="slider-range"></div>
-                    </div>
-                
-                </div>
-            </div>
+        </div>
+        <div class="selected_items_history" id="selected_items_history">
 
-            <div class="listing_container__P9mcK">
-                <div class="listing_gridlayout__SQwz8" id="all_property">
-
-
-                    <?php  
-                    get_properties();
-                    ?>
+        </div>
+        <div class="listing_container__P9mcK">
+            <div class="listing_gridlayout__SQwz8" id="all_property">
+                <?php
+                   
+                ?>
             </div>
             <div class="listing_filterPhone__Fcmrh">
                 <div class="listing_sidemeunbox__PQyTf">
@@ -258,431 +262,10 @@ session_start();
                     </div>
                 </div>
             </div>
-            <div class="content_container__LwrrU">
-                <div class="content_mainCont__xmz_n">
-                    <div class="content_content__HcMmG">
-                        <div class="content_heading__x5_Hn">
-                            <h3>Exploring the World of Roomsoom Coliving</h3>
-                        </div>
-
-                        <div class="verticle_tab">
-                            <div class="tab">
-                                <button class="tablinks" onclick="openCity(event, 'overview')"
-                                    id="defaultOpen">Overview</button>
-                                <button class="tablinks" onclick="openCity(event, 'hasslefree')">Hassle-free Luxury
-                                    Coliving with Roomsoom</button>
-                                <button class="tablinks" onclick="openCity(event, 'convenience')">The Convenience of
-                                    Luxury Coliving with Roomsoom</button>
-                                <button class="tablinks" onclick="openCity(event, 'privacy')" id="defaultOpen">The Ideal
-                                    Blend of Privacy & Socialization at Roomsoom Luxury Coliving</button>
-                                <button class="tablinks" onclick="openCity(event, 'benifits')">Hidden Benefits of
-                                    Roomsoom
-                                    Coliving: More Than Just a Home</button>
-                                <button class="tablinks" onclick="openCity(event, 'community')">Joining the Roomsoom
-                                    Coliving
-                                    Community</button>
-                            </div>
-
-                            <div id="overview" class="tabcontent">
-
-                                <p>In today's fast-paced world, finding a place to call home that offers both comfort
-                                    and
-                                    convenience can be a challenge. But with HouRoomsoomsr Coliving, the answer is
-                                    simple. We
-                                    provide fully furnished and serviced apartments that make hassle-free living a
-                                    reality.
-                                    Scroll below to take a comprehensive journey through the world of Roomsoom,
-                                    exploring
-                                    the
-                                    myriad benefits and amenities that come with choosing us as your home away from
-                                    home.
-                                </p>
-                            </div>
-
-                            <div id="hasslefree" class="tabcontent">
-
-                                <p>At Roomsoom, we understand that your time is valuable, and the last thing you want to
-                                    worry
-                                    about is setting up your new apartment. That's why our luxury apartments for rent
-                                    are
-                                    ready for you to move in. From cosy bedrooms to well-equipped kitchens and stylish
-                                    living areas, we've thought of every detail to make your stay comfortable. <br><br>
-
-                                    Roomsoom Coliving spaces exemplify our core philosophy. We believe in creating a
-                                    community
-                                    where individuals can live together harmoniously, sharing experiences and building
-                                    connections. Our apartments for rent are designed to foster this sense of community
-                                    with
-                                    an array of breakout zones such as theatre rooms, rooftop putting, gaming zones,
-                                    fitness
-                                    centres, and more. <br><br>
-
-                                    In addition to the convenience of modern luxury apartments, we offer spacious common
-                                    areas where you can interact with fellow residents, creating an enriching social
-                                    experience.</p>
-                            </div>
-
-                            <div id="convenience" class="tabcontent">
-                                <p>Coliving with Roomsoom means enjoying a host of amenities that simplify your daily
-                                    life.
-                                    When you sign up for a Roomsoom stay, you never have to stress about finding a maid,
-                                    cook,
-                                    or laundry service nearby. Our professional housekeeping services ensure that your
-                                    space
-                                    remains pristine. Laundry becomes a breeze with doorstep service. Moreover, we’ve
-                                    also
-                                    got your F&B sorted. Craving a gourmet meal? Enjoy a lavish spread of scrumptious,
-                                    healthy, and hygienic food every day. <br> <br>
-
-                                    Roomsoom Coliving goes above and beyond to fulfil your expectations of a seamless
-                                    stay.
-                                    Whether you're working from home or indulging in a Sunday Netflix binge, we ensure
-                                    you
-                                    stay connected with super-speed Wi-Fi. To top it all, our hospitality transcends any
-                                    other coliving player because Roomsoom offers you easy access to 24/7 assistance
-                                    from
-                                    IHM-trained Resident Managers at the property and our user-friendly app. <br><br>
-
-                                    With Roomsoom, you don't just find a place to live; you find a community that
-                                    matches
-                                    your
-                                    vibe. Explore Roomsoom Coliving and Apartments for Rent effortlessly, as we want you
-                                    to
-                                    discover the perfect housing solution with ease.</p>
-                            </div>
-                            <div id="privacy" class="tabcontent">
-                                <p>
-                                    One of the unique aspects of Roomsoom Coliving is our ability to strike the perfect
-                                    balance
-                                    between privacy and community living. Our furnished chic rooms provide the ideal
-                                    home
-                                    for working professionals, offering every amenity imaginable. But it's not just
-                                    about
-                                    your room; it's about the incredible breakout zones we provide. From gaming zones to
-                                    pool tables, theatre rooms to rooftop putting, and fitness zones, we've created
-                                    spaces
-                                    for you to socialize with ease. <br><br>
-
-                                    The biggest plus? Our weekly community events. From pet therapy to stand-up comedy,
-                                    DJ
-                                    Nights, and Open Mics, our superb community team organizes varied community events
-                                    to
-                                    cater to the diverse interests of Roomsoom Homies. These gatherings bring residents
-                                    together, fostering a sense of belonging and camaraderie. It's more than just a
-                                    place to
-                                    stay; it's a vibrant community waiting to welcome you.
-                                </p>
-                            </div>
-                            <div id="benifits" class="tabcontent">
-                                <p>
-                                    While the luxury apartments and community events are major attractions, Roomsoom
-                                    offers
-                                    a
-                                    range of hidden benefits that make your stay even more delightful. Here are some of
-                                    them: <br><br>
-
-                                    <b> Hangout Spaces for a Weekend Movie Binge - Roomsoom's Theatre Rooms</b> <br>
-                                    Imagine having a state-of-the-art theatre right within your living space. Roomsoom's
-                                    theatre rooms are equipped with high-quality audiovisual systems, comfortable
-                                    seating,
-                                    and every OTT subscription. It's the perfect setting for a weekend movie binge with
-                                    friends or even a solo cinematic escape. <br><br>
-
-                                    <b>Fitness Zones for a Healthy Lifestyle</b> <br>
-                                    Maintaining a healthy lifestyle is made easy at Roomsoom Luxury Coliving. Our
-                                    fitness
-                                    zones
-                                    are well-equipped with modern gym equipment. Whether you're a fitness enthusiast or
-                                    just
-                                    looking to stay active, you'll have everything you need right at your doorstep.
-                                    <br><br>
-
-                                    <b>Rooftop for Leisure</b> <br>
-                                    For those moments when you need to unwind and enjoy some fresh air, our rooftop
-                                    spaces
-                                    offer the perfect solution. You can relax with a book, soak in the sun, or simply
-                                    take
-                                    in the panoramic views of the city. <br><br>
-
-                                    <b>Vending Machines for Snack Cravings</b> <br>
-                                    Late-night snack cravings? No problem. Roomsoom provides vending machines stocked
-                                    with
-                                    a
-                                    variety of snacks and beverages, ensuring that you have access to your favourite
-                                    treats
-                                    24/7.
-                                </p>
-                            </div>
-                            <div id="community" class="tabcontent">
-                                <p>When you choose Roomsoom Luxury Coliving, you're not just renting an apartment;
-                                    you're
-                                    becoming part of a vibrant and forward-thinking community. We believe in creating a
-                                    space where individuals can thrive, connect, and create lasting memories. <br><br>
-
-                                    Our community is a melting pot of cultures, professions, and backgrounds. It's a
-                                    place
-                                    where you can learn, grow, and forge friendships that last a lifetime. Whether
-                                    you're
-                                    new to the city or simply seeking a change of scenery, Roomsoom welcomes you with
-                                    open
-                                    arms. <br><br>
-
-                                    In conclusion, Roomsoom is more than just a housing solution; it's a lifestyle
-                                    choice.
-                                    With
-                                    hassle-free luxury coliving, unmatched convenience, and a thriving community, we
-                                    offer
-                                    the ultimate living experience for working professionals. Say goodbye to the stress
-                                    of
-                                    setting up a new home and embrace the comfort and convenience of Roomsoom, your
-                                    destination
-                                    for luxury coliving. <br><br>
-
-                                    Discover a world where luxury and community meet seamlessly, where comfort and
-                                    convenience redefine your living experience. Choose Roomsoom Coliving for a life
-                                    that's
-                                    both extraordinary and effortless. Join us in creating a brighter and more inclusive
-                                    future, one community at a time.</p>
-                            </div>
-                        </div>
-
-                        <div class="mobile_collapsible_tab">
-                            <button type="button" class="collapsible">Overview</button>
-                            <div class="content">
-                                <p>In today's fast-paced world, finding a place to call home that offers both comfort
-                                    and
-                                    convenience can be a challenge. But with Roomsoom Coliving, the answer is simple. We
-                                    provide fully furnished and serviced apartments that make hassle-free living a
-                                    reality.
-                                    Scroll below to take a comprehensive journey through the world of Roomsoom,
-                                    exploring
-                                    the
-                                    myriad benefits and amenities that come with choosing us as your home away from
-                                    home.</p>
-                            </div>
-                            <button type="button" class="collapsible">Hassle-free Luxur Coliving with Roomsoom</button>
-                            <div class="content">
-                                <p>At Roomsoom, we understand that your time is valuable, and the last thing you want to
-                                    worry
-                                    about is setting up your new apartment. That's why our luxury apartments for rent
-                                    are
-                                    ready for you to move in. From cosy bedrooms to well-equipped kitchens and stylish
-                                    living areas, we've thought of every detail to make your stay comfortable. <br><br>
-
-                                    Roomsoom Coliving spaces exemplify our core philosophy. We believe in creating a
-                                    community
-                                    where individuals can live together harmoniously, sharing experiences and building
-                                    connections. Our apartments for rent are designed to foster this sense of community
-                                    with
-                                    an array of breakout zones such as theatre rooms, rooftop putting, gaming zones,
-                                    fitness
-                                    centres, and more. <br><br>
-
-                                    In addition to the convenience of modern luxury apartments, we offer spacious common
-                                    areas where you can interact with fellow residents, creating an enriching social
-                                    experience.</p>
-                            </div>
-                            <button type="button" class="collapsible">The Convenience of Luxury Coliving with
-                                Roomsoom</button>
-                            <div class="content">
-                                <p>Coliving with Roomsoom means enjoying a host of amenities that simplify your daily
-                                    life.
-                                    When you sign up for a Roomsoom stay, you never have to stress about finding a maid,
-                                    cook,
-                                    or laundry service nearby. Our professional housekeeping services ensure that your
-                                    space
-                                    remains pristine. Laundry becomes a breeze with doorstep service. Moreover, we’ve
-                                    also
-                                    got your F&B sorted. Craving a gourmet meal? Enjoy a lavish spread of scrumptious,
-                                    healthy, and hygienic food every day. <br> <br>
-
-                                    Roomsoom Coliving goes above and beyond to fulfil your expectations of a seamless
-                                    stay.
-                                    Whether you're working from home or indulging in a Sunday Netflix binge, we ensure
-                                    you
-                                    stay connected with super-speed Wi-Fi. To top it all, our hospitality transcends any
-                                    other coliving player because Roomsoom offers you easy access to 24/7 assistance
-                                    from
-                                    IHM-trained Resident Managers at the property and our user-friendly app. <br><br>
-
-                                    With Roomsoom, you don't just find a place to live; you find a community that
-                                    matches
-                                    your
-                                    vibe. Explore Roomsoom Coliving and Apartments for Rent effortlessly, as we want you
-                                    to
-                                    discover the perfect housing solution with ease.</p>
-                            </div>
-                            <button type="button" class="collapsible">The Ideal Blend of Privacy & Socialization at
-                                Roomsoom Luxury Coliving</button>
-                            <div class="content">
-                                <p>One of the unique aspects of Roomsoom Coliving is our ability to strike the perfect
-                                    balance
-                                    between privacy and community living. Our furnished chic rooms provide the ideal
-                                    home
-                                    for working professionals, offering every amenity imaginable. But it's not just
-                                    about
-                                    your room; it's about the incredible breakout zones we provide. From gaming zones to
-                                    pool tables, theatre rooms to rooftop putting, and fitness zones, we've created
-                                    spaces
-                                    for you to socialize with ease. <br><br>
-
-                                    The biggest plus? Our weekly community events. From pet therapy to stand-up comedy,
-                                    DJ
-                                    Nights, and Open Mics, our superb community team organizes varied community events
-                                    to
-                                    cater to the diverse interests of Roomsoom Homies. These gatherings bring residents
-                                    together, fostering a sense of belonging and camaraderie. It's more than just a
-                                    place to
-                                    stay; it's a vibrant community waiting to welcome you.</p>
-                            </div>
-                            <button type="button" class="collapsible">Hidden Benefits of Roomsoom Coliving: More Than
-                                Just
-                                a Home</button>
-                            <div class="content">
-                                <p>
-                                    While the luxury apartments and community events are major attractions, Roomsoom
-                                    offers
-                                    a range of hidden benefits that make your stay even more delightful. Here are some
-                                    of them: <br> <br>
-
-                                    <b> Hangout Spaces for a Weekend Movie Binge - Roomsoom's Theatre Rooms</b> <br>
-                                    Imagine having a state-of-the-art theatre right within your living space. Roomsoom's
-                                    theatre rooms are equipped with high-quality audiovisual systems, comfortable
-                                    seating, and every OTT subscription. It's the perfect setting for a weekend movie
-                                    binge with friends or even a solo cinematic escape. <br><br>
-
-                                    <b>Fitness Zones for a Healthy Lifestyle</b><br>
-                                    Maintaining a healthy lifestyle is made easy at Roomsoom Luxury Coliving. Our
-                                    fitness
-                                    zones are well-equipped with modern gym equipment. Whether you're a fitness
-                                    enthusiast or just looking to stay active, you'll have everything you need right at
-                                    your doorstep. <br><br>
-
-                                    <b>Rooftop for Leisure</b><br>
-                                    For those moments when you need to unwind and enjoy some fresh air, our rooftop
-                                    spaces offer the perfect solution. You can relax with a book, soak in the sun, or
-                                    simply take in the panoramic views of the city. <br><br>
-
-                                    <b>Vending Machines for Snack Cravings</b> <br>
-                                    Late-night snack cravings? No problem. Roomsoom provides vending machines stocked
-                                    with
-                                    a variety of snacks and beverages, ensuring that you have access to your favourite
-                                    treats 24/7.
-                                </p>
-                            </div>
-                            <button type="button" class="collapsible">Joining the Roomsoom Coliving Community</button>
-                            <div class="content">
-                                <p>
-                                    When you choose Roomsoom Luxury Coliving, you're not just renting an apartment;
-                                    you're
-                                    becoming part of a vibrant and forward-thinking community. We believe in creating a
-                                    space where individuals can thrive, connect, and create lasting memories. <br><br>
-
-                                    Our community is a melting pot of cultures, professions, and backgrounds. It's a
-                                    place where you can learn, grow, and forge friendships that last a lifetime. Whether
-                                    you're new to the city or simply seeking a change of scenery, Roomsoom welcomes you
-                                    with open arms. <br><br>
-
-                                    In conclusion, Roomsoom is more than just a housing solution; it's a lifestyle
-                                    choice.
-                                    With hassle-free luxury coliving, unmatched convenience, and a thriving community,
-                                    we offer the ultimate living experience for working professionals. Say goodbye to
-                                    the stress of setting up a new home and embrace the comfort and convenience of
-                                    Roomsoom, your destination for luxury coliving. <br><br>
-
-                                    Discover a world where luxury and community meet seamlessly, where comfort and
-                                    convenience redefine your living experience. Choose Roomsoom Coliving for a life
-                                    that's
-                                    both extraordinary and effortless. Join us in creating a brighter and more inclusive
-                                    future, one community at a time.
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="faqs_faqscontainer__on7i_">
-                <div class="faqs_faqtitle__pTGTz">
-                    <h3>FAQs</h3>
-                </div>
-
-                <button type="button" class="collapsible">What is Roomsoom Coliving all about?</button>
-                <div class="content">
-                    <p>At Roomsoom, we've combined equal parts innovation, convenience, community and opulence to create
-                        an
-                        extraordinary living experience for India’s working professionals.</p>
-                </div>
-                <button type="button" class="collapsible">How does Roomsoom Coliving set itself apart from traditional
-                    housing options?</button>
-                <div class="content">
-                    <p>Roomsoom Luxury Coliving stands out by offering fully furnished and ready-to-move-in properties.
-                        Unlike traditional housing, you don't have to worry about purchasing furniture, setting up
-                        utilities, or dealing with complicated paperwork. With Roomsoom, you can enjoy a comfortable and
-                        hassle-free living space from day one!</p>
-                </div>
-                <button type="button" class="collapsible">What does a Roomsoom membership include?</button>
-                <div class="content">
-                    <p>As a Roomsoom member, you get access to beautifully designed, fully-furnished spaces managed to
-                        perfection and other irresistible privileges. Roomsoom Homies (our residents) enjoy an array of
-                        all-inclusive amenities, premium services, priority access to Roomsoom’s latest launches,
-                        personalised assistance from IHM-trained resident managers, special offers and discounts, and
-                        invitations to exclusive community events.</p>
-                </div>
-                <button type="button" class="collapsible">What are the locations where Roomsoom Coliving is currently
-                    available?</button>
-                <div class="content">
-                    <p>Roomsoom is omnipresent across almost all the major metropolitans of the country, including
-                        Gurugram, Hyderabad, Pune, Bangalore and Vizag.</p>
-                </div>
-                <button type="button" class="collapsible">How do I book a Roomsoom Coliving or apartments for
-                    rent?</button>
-                <div class="content">
-                    <p>To book Roomsoom’s Luxury Coliving, apartments/house for rent, simply visit our website or get in
-                        touch with us at +918810107070. You can browse available modern luxury apartments, house for
-                        rent or flats for rent; choose your preferred location, and complete the booking process online.
-                    </p>
-                </div>
-                <button type="button" class="collapsible">Are the apartments/flats at Roomsoom Co living
-                    pet-friendly?</button>
-                <div class="content">
-                    <p>We understand that pets are part of the family. While not all Roomsoom spaces are pet-friendly,
-                        Roomsoom Homes allows pets. Please check the specific apartment listing for more details.
-                    </p>
-                </div>
-                <button type="button" class="collapsible">What is the duration of stay required at Roomsoom Luxury
-                    Coliving?</button>
-                <div class="content">
-                    <p>Roomsoom offers flexible stay options including modern luxury apartments, house/flats for rent
-                        and
-                        Luxury Coliving. Our minimum lock-in period is as short as three months while it can be as long
-                        as several months, depending on your needs.
-                    </p>
-                </div>
-                <button type="button" class="collapsible">Do I need to bring my own furniture and appliances to stay at
-                    Roomsoom Co living?</button>
-                <div class="content">
-                    <p>No, you don't need to bring anything with you, just a bag of clothes and rest we’ve got covered.
-                        Roomsoom Co living and apartments/flats for rent come fully furnished and equipped with
-                        everything
-                        you need for a comfortable stay.
-                    </p>
-                </div>
-                <button type="button" class="collapsible">How is security ensured at Roomsoom properties?</button>
-                <div class="content">
-                    <p>Your safety is our priority. We follow 3-tier security procedures at Roomsoom Co living &
-                        Roomsoom
-                        Homes. We have advanced security measures in place, including secure access control & CCTV
-                        surveillance, to ensure a safe living environment for our residents.
-                    </p>
-                </div>
-
-            </div>
         </div>
 
-        <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px"
-                class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
+        <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img class="whatsapp-icon"
+                src="asset/images/whatsapp-icon1.png" alt=""></a>
 
         <!-- ===== FOOTER SECTION ===== -->
         <?php  include './header_footer/footer.php' ;      ?>
@@ -706,13 +289,6 @@ session_start();
         <!-- jquery ui -->
         <script src="js/jquery-ui-1.12.1.min.js"></script>
 
-       
-
-        <!-- =======BOOTSTRAP JS CDN========== -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
-
 
         <script>
         $(function() {
@@ -728,6 +304,138 @@ session_start();
             $("#amount").val("$" + $("#slider-range").slider("values", 0) +
                 " - $" + $("#slider-range").slider("values", 1));
         });
+
+
+
+
+        //GENDER
+        let dropdownBtn = document.querySelector('#gender_option');
+        let menuContent = document.querySelector('.select_gender_option');
+        let genderupangle = document.querySelector(".gender_angle_arrow");
+        dropdownBtn.addEventListener('click', () => {
+            if (menuContent.style.display === "") { 
+                menuContent.style.display = "flex";
+                genderupangle.innerHTML = "<i class='fa-solid fa-chevron-up'></i>";
+            } else {
+                
+                menuContent.style.display = "";
+                genderupangle.innerHTML = "<i class='fa-solid fa-chevron-down'></i>";
+            }
+        })
+        
+
+        //AMENITIES
+        let dropdownamenities = document.querySelector('#amenities_option');
+        let amenitiesContent = document.querySelector('.select_amenities');
+        let upangle = document.querySelector(".up_down_angle");
+        dropdownamenities.addEventListener('click', () => {
+            if (amenitiesContent.style.display === "") {
+                amenitiesContent.style.display = "flex";
+                upangle.innerHTML = "<i class='fa-solid fa-chevron-up'></i>";
+            } else {
+                amenitiesContent.style.display = "";
+                upangle.innerHTML = "<i class='fa-solid fa-chevron-down'></i>";
+            }
+        })
+
+        //LOCALITIES
+        let dropdownlocality = document.querySelector('#locality_option');
+        let localityContent = document.querySelector('.select_localities');
+        let localityupangle = document.querySelector(".locality_updown_arrow");
+        dropdownlocality.addEventListener('click', () => {
+            if (localityContent.style.display === "") {
+                localityContent.style.display = "grid";
+                localityupangle.innerHTML = "<i class='fa-solid fa-chevron-up'></i>";
+            } else {
+                localityContent.style.display = "";
+                localityupangle.innerHTML = "<i class='fa-solid fa-chevron-down'></i>";
+            }
+        })
+
+
+        //LIVE SEARCH
+        $("#Property__search").on("keyup", function() {
+            let search_term = $(this).val();
+            $.ajax({
+                url: "phpScript/ajax_live_search.php",
+                type: "POST",
+                data: {
+                    search: search_term
+                },
+                success: function(data) {
+                    $("#all_property").html(data);
+                }
+            })
+        });
+
+        //FILTER BY GENDER
+        function showUser(str) {
+            if (str == "") {
+                document.getElementById("all_property").innerHTML = "";
+                return;
+            }
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("all_property").innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "phpScript/ajax_gender_search.php?q=" + str, true);
+            xmlhttp.send();
+        }
+
+        //FILTER BY LOCATION
+        function ShowLocality(str) {
+            if (str == "") {
+                document.getElementById("all_property").innerHTML = "";
+                return;
+            }
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("all_property").innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "phpScript/ajax_locality_search.php?q=" + str, true);
+            xmlhttp.send();
+        }
+        //FILTER BY AMENITIES
+        function ShowAmenities(str) {
+            if (str == "") {
+                document.getElementById("all_property").innerHTML = "";
+                return;
+            }
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("all_property").innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "phpScript/ajax_amenities_search.php?q=" + str, true);
+            xmlhttp.send();
+        }
+
+        function showDetails(city) {
+            let str = city.getAttribute("data-city-value");
+            // alert("The city is a " + str + ".");
+            if (str == "") {
+                document.getElementById("all_property").innerHTML = "";
+                return;
+            }
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("all_property").innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "phpScript/ajax_cityWise_search.php?q=" + str, true);
+            xmlhttp.send();
+        }
+
+    
+       //RANG SLIDER
+      
+
         </script>
 </body>
 

@@ -3,8 +3,8 @@ let next = document.querySelector('.testim__right__arrow');
 let slide = document.getElementById("btnClick");
 
 prev.addEventListener('click', () => {
-    slide.scrollLeft -=500;
+    slide.scrollLeft -=200;
 })
 next.addEventListener('click', () => {
-    slide.scrollLeft +=500;
+    slide.scrollLeft +=200;
 })

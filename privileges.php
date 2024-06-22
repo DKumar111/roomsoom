@@ -363,7 +363,7 @@ session_start();
     </div>
     <!-- ===================PRIVILEGES MAIN SECTION ENDS HERE========================= -->
 
-    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px" class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
+    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img  class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
 
     <!-- =====FOOTER====== -->
     <?php include './header_footer/footer.php'  ?>

@@ -36,22 +36,20 @@ session_start();
 
 
     <!-- =======HOW TO BOOK MAIN SECTION======== -->
-    <div class="wrapperTop">
+    <div style="margin-top:0rem !important;" class="wrapperTop">
         <div class="book_container__6bWqv">
             <div class="book_mainCont__PUUz7">
+                <div class="howTo_image"><img src="asset/images/howtobook/howto.png" alt=""></div>
                 <div class="book_title__6mf1e">
-                    <h2>How To Book</h2>
+                    <h2>How To Book ?</h2>
                 </div>
-                <p>Juggling with the troublesome trio-new job, new city and house-hunting? We like to keep your Roomsoom
-                    experience utterly hassle-free right from the start.<br> <br>Let us help you avoid all that stress
-                    because booking with us is easy and seamless. Follow these five simple steps to book your luxury
-                    space:</p>
             </div>
         </div>
         <div class="goals_container__VmbxY">
             <div class="goals_goalsMain__FDzqE">
-                <div class="goals_mission__A9GbZ">
-                    <div class="goals_Image__riXXr"><img alt="roof"
+                <!-- <div class="goals_mission__A9GbZ">
+                    <div class="goals_Image__riXXr">
+                        <img alt="roof"
                             
                             src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftouch.c1fd6f85.png&w=828&q=75"
                             width="414" height="284" decoding="async" data-nimg="1" loading="lazy"
@@ -76,7 +74,8 @@ session_start();
                             you shortlist the best fit based on your requirements and needs. We will be happy to answer
                             any questions you may have about the property and amenities.</p>
                     </div>
-                    <div class="goals_Image__riXXr"><img alt="roof"
+                    <div class="goals_Image__riXXr">
+                        <img alt="roof"
                             
                             src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fshort.13ab798e.png&w=828&q=75"
                             width="414" height="284" decoding="async" data-nimg="1" loading="lazy"
@@ -87,7 +86,8 @@ session_start();
                     </div>
                 </div>
                 <div class="goals_goals__Kaq4e">
-                    <div class="goals_Image__riXXr"><img alt="roof"
+                    <div class="goals_Image__riXXr">
+                        <img alt="roof"
                             
                             src="https://360virtualtoursnw.co.uk/wp-content/uploads/2023/05/Virtual-Tours_1000x550.jpg"
                             width="414" height="284" decoding="async" data-nimg="1" loading="lazy"
@@ -114,7 +114,8 @@ session_start();
                             sales representative will guide you through the payment process &amp; answer any questions.
                         </p>
                     </div>
-                    <div class="goals_Image__riXXr"><img alt="roof"
+                    <div class="goals_Image__riXXr">
+                        <img alt="roof"
                             
                             src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpay.ead59222.png&w=828&q=75"
                             width="414" height="284" decoding="async" data-nimg="1" loading="lazy"
@@ -125,7 +126,8 @@ session_start();
                     </div>
                 </div>
                 <div class="goals_goals__Kaq4e">
-                    <div class="goals_Image__riXXr"><img alt="roof"
+                    <div class="goals_Image__riXXr">
+                        <img alt="roof"
                            
                             src="https://www.adanirealty.com/-/media/Project/Realty/Blogs/ReadytoMove-Properties-Weighing-the-Benefits-and-Drawbacks-for-Homebuyers.png"
                             width="414" height="284" decoding="async" data-nimg="1" loading="lazy"
@@ -151,7 +153,8 @@ session_start();
                             moving out as when moving in. Our move-out process is super seamless, and only in the rarest
                             occasion do we go beyond our 30 days TAT for your Security Deposit Refund!</p>
                     </div>
-                    <div class="goals_Image__riXXr"><img alt="roof"
+                    <div class="goals_Image__riXXr">
+                        <img alt="roof"
                         
                             src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fout.94d0a560.png&w=828&q=75"
                             width="414" height="284" decoding="async" data-nimg="1" loading="lazy"
@@ -159,6 +162,50 @@ session_start();
                         <div class="goals_number__p8vWt">
                             <h2>6</h2>
                         </div>
+                    </div>
+                </div> -->
+                <div class="mission_how_book">
+                    <div class="mission_how_book_sub_section">
+                        <div class="">
+                        <p class="mission_img_text" >Get in touch with us</p>
+                            <img width="70px" height="70px" src="asset/images/howtobook/touchWith.jpg" alt="">
+                        </div>
+                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
+                    </div>
+                    <div class="mission_how_book_sub_section">
+                        <div class="">
+                        <p class="mission_img_text" >Shortlist your options</p>
+                            <img width="70px" height="70px" src="asset/images/howtobook/shortlist.webp" alt="">
+                        </div>
+                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
+                    </div>
+                    <div class="mission_how_book_sub_section">
+                        <div class="">
+                        <p class="mission_img_text" >Virtual Tour</p>
+                            <img width="70px" height="70px" src="asset/images/howtobook/virtualTour.png" alt="">
+                        </div>
+                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
+                    </div>
+                    <div class="mission_how_book_sub_section">
+                        <div class="">
+                        <p class="mission_img_text" >Pay Token</p>
+                            <img width="70px" height="70px" src="asset/images/howtobook/token.jpg" alt="">
+                        </div>
+                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
+                    </div>
+                    <div class="mission_how_book_sub_section">
+                        <div class="">
+                        <p class="mission_img_text" >Move in</p>
+                            <img width="70px" height="70px" src="asset/images/howtobook/movein.jpg" alt="">
+                        </div>
+                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
+                    </div>
+                    <div class="mission_how_book_sub_section">
+                        <div class="">
+                        <p class="mission_img_text" >Move Out</p>
+                            <img width="70px" height="70px" src="asset/images/howtobook/moveout.jpg" alt="">
+                        </div>
+                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
                     </div>
                 </div>
             </div>
@@ -215,7 +262,7 @@ session_start();
     <!-- =======/HOW TO BOOK MAIN SECTION======== -->
 
 
-    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px" class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
+    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img  class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
 
     <!-- =====FOOTER====== -->
     <?php include './header_footer/footer.php'  ?>

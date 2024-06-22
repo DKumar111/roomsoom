@@ -44,6 +44,7 @@ session_start();
                 <button  class="tablinks" onclick="openCity(event, 'User_Information')" id="defaultOpen" >User Information</button>
                 <button  class="tablinks" onclick="openCity(event, 'Payments_Information')" >Payments Information</button>
                 <button  class="tablinks" onclick="openCity(event, 'Booking_Information')" >Booking Information</button>
+                <button  class="tablinks" onclick="openCity(event, 'Schedule_visit')" >Schedule Visit</button>
             </div>
         </div>
         <div class="profile_right_section">
@@ -88,7 +89,47 @@ session_start();
             </div>
             <div id="Payments_Information" class="tabcontent">
                 <h1>Payments Information</h1>
-                <h3>No Payment History Available</h3>
+                <table >
+                            <tr style="background-color:white; position: sticky; top: 0rem;">
+                              <th>Email</th>
+                              <th>Transection ID</th>
+                              <th>Amount</th>
+                              <th>Date</th>
+                            </tr>
+                <?php
+                    if(isset($_SESSION['user_id'])){
+                        $user_id = $_SESSION['user_id'];
+                        $payment_sql = "SELECT * FROM `roomsoom_user` WHERE user_id = $user_id";
+                        $payment_result = mysqli_query($conn, $payment_sql  );
+                        $row3 = mysqli_fetch_assoc($payment_result);
+                        $user_email = $row3['email'];
+                        // echo $user_email;
+                        $payment_query = "SELECT * FROM `payment` WHERE user_email = '$user_email'";
+                        $query_result = mysqli_query($conn, $payment_query);
+                        $count3 = mysqli_num_rows($query_result);
+                        if($count3 == 0){
+                            echo "<h3>No Payment History Available</h3>";
+                        }
+                        while($row4 = mysqli_fetch_assoc($query_result)){
+                            $email = $row4['user_email'];
+                            $trx_id = $row4['transection_id'];
+                            $amount = $row4['amount'];
+                            $date = $row4['date'];
+
+                            echo "
+                            <tr>
+                              <td>$email</td>
+                              <td>$trx_id</td>
+                              <td> Rs. $amount/-</td>
+                              <td>$date</td>
+                            </tr>
+                        ";
+                        }
+                        echo " </table>";
+                    }
+
+
+                ?>
             </div>
             <div id="Booking_Information" class="tabcontent">
                 <h1 >Booking Information</h1>
@@ -97,7 +138,6 @@ session_start();
                               <th>Name</th>
                               <th>Email</th>
                               <th>City</th>
-                              <th>Locality</th>
                               <th>Address</th>
                               <th>Checkin Date</th>
                               <th>Booking Date</th>
@@ -117,25 +157,71 @@ session_start();
                     while($row2 = mysqli_fetch_assoc($result2)){
                         $customer_id = $row2['user_id'];
                         $customer_name = $row2['customer_name'];
-                        $customer_email = $row2['customer_email'];
+                        $customer_mobile = $row2['customer_mobile'];
                         $city = $row2['city'];
-                        $locality = $row2['locality'];
                         $address = $row2['address'];
-                        $arrvl_date = $row2['arrival_date'];
+                        $arrvl_date = $row2['joining_date'];
                         $booking_date = $row2['booking_date'];
                         // $customer_mobile = $row2['customer_mobile'];
                         echo "
                             <tr>
                               <td>$customer_name</td>
-                              <td>$customer_email</td>
+                              <td>$customer_mobile</td>
                               <td>$city</td>
-                              <td>$locality</td>
                               <td>$address</td>
                               <td>$arrvl_date</td>
                               <td>$booking_date</td>
                             </tr>
                         ";
                     }
+                    echo " </table>";
+                    
+                }
+                ?>
+            </div>
+            <div id="Schedule_visit" class="tabcontent">
+                <h1 >Schedule for visit</h1>
+                <table >
+                            <tr style="background-color:white; position: sticky; top: 0rem;">
+                              <th>S. No.</th>
+                              <th>City</th>
+                              <th>Address</th>
+                              <th>Visit Date</th>
+                              <th>Visit time</th>
+                            </tr>
+                <?php
+                if(isset($_SESSION['user_id'])){
+                    $user_id = $_SESSION['user_id'];
+
+                    $get_user_sql2 = "SELECT * FROM `visit_table` WHERE user_id = $user_id";
+                    $result2 = mysqli_query($conn, $get_user_sql2);
+                    $count2 = mysqli_num_rows($result2);
+                    
+                    if($count2 == 0){
+                        echo "<h2>No Record Found</h2>";
+                    }
+                    $count = 1;
+                    while($row2 = mysqli_fetch_assoc($result2)){
+                        $customer_id = $row2['user_id'];
+                        $visit_date = $row2['visit_date'];
+                        $visit_time = $row2['visit_time'];
+                        $time = strftime($visit_time);
+                        $property_city = $row2['property_city'];
+                        $address = $row2['property_address'];
+                        
+                        // $customer_mobile = $row2['customer_mobile'];
+                        echo "
+                            <tr>
+                              <td>$count</td>
+                              <td>$property_city</td>
+                              <td>$address</td>
+                              <td>$visit_date</td>
+                              <td>$time</td>
+                            </tr>
+                        ";
+                        $count++;
+                    }
+                   
                     echo " </table>";
                     
                 }

@@ -4,14 +4,26 @@ include ('phpScript/dbconnect.php') ;
 session_start();
 
 
-if(isset($_POST['send-message'])){
-    $subject = "Enquiry from Roomsoom website";
-    $name= $_POST['name'];
-    $phone= $_POST['phone'];
-    $message= $_POST['message'];
+// if(isset($_POST['send-message'])){
+//     $subject = "Enquiry from Roomsoom website";
+//     $name= $_POST['name'];
+//     $phone= $_POST['phone'];
+//     $message= $_POST['message'];
 
-    $to = "contact@roomsoom.com";
-}
+//     $toEmail = "dk9094293@gmail.com";
+
+//     $header = [
+//         'Name' =>  $name,
+//         'Phone Number' => $phone,
+//         'Message' => $message
+//     ];
+
+//     $header = implode("\r\n", $header);
+
+//     mail($toEmail, $subject, $name, $header);
+//     echo "<script>alert('We have recieved your message successfully!.')</script>";
+//     echo "<script>window.open('contact.php','_self')</script>";
+// }
 
 
 
@@ -72,8 +84,7 @@ if(isset($_POST['send-message'])){
                     <div class="cbanner_bannerImg__wdNPs">
                         <div class="cbanner_cards__UMMc1">
                             <div class="cbanner_card__51iL9">
-                                <div class="cbanner_imgCont__2joef"><img alt="Email" src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsupport.c99b34f6.png&w=384&q=75
-" width="192" height="192" decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></div>
+                                <div class="cbanner_imgCont__2joef"><img alt="Email" src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsupport.c99b34f6.png&w=384&q=75 " width="192" height="192" decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></div>
                                 <div class="cbanner_textBox__nC31n">
                                     <h3>Email</h3>
                                     <p>contact@roomsoom.com</p>
@@ -94,13 +105,13 @@ if(isset($_POST['send-message'])){
                                         src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flocation.202cade6.png&w=384&q=75"
                                         width="192" height="192" decoding="async" data-nimg="1" loading="lazy"
                                         style="color: transparent;"></div>
-                                <div class="cbanner_textBox__nC31n">
-                                    <h3 class="cbanner_titleMain__jj0xp">ROOMSOOM HOMES PRIVATE LIMITED</h3>
-                                    <p>5th Floor, DLF Two Horizon Centre, DLF Phase-5, Gurugram, Haryana, India, 122002
-                                    </p>
+                                <div  class="cbanner_textBox__nC31na">
+                                    <a style="color:blue;" href="" class="cbanner_titleMain__jj0xp">Location</a>
+                                    <!-- <p>5th Floor, DLF Two Horizon Centre, DLF Phase-5, Gurugram, Haryana, India, 122002
+                                    </p> -->
                                 </div>
                             </div>
-                            <div class="cbanner_card__51iL9" id="cbanner_hide__TzsP1">
+                            <!-- <div class="cbanner_card__51iL9" id="cbanner_hide__TzsP1">
                                 <div class="cbanner_imgCont__2joef"><img alt="Socials"
                                         src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSocial.ed116ada.png&w=384&q=75"
                                         width="192" height="192" decoding="async" data-nimg="1" loading="lazy"
@@ -140,17 +151,22 @@ if(isset($_POST['send-message'])){
                                                     loading="lazy" style="color: transparent;"></a></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="cbanner_formCont__hJXHT">
                         <div class="cbanner_formSec__bh2Go">
                             <form action="phpScript/email_msg.php" method="post">
-                                <input type="text" placeholder="Name" class="cbanner_first__AfD7k" name="name" required="" id="name">
+                                <input type="text" placeholder="Name" class="cbanner_first__AfD7k" name="name"
+                                    required="" id="name">
+                                <input type="email" placeholder="Email" class="cbanner_first__AfD7k" name="email"
+                                    required="" id="name">
                                 <input type="text" placeholder="Phone Number" name="phone" required="" id="phone">
-                                <input type="text" placeholder="Query/Concern" class="undefined cbanner_textarea__zv7EL" name="message" id="message">
+                                <input type="text" placeholder="Query/Concern" class="undefined cbanner_textarea__zv7EL"
+                                    name="message" id="message">
                                 <div class="cbanner_btn__Fl1rW">
-                                    <input type="submit" class="cbanner_btnVal__QMF4Z"  name="send_message" value="Send message">
+                                    <input type="submit" class="cbanner_btnVal__QMF4Z" name="send_message"
+                                        value="Send message">
                                 </div>
                             </form>
                             <div class="cbanner_support__OIiYe">
@@ -176,7 +192,8 @@ if(isset($_POST['send-message'])){
         </div>
     </div>
 
-    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px" class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
+    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img class="whatsapp-icon"
+            src="asset/images/whatsapp-icon1.png" alt=""></a>
 
     <!-- =====FOOTER====== -->
     <?php include './header_footer/footer.php'  ?>

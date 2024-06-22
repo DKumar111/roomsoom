@@ -21,10 +21,6 @@ session_start();
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- ===/FONTAWESOME CDN=== -->
-
-
-
-
     <!-- =======GOOGLE FONT CDN======= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,9 +28,8 @@ session_start();
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 </head>
 
@@ -42,9 +37,6 @@ session_start();
     <!-- ===== HEADER SECTION ===== -->
     <?php  include './header_footer/header.php' ;  ?>
     <!-- ===== /HEADER SECTION ===== -->
-
-
-
     <!-- ==========================POPUP ON PAGE LOAD=================================== -->
     <?php
     if(!isset($_SESSION['username']))
@@ -67,194 +59,338 @@ session_start();
                     <div class="hero_circle__58Cu2"></div>
                     <div class="hero_heroHead__0XFfS">
                         <div class="hero_heading__mqm66">
-                            <div class="hero_smallCircle__o4aRt"></div>
                             <h1>Experience Luxury <br> Living at Roomsoom</h1>
                             <div class="hero_line__DnkCr">
                                 <div class="hero_linesmall__7L4R_"></div>
                             </div>
                             <h2>Rent the best of managed living</h2>
-                            <div class="hero_cta__7ndSC"><a href="properties.php"><button>Find my Roomsoom</button></a>
+                            <div class="hero_cta__7ndSC">
+                                <input type="search" placeholder="Find a roomsoom near your place" name="hero_search"
+                                    id="hero_search" class="hero_SearchBar">
+                                <button type="submit" class="hero_search_btn"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="hero_heroImage__qJC5C"><video autoplay="" muted="" loop="" playsinline="" preload="auto">
-                        <source src="video/roomsoom_video.mp4" type="video/mp4">
-                    </video></div>
-            </div>
-        </div>
-        <div class="welcome_container__xDG9q">
-            <div class="welcome_live__uXZn2"><img alt="#letslivebetter"
-                    src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flive.3ac1c9e9.png&w=32&q=75"
-                    width="32" height="303" decoding="async" data-nimg="1" loading="lazy" style="color:transparent">
-            </div>
-            <div class="welcome_welMain__A1HlB">
-                <div class="welcome_welImage__mZNRj"><img alt="Housr Coliving"
-                        src="https://housr.in/_next/image?url=https%3A%2F%2Fcloudfront.housr.in%2Fsofa.jpg&w=1920&q=75"
-                        width="800" height="800" decoding="async" data-nimg="1" loading="lazy"
-                        style="color:transparent"></div>
-                <div class="welcome_welCont__ObR_l">
-                    <div class="welcome_block__O7ep2"></div>
-                    <div class="welcome_welHead__zeGSA">
-                        <div class="welcome_title__0_xRo">
-                            <div class="welcome_smallCircle__JBPa_"></div>
-                            <h3>Welcome</h3>
-                        </div>
-                        <div class="welcome_content__3AXBX">
-                            <p class="welcome_p1__4sMfw">Indulge in the ultimate luxury of managed living at Roomsoom.
-                                From
-                                top-notch amenities to an exclusive community, we have everything you need to live in
-                                style.</p>
-                            <p class="welcome_p2__nepoi">Plus, with IHM-trained Resident Managers available at all
-                                times, you can focus on enjoying your space while we take care of the rest.</p>
-                        </div>
-                    </div>
+                <div class="hero_heroImage__qJC5C">
+                    <img src="asset/images/hero-img.png" alt="">
                 </div>
             </div>
         </div>
         <div class="card_container__Klf5R">
-            <div class="card_container__Klf5R">
-                <div class="card_cityMain__lBQrv">
-                    <div class="card_title__TdvwU">
-                        <h2>Here. There. <b>Roomsoom</b> Everywhere!</h2>
-                    </div>
-                    <div class="card_cardBox__uU7lZ">
-                        <div class="city_wise_search_section">
-                            <div class="city_section">
-                            <a href="search_property.php?city=delhi">
+            <div class="card_cityMain__lBQrv">
+                <div class="card_title__TdvwU">
+                    <h2>Here. There. <b>Roomsoom</b> Everywhere!</h2>
+                </div>
+                <div class="card_cardBox__uU7lZ">
+                    <div class="city_wise_search_section">
+                        <div class="city_section">
+                            <a onclick="showDetails(this)" data-city-value="delhi" id="delhi"
+                                href="search_property.php?city=delhi">
                                 <img width="100px" height="100px" src="asset/images/delhi.png" alt="" draggable="false">
                             </a>
                             <span>Delhi</span>
-                            </div>
-                           
-                            <div class="city_section">
-                            <a href="search_property.php?city=noida">
+                        </div>
+
+                        <div class="city_section">
+                            <a onclick="showDetails(this)" data-city-value="noida" id="noida"
+                                href="search_property.php?city=noida">
                                 <img width="100px" height="100px" src="asset/images/noida.png" alt="" draggable="false">
                             </a>
                             <span>Noida</span>
-                            </div>
-                            
-                            <div class="city_section">
-                            <a href="search_property.php?city=hyderabad">
-                                <img width="100px" height="100px" src="asset/images/hydrabad.webp" alt="" draggable="false">
-                            </a>
-                            <span>Hyderabad</span>
-                            </div>
-                            
-                            <div class="city_section">
-                            <a href="search_property.php?city=gurgaon">
-                                <img width="100px" height="100px" src="asset/images/gurgaon.webp" alt="" draggable="false">
+                        </div>
+
+                        <div class="city_section">
+                            <a data-city-value="gurgaon" id="gurgaon" onclick="showDetails(this)"
+                                href="search_property.php?city=gurgaon">
+                                <img width="100px" height="100px" src="asset/images/gurgaon.png" alt=""
+                                    draggable="false">
                             </a>
                             <span>Gurgaon</span>
-                            </div>
-                            
-                            <div class="city_section">
-                            <a href="search_property.php?city=bangalore">
-                                <img width="100px" height="100px" src="asset/images/banglore.webp" alt="" draggable="false">
-                            </a>
-                            <span>Bangalore</span>
-                            </div>
-                            
-                            <div class="city_section">
-                            <a href="search_property.php?city=pune">
-                                <img width="100px" height="100px" src="asset/images/pune.webp" alt="" draggable="false">
-                            </a>
-                            <span>Pune</span>
-                            </div>
-                            
                         </div>
-                      
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="welcome_container__xDG9q">
+            <div class="welcome_container_subsection__xDG9q">
+                <div class="welcome_welMain__A1HlB">
+                    <div class="welcome_title__0_xRo_find_easy">
+                        <div class="easy__find_text" style="font-size:4rem;font-weight:lighter;">FIND</div>
+                        <div class="easy_text">EASY</div>
+                    </div>
+                    <div style="background-color: #faebd7;" class="welcome_welImage__mZNRj">
+                        <img alt="Housr Coliving" src="asset/images/roomies3.png" width="800" height="800"
+                            decoding="async" data-nimg="1" loading="lazy" style="color:transparent">
+                    </div>
+                    <div class="welcome_welCont__ObR_l">
+                        <div class="welcome_welHead__zeGSA">
+                            <div class="welcome_title__0_xRo">
+                                <h3 class="welcome_heading">Easy on the pocket, <span class="welcome_heading_subtitle">Easy on the mind.</span></h3>
+                            </div>
+                            <div class="welcome_content__3AXBX">
+                                <div class="welcome_content_sub_small_text">
+                                    <p>Fully Furnished</p>
+                                    <p>Homes</p>
+                                </div>
+                                <div class="welcome_content_sub_small_text">
+                                    <p>Loaded</p>
+                                    <p>Amenities</p>
+                                </div>
+                                <div class="welcome_content_sub_small_text">
+                                    <p>WhatsApp</p>
+                                    <p>Video Tour</p>
+                                </div>
+                                <div class="welcome_content_sub_small_text">
+                                    <p>Zero Brokerage</p>
+                                    <p>One Month Deposit</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-          
-
-            <div class="amenities_container__FPNLg">
-                <div class="amenities_amenMain__t7XoQ">
-                    <div class="amenities_title__apKqn">
-                        <h2>Every Roomsoom Comes With</h2>
+            <div style="direction:rtl;" class="welcome_container_subsection__xDG9q2">
+                <div class="welcome_welMain__A1HlB">
+                    <div class="welcome_title__0_xRo_Stay_Easy">
+                        <div class="easy__find_text" style="font-size:4rem;font-weight:lighter;">STAY</div>
+                        <div class="easy_text">EASY</div>
                     </div>
-                    <div class="amenities_amenBox__WocXO">
-                        <div class="amenities_amenDiv__TGlue">
-                            <div class="amenities_amenIcon__b94RB"><img alt="Fully Furnished"
-                                    srcset="https://housr.in/_next/static/media/chair.6977ebae.svg 1x, https://housr.in/_next/static/media/chair.6977ebae.svg 2x"
-                                    src="https://housr.in/_next/static/media/chair.6977ebae.svg" width="35" height="35"
-                                    decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></div>
-                            <div class="amenities_title__apKqn">
-                                <h3>Fully Furnished</h3>
+                    <div style="background-color: #e4fcb9;" class="welcome_welImage__mZNRj"><img alt="Housr Coliving" src="asset/images/roomies6.png"
+                            width="700" height="700" decoding="async" data-nimg="1" loading="lazy"
+                            style="color:transparent"></div>
+                    <div class="welcome_welCont__ObR_l">
+                        <div class="welcome_welHead__zeGSA">
+                            <div class="welcome_title__0_xRo">
+                                <h3 class="welcome_heading">Perfect for working, <span class="welcome_heading_subtitle">More so for unwinding
+                                        after</span></h3>
+                            </div>
+                            <div class="welcome_content__3AXBX">
+                                <div class="welcome_content_sub_small_text">
+                                    <p>Fully Furnished</p>
+                                    <p>Homes</p>
+                                </div>
+                                <div class="welcome_content_sub_small_text">
+                                    <p>Loaded</p>
+                                    <p>Amenities</p>
+                                </div>
+                                <div class="welcome_content_sub_small_text">
+                                    <p>WhatsApp</p>
+                                    <p>Video Tour</p>
+                                </div>
+                                <div class="welcome_content_sub_small_text">
+                                    <p>Zero Brokerage</p>
+                                    <p>One Month Deposit</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="amenities_amenDiv__TGlue">
-                            <div class="amenities_amenIcon__b94RB"><img alt="IHM Trained Resident Managers"
-                                    srcset="https://housr.in/_next/static/media/RM.ba86a7ca.svg 1x, https://housr.in/_next/static/media/RM.ba86a7ca.svg 2x"
-                                    src="https://housr.in/_next/static/media/RM.ba86a7ca.svg" width="35" height="35"
-                                    decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></div>
-                            <div class="amenities_title__apKqn">
-                                <h3>IHM Trained Resident Managers</h3>
-                            </div>
-                        </div>
-                        <div class="amenities_amenDiv__TGlue">
-                            <div class="amenities_amenIcon__b94RB"><img alt="Daily Professional Housekeeping"
-                                    srcset="https://housr.in/_next/static/media/mop.b4133d66.svg 1x, https://housr.in/_next/static/media/mop.b4133d66.svg 2x"
-                                    src="https://housr.in/_next/static/media/mop.b4133d66.svg" width="35" height="35"
-                                    decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></div>
-                            <div class="amenities_title__apKqn">
-                                <h3>Daily Professional Housekeeping</h3>
-                            </div>
-                        </div>
-                        <div class="amenities_amenDiv__TGlue">
-                            <div class="amenities_amenIcon__b94RB"><img alt="Laundry at Your Doorstep"
-                                    srcset="https://housr.in/_next/static/media/laundry.ce359a3a.svg 1x, https://housr.in/_next/static/media/laundry.ce359a3a.svg 2x"
-                                    src="https://housr.in/_next/static/media/laundry.ce359a3a.svg" width="35"
-                                    height="35" decoding="async" data-nimg="1" loading="lazy"
-                                    style="color: transparent;"></div>
-                            <div class="amenities_title__apKqn">
-                                <h3>Laundry at Your Doorstep</h3>
-                            </div>
-                        </div>
-                        <div class="amenities_amenDiv__TGlue">
-                            <div class="amenities_amenIcon__b94RB"><img alt="3-Tier Security"
-                                    srcset="https://housr.in/_next/static/media/Lock.d9a7b7f9.svg 1x, https://housr.in/_next/static/media/Lock.d9a7b7f9.svg 2x"
-                                    src="https://housr.in/_next/static/media/Lock.d9a7b7f9.svg" width="35" height="35"
-                                    decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></div>
-                            <div class="amenities_title__apKqn">
-                                <h3>3-Tier Security</h3>
-                            </div>
-                        </div>
-                        <div class="amenities_amenDiv__TGlue">
-                            <div class="amenities_amenIcon__b94RB"><img alt="High-speed Wifi"
-                                    srcset="	https://housr.in/_next/static/media/wifi.43a5877b.svg 1x, 	https://housr.in/_next/static/media/wifi.43a5877b.svg 2x"
-                                    src="	https://housr.in/_next/static/media/wifi.43a5877b.svg" width="35" height="35"
-                                    decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></div>
-                            <div class="amenities_title__apKqn">
-                                <h3>High-speed Wifi</h3>
-                            </div>
-                        </div>
-                        <div class="amenities_amenDiv__TGlue">
-                            <div class="amenities_amenIcon__b94RB"><img alt="Healthy Gourmet Meals"
-                                    srcset="https://housr.in/_next/static/media/restaurant.ad35b402.svg 1x, https://housr.in/_next/static/media/restaurant.ad35b402.svg 2x"
-                                    src="https://housr.in/_next/static/media/restaurant.ad35b402.svg" width="35"
-                                    height="35" decoding="async" data-nimg="1" loading="lazy"
-                                    style="color: transparent;"></div>
-                            <div class="amenities_title__apKqn">
-                                <h3>Healthy Gourmet Meals</h3>
-                            </div>
-                        </div>
-                        <div class="amenities_amenDiv__TGlue">
-                            <div class="amenities_amenIcon__b94RB"><img alt="App-Enabled Living"
-                                    srcset="https://housr.in/_next/static/media/Mobile.1ef8b50c.svg 1x, https://housr.in/_next/static/media/Mobile.1ef8b50c.svg 2x"
-                                    src="https://housr.in/_next/static/media/Mobile.1ef8b50c.svg" width="35" height="35"
-                                    decoding="async" data-nimg="1" loading="lazy" style="color: transparent;"></div>
-                            <div class="amenities_title__apKqn">
-                                <h3>App-Enabled Living</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="amenities_cta__Ank7t"><a href="properties.php"><button>Find my Roomsoom</button></a>
                     </div>
                 </div>
             </div>
+            <div style="direction:ltr;" class="welcome_container_subsection__xDG9q3">
+                <div class="welcome_welMain__A1HlB">
+                    <!-- polygon -->
+                    <!-- <div class="box_parent">
+                        <div class="box2"></div>
+                        <svg class="flt_svg" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="flt_tag">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+                                    <feColorMatrix in="blur" mode="matrix"
+                                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="flt_tag" />
+                                    <feComposite in="SourceGraphic" in2="flt_tag" operator="atop" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div> -->
+                    <!-- /polygon -->
+                    <div style="background-color: #cbccfd;" class="welcome_welImage__mZNRj"><img alt="Housr Coliving" src="asset/images/roomies4.png"
+                            width="800" height="800" decoding="async" data-nimg="1" loading="lazy"
+                            style="color:transparent"></div>
+                    <div class="welcome_welCont__ObR_l">
+                        <div class="welcome_welHead__zeGSA">
+                            <div class="welcome_title__0_xRo">
+                                <h3 class="welcome_heading">Join & vibe <span class="welcome_heading_subtitle">with a vibrant colourful
+                                        community.</span></h3>
+                            </div>
+                            <div class="welcome_content__3AXBX">
+                                <div class="welcome_content_sub_small_text">
+                                    <p>Fully Furnished</p>
+                                    <p>Homes</p>
+                                </div>
+                                <div class="welcome_content_sub_small_text">
+                                    <p>Loaded</p>
+                                    <p>Amenities</p>
+                                </div>
+                                <div class="welcome_content_sub_small_text">
+                                    <p>WhatsApp</p>
+                                    <p>Video Tour</p>
+                                </div>
+                                <div class="welcome_content_sub_small_text">
+                                    <p>Zero Brokerage</p>
+                                    <p>One Month Deposit</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="easy_at_roomsoom">
+            <div class="easy_at_heading">
+                <h1>It's easy at <span style="color:#fc777b;">Roomsoom</span></h1>
+            </div>
+            <div class="easy_at_card_section">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img width="330px" height="180px" src="asset/images/find-easy.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="330px" height="180px" src="asset/images/stay-easy.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="330px" height="180px" src="asset/images/bond-easy.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="most_celebrated_space">
+            <div class="most_celebrated_heading">
+                <p>We are India's Most Celebrated <span style="color: #f75e5e;">Coliving </span>Spaces</p>
+            </div>
+            <div class="counter_section">
+                <div class="count_number_section">
+                    <div class="count_number">50K+</div>
+                    <div class="count_text">Customer</div>
+                </div>
+                <div class="count_number_section">
+                    <div class="count_number">450+</div>
+                    <div class="count_text">Roomies</div>
+                </div>
+                <div class="count_number_section">
+                    <div class="count_number">3</div>
+                    <div class="count_text">City</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="memories_section">
+            <div class="memories_sub_section">
+                <div class="memories_image_div">
+                    <img src="asset/images/roomies7.png" alt="">
+                </div>
+                <div class="memories_text_div">
+                    <div class="">
+                        <div class="memories_text_11">Let's make some</div>
+                        <div class="memories_text_22">Memories!</div>
+                    </div>
+                    <a class="memories_btn" href="#">Roomies Tales</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mobile_view_memories">
+            <div class="mobile_view_memories_container">
+                <div class="image_memories_section">
+                    <div class=""></div>
+                    <img src="asset/images/roomies7.png" alt="">
+                </div>
+                <div style="padding-right: 2rem;position: absolute;left: 12rem;" class="">
+                    <div class="">Let's make some</div>
+                    <div style="font-size:1.6rem;color: rgb(95, 6, 68);font-weight: bold;" class="">Memories!</div>
+                </div>
+            </div>
+            <div class="">
+                <a style="background-color: #2d948f;color:white;padding:1rem 1rem;border-radius:6px;"
+                    href="mobile_view_roomies_button">Roomies Tales</a>
+            </div>
+        </section>
+
+        <section class="testimonials_containerMain__M_1ES">
+            <div class="testimonials_title__SEhDx">
+                <p>What Roomsoom Homies have to say</p>
+            </div>
+            <div class="testimonials_sliderDiv__P2irp">
+                <div class="testimonials_mainCont__hmExz" id="btnClick">
+                    <div class="testimonials_container__azBtq">
+                        <div class="testimonials_contMain__vbNaQ">
+                            <div id="content">
+                                <div class="testimonial">
+                                    <blockquote style="background: #e9e8e9;">
+                                        "Roomsoom made finding a room easy with great amenities and responsive
+                                        support, perfect for my needs."
+                                    </blockquote>
+                                    <div></div>
+                                    <p style="color:black;">
+                                        Rajendra Gupta &mdash; Uttar Pradesh, India
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials_container__azBtq">
+                        <div class="testimonials_contMain__vbNaQ">
+
+                            <div id="content">
+                                <div class="testimonial">
+                                    <blockquote style="background: #ffeaf8;">
+                                        "Excellent service from Roomsoom, reliable and quick responses, helped me
+                                        settle into a comfortable living space hassle-free."
+                                    </blockquote>
+                                    <div></div>
+                                    <p style="color:black;">
+                                        Simran Kaur &mdash; Punjab, India
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials_container__azBtq">
+                        <div class="testimonials_contMain__vbNaQ">
+
+                            <div id="content">
+                                <div class="testimonial">
+                                    <blockquote style="background: #f8ffd5;">
+                                        "Roomsoom's efficient booking process and quality accommodations exceeded my
+                                        expectations. A trustworthy choice for hassle-free renting."
+                                    </blockquote>
+                                    <div></div>
+                                    <p style="color:black;">
+                                        Sameer Jain &mdash; Rajasthan, India
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials_container__azBtq">
+                        <div class="testimonials_contMain__vbNaQ">
+
+                            <div id="content">
+                                <div class="testimonial">
+                                    <blockquote style="background: #e1fbc0;">
+                                        "I found Roomsoom to be professional and accommodating, ensuring a smooth
+                                        transition into a well-maintained and comfortable apartment."
+                                    </blockquote>
+                                    <div></div>
+                                    <p style="color:black;">
+                                        Ram Kumar &mdash; Delhi, India
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="card_container__Klf5R">
             <div class="community_container__tbwMr">
                 <div class="community_comMain__56zqT">
                     <div class="community_comSection__XMsum">
@@ -334,9 +470,6 @@ session_start();
                         </div>
                     </div>
                     <div class="community_formSection__6clMG">
-                        <div class="community_circle1__3VApH"></div>
-                        <div class="community_circle2__TcQVK"></div>
-                        <div class="community_circle3__0v2QV"></div>
                         <div class="community_formMain__hYfPg">
                             <div class="community_title___HjXP">
                                 <h3>Get going in a few <br> clicks</h3>
@@ -431,188 +564,7 @@ session_start();
             <section>
 
             </section>
-            <section class="testimonials_containerMain__M_1ES">
-                <div class="testimonials_title__SEhDx">
-                    <h2>What Roomsoom Homies have to say</h2>
-                </div>
-                <div class="testimonials_sliderDiv__P2irp">
-                    <div class="testimonials_mainCont__hmExz" id="btnClick">
-                        <div class="testimonials_container__azBtq">
-                            <div class="testimonials_contMain__vbNaQ">
-                                <div>
-                                    <div class="testimonials_starCont__5L8Uc">
-                                        <div class="testimonials_starMain__nd_FY">
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials_text__26X75">
-                                        <p>Who doesn't want to stay at a place that feels like your second home and has
-                                            all
-                                            the basic amenities, from the gym to meals, at your fingertip? Well, this
-                                            place
-                                            offers you precisely that! Roomsoom’s serviced apartments are straight-up
-                                            perfection! I have been a part of the Roomsoom community for over a year
-                                            now, and
-                                            it has been fantastic.</p>
-                                    </div>
-                                </div>
-                                <div class="testimonials_lastBoard__LA_M9">
-                                    <div class="testimonials_imageBox__4Oi6s"><img alt="Pritika Gupta"
-                                            src="asset/images/testimonials-img/user1.webp" width="100" height="100"
-                                            decoding="async" data-nimg="1" loading="lazy" style="color:transparent">
-                                    </div>
-                                    <div class="testimonials_nameBox__HmaIG">
-                                        <h3>Pritika Gupta</h3>
-                                        <h4>Pritika Gupta</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonials_container__azBtq">
-                            <div class="testimonials_contMain__vbNaQ">
-                                <div>
-                                    <div class="testimonials_starCont__5L8Uc">
-                                        <div class="testimonials_starMain__nd_FY">
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials_text__26X75">
-                                        <p>My experience with Roomsoom has been great. The staff has been very diligent
-                                            and
-                                            thorough with their services. They take quite outstanding care of
-                                            maintaining
-                                            the hygiene of the place. For me, the highlight of my Roomsoom stay has been
-                                            their
-                                            wonderful food which is extremely nutritious and delicious and comes closest
-                                            to
-                                            home-cooked meals.</p>
-                                    </div>
-                                </div>
-                                <div class="testimonials_lastBoard__LA_M9">
-                                    <div class="testimonials_imageBox__4Oi6s"><img alt="Kashish Bajaj"
-                                            src="asset/images/testimonials-img/user1.webp" "
-                                        width=" 100" height="100" decoding="async" data-nimg="1" loading="lazy"
-                                            style="color:transparent"></div>
-                                    <div class="testimonials_nameBox__HmaIG">
-                                        <h3>Kashish Bajaj</h3>
-                                        <h4>Kashish Bajaj</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonials_container__azBtq">
-                            <div class="testimonials_contMain__vbNaQ">
-                                <div>
-                                    <div class="testimonials_starCont__5L8Uc">
-                                        <div class="testimonials_starMain__nd_FY">
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                            <div class="testimonials_starIcon__qAQFI"><img alt="Star"
-                                                    srcset="https://housr.in/_next/static/media/Star.618c4448.svg 1x, https://housr.in/_next/static/media/Star.618c4448.svg 2x"
-                                                    src="https://housr.in/_next/static/media/Star.618c4448.svg"
-                                                    width="25" height="25" decoding="async" data-nimg="1" loading="lazy"
-                                                    style="color:transparent">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials_text__26X75">
-                                        <p>Roomsoom is the best Coliving space you'll find in Gurgaon. Here at Roomsoom,
-                                            we get
-                                            healthy meals, a recreational lounge with facilities like chess, a billiards
-                                            table, a TT table, a play station and an excellent gym. It’s a perfect blend
-                                            of
-                                            living independently while being a part of the community; Roomsoom is an
-                                            ideal home
-                                            away from home.</p>
-                                    </div>
-                                </div>
-                                <div class="testimonials_lastBoard__LA_M9">
-                                    <div class="testimonials_imageBox__4Oi6s"><img alt="Ankit Shukla"
-                                            src="asset/images/testimonials-img/user1.webp" width="100" height="100"
-                                            decoding="async" data-nimg="1" loading="lazy" style="color:transparent">
-                                    </div>
-                                    <div class="testimonials_nameBox__HmaIG">
-                                        <h3>Ankit Shukla</h3>
-                                        <h4>Ankit Shukla</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonials_icons__g8EhO"><span><img class="testim__left__arrow" alt="left"
-                                srcset="https://housr.in/_next/static/media/Expand_left.87a2448c.svg 1x, https://housr.in/_next/static/media/Expand_left.87a2448c.svg 2x"
-                                src="https://housr.in/_next/static/media/Expand_left.87a2448c.svg" width="24"
-                                height="24" decoding="async" data-nimg="1" loading="lazy"
-                                style="color:transparent"></span><span><img class="testim__right__arrow" alt="right"
-                                srcset="https://housr.in/_next/static/media/Expand_right.a41c922f.svg 1x, https://housr.in/_next/static/media/Expand_right.a41c922f.svg 2x"
-                                src="https://housr.in/_next/static/media/Expand_right.a41c922f.svg" width="24"
-                                height="24" decoding="async" data-nimg="1" loading="lazy"
-                                style="color:transparent"></span>
-                    </div>
-                </div>
-            </section>
+
 
             <div class="connect_container__bcQb3">
                 <div class="connect_conMain__cK61x">
@@ -650,324 +602,6 @@ session_start();
                                     contact@roomsoom.com</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content_container__LwrrU">
-                <div class="content_mainCont__xmz_n">
-                    <div class="content_content__HcMmG">
-                        <div class="content_heading__x5_Hn">
-                            <h3>Exploring the World of Roomsoom Coliving</h3>
-                        </div>
-
-                       
-                        <div class="verticle_tab">
-                            <div class="tab">
-                                <button class="tablinks" onclick="openCity(event, 'overview')"
-                                    id="defaultOpen">Overview</button>
-                                <button class="tablinks" onclick="openCity(event, 'hasslefree')">Hassle-free Luxury
-                                    Coliving with Housr</button>
-                                <button class="tablinks" onclick="openCity(event, 'convenience')">The Convenience of
-                                    Luxury Coliving with Housr</button>
-                                <button class="tablinks" onclick="openCity(event, 'privacy')" id="defaultOpen">The Ideal
-                                    Blend of Privacy & Socialization at Housr Luxury Coliving</button>
-                                <button class="tablinks" onclick="openCity(event, 'benifits')">Hidden Benefits of Housr
-                                    Coliving: More Than Just a Home</button>
-                                <button class="tablinks" onclick="openCity(event, 'community')">Joining the Housr
-                                    Coliving
-                                    Community</button>
-                            </div>
-
-                            <div id="overview" class="tabcontent">
-
-                                <p style="width: 70%;">In today's fast-paced world, finding a place to call home that offers both comfort
-                                    and
-                                    convenience can be a challenge. But with Housr Coliving, the answer is simple. We
-                                    provide fully furnished and serviced apartments that make hassle-free living a
-                                    reality.
-                                    Scroll below to take a comprehensive journey through the world of Housr, exploring
-                                    the
-                                    myriad benefits and amenities that come with choosing us as your home away from
-                                    home.
-                                </p>
-                            </div>
-
-                            <div id="hasslefree" class="tabcontent">
-
-                                <p style="width: 70%;">At Housr, we understand that your time is valuable, and the last thing you want to
-                                    worry
-                                    about is setting up your new apartment. That's why our luxury apartments for rent
-                                    are
-                                    ready for you to move in. From cosy bedrooms to well-equipped kitchens and stylish
-                                    living areas, we've thought of every detail to make your stay comfortable. <br><br>
-
-                                    Housr Coliving spaces exemplify our core philosophy. We believe in creating a
-                                    community
-                                    where individuals can live together harmoniously, sharing experiences and building
-                                    connections. Our apartments for rent are designed to foster this sense of community
-                                    with
-                                    an array of breakout zones such as theatre rooms, rooftop putting, gaming zones,
-                                    fitness
-                                    centres, and more. <br><br>
-
-                                    In addition to the convenience of modern luxury apartments, we offer spacious common
-                                    areas where you can interact with fellow residents, creating an enriching social
-                                    experience.</p>
-                            </div>
-
-                            <div id="convenience" class="tabcontent">
-                                <p style="width: 70%;">Coliving with Housr means enjoying a host of amenities that simplify your daily life.
-                                    When you sign up for a Housr stay, you never have to stress about finding a maid,
-                                    cook,
-                                    or laundry service nearby. Our professional housekeeping services ensure that your
-                                    space
-                                    remains pristine. Laundry becomes a breeze with doorstep service. Moreover, we’ve
-                                    also
-                                    got your F&B sorted. Craving a gourmet meal? Enjoy a lavish spread of scrumptious,
-                                    healthy, and hygienic food every day. <br> <br>
-
-                                    Housr Coliving goes above and beyond to fulfil your expectations of a seamless stay.
-                                    Whether you're working from home or indulging in a Sunday Netflix binge, we ensure
-                                    you
-                                    stay connected with super-speed Wi-Fi. To top it all, our hospitality transcends any
-                                    other coliving player because Housr offers you easy access to 24/7 assistance from
-                                    IHM-trained Resident Managers at the property and our user-friendly app. <br><br>
-
-                                    With Housr, you don't just find a place to live; you find a community that matches
-                                    your
-                                    vibe. Explore Housr Coliving and Apartments for Rent effortlessly, as we want you to
-                                    discover the perfect housing solution with ease.</p>
-                            </div>
-                            <div id="privacy" class="tabcontent">
-                                <p style="width: 70%;">
-                                    One of the unique aspects of Housr Coliving is our ability to strike the perfect
-                                    balance
-                                    between privacy and community living. Our furnished chic rooms provide the ideal
-                                    home
-                                    for working professionals, offering every amenity imaginable. But it's not just
-                                    about
-                                    your room; it's about the incredible breakout zones we provide. From gaming zones to
-                                    pool tables, theatre rooms to rooftop putting, and fitness zones, we've created
-                                    spaces
-                                    for you to socialize with ease. <br><br>
-
-                                    The biggest plus? Our weekly community events. From pet therapy to stand-up comedy,
-                                    DJ
-                                    Nights, and Open Mics, our superb community team organizes varied community events
-                                    to
-                                    cater to the diverse interests of Housr Homies. These gatherings bring residents
-                                    together, fostering a sense of belonging and camaraderie. It's more than just a
-                                    place to
-                                    stay; it's a vibrant community waiting to welcome you.
-                                </p>
-                            </div>
-                            <div id="benifits" class="tabcontent">
-                                <p style="width: 70%;">
-                                    While the luxury apartments and community events are major attractions, Housr offers
-                                    a
-                                    range of hidden benefits that make your stay even more delightful. Here are some of
-                                    them: <br><br>
-
-                                    <b> Hangout Spaces for a Weekend Movie Binge - Housr's Theatre Rooms</b> <br>
-                                    Imagine having a state-of-the-art theatre right within your living space. Housr's
-                                    theatre rooms are equipped with high-quality audiovisual systems, comfortable
-                                    seating,
-                                    and every OTT subscription. It's the perfect setting for a weekend movie binge with
-                                    friends or even a solo cinematic escape. <br><br>
-
-                                    <b>Fitness Zones for a Healthy Lifestyle</b> <br>
-                                    Maintaining a healthy lifestyle is made easy at Housr Luxury Coliving. Our fitness
-                                    zones
-                                    are well-equipped with modern gym equipment. Whether you're a fitness enthusiast or
-                                    just
-                                    looking to stay active, you'll have everything you need right at your doorstep.
-                                    <br><br>
-
-                                    <b>Rooftop for Leisure</b> <br>
-                                    For those moments when you need to unwind and enjoy some fresh air, our rooftop
-                                    spaces
-                                    offer the perfect solution. You can relax with a book, soak in the sun, or simply
-                                    take
-                                    in the panoramic views of the city. <br><br>
-
-                                    <b>Vending Machines for Snack Cravings</b> <br>
-                                    Late-night snack cravings? No problem. Housr provides vending machines stocked with
-                                    a
-                                    variety of snacks and beverages, ensuring that you have access to your favourite
-                                    treats
-                                    24/7.
-                                </p>
-                            </div>
-                            <div id="community" class="tabcontent">
-                                <p style="width: 70%;">When you choose Housr Luxury Coliving, you're not just renting an apartment; you're
-                                    becoming part of a vibrant and forward-thinking community. We believe in creating a
-                                    space where individuals can thrive, connect, and create lasting memories. <br><br>
-
-                                    Our community is a melting pot of cultures, professions, and backgrounds. It's a
-                                    place
-                                    where you can learn, grow, and forge friendships that last a lifetime. Whether
-                                    you're
-                                    new to the city or simply seeking a change of scenery, Housr welcomes you with open
-                                    arms. <br><br>
-
-                                    In conclusion, Housr is more than just a housing solution; it's a lifestyle choice.
-                                    With
-                                    hassle-free luxury coliving, unmatched convenience, and a thriving community, we
-                                    offer
-                                    the ultimate living experience for working professionals. Say goodbye to the stress
-                                    of
-                                    setting up a new home and embrace the comfort and convenience of Housr, your
-                                    destination
-                                    for luxury coliving. <br><br>
-
-                                    Discover a world where luxury and community meet seamlessly, where comfort and
-                                    convenience redefine your living experience. Choose Housr Coliving for a life that's
-                                    both extraordinary and effortless. Join us in creating a brighter and more inclusive
-                                    future, one community at a time.</p>
-                            </div>
-                        </div>
-                       
-                        <div class="mobile_collapsible_tab">
-                            <button type="button" class="collapsible">Overview</button>
-                            <div class="content">
-                                <p style="width: 70%;">In today's fast-paced world, finding a place to call home that offers both comfort
-                                    and
-                                    convenience can be a challenge. But with Housr Coliving, the answer is simple. We
-                                    provide fully furnished and serviced apartments that make hassle-free living a
-                                    reality.
-                                    Scroll below to take a comprehensive journey through the world of Housr, exploring
-                                    the
-                                    myriad benefits and amenities that come with choosing us as your home away from
-                                    home.</p>
-                            </div>
-                            <button type="button" class="collapsible">Hassle-free Luxur Coliving with Housr</button>
-                            <div class="content">
-                                <p style="width: 70%;">At Housr, we understand that your time is valuable, and the last thing you want to
-                                    worry
-                                    about is setting up your new apartment. That's why our luxury apartments for rent
-                                    are
-                                    ready for you to move in. From cosy bedrooms to well-equipped kitchens and stylish
-                                    living areas, we've thought of every detail to make your stay comfortable. <br><br>
-
-                                    Housr Coliving spaces exemplify our core philosophy. We believe in creating a
-                                    community
-                                    where individuals can live together harmoniously, sharing experiences and building
-                                    connections. Our apartments for rent are designed to foster this sense of community
-                                    with
-                                    an array of breakout zones such as theatre rooms, rooftop putting, gaming zones,
-                                    fitness
-                                    centres, and more. <br><br>
-
-                                    In addition to the convenience of modern luxury apartments, we offer spacious common
-                                    areas where you can interact with fellow residents, creating an enriching social
-                                    experience.</p>
-                            </div>
-                            <button type="button" class="collapsible">The Convenience of Luxury Coliving with
-                                Housr</button>
-                            <div class="content">
-                                <p style="width: 70%;">Coliving with Housr means enjoying a host of amenities that simplify your daily life.
-                                    When you sign up for a Housr stay, you never have to stress about finding a maid,
-                                    cook,
-                                    or laundry service nearby. Our professional housekeeping services ensure that your
-                                    space
-                                    remains pristine. Laundry becomes a breeze with doorstep service. Moreover, we’ve
-                                    also
-                                    got your F&B sorted. Craving a gourmet meal? Enjoy a lavish spread of scrumptious,
-                                    healthy, and hygienic food every day. <br> <br>
-
-                                    Housr Coliving goes above and beyond to fulfil your expectations of a seamless stay.
-                                    Whether you're working from home or indulging in a Sunday Netflix binge, we ensure
-                                    you
-                                    stay connected with super-speed Wi-Fi. To top it all, our hospitality transcends any
-                                    other coliving player because Housr offers you easy access to 24/7 assistance from
-                                    IHM-trained Resident Managers at the property and our user-friendly app. <br><br>
-
-                                    With Housr, you don't just find a place to live; you find a community that matches
-                                    your
-                                    vibe. Explore Housr Coliving and Apartments for Rent effortlessly, as we want you to
-                                    discover the perfect housing solution with ease.</p>
-                            </div>
-                            <button type="button" class="collapsible">The Ideal Blend of Privacy & Socialization at
-                                Housr Luxury Coliving</button>
-                            <div class="content">
-                                <p style="width: 70%;">One of the unique aspects of Housr Coliving is our ability to strike the perfect
-                                    balance
-                                    between privacy and community living. Our furnished chic rooms provide the ideal
-                                    home
-                                    for working professionals, offering every amenity imaginable. But it's not just
-                                    about
-                                    your room; it's about the incredible breakout zones we provide. From gaming zones to
-                                    pool tables, theatre rooms to rooftop putting, and fitness zones, we've created
-                                    spaces
-                                    for you to socialize with ease. <br><br>
-
-                                    The biggest plus? Our weekly community events. From pet therapy to stand-up comedy,
-                                    DJ
-                                    Nights, and Open Mics, our superb community team organizes varied community events
-                                    to
-                                    cater to the diverse interests of Housr Homies. These gatherings bring residents
-                                    together, fostering a sense of belonging and camaraderie. It's more than just a
-                                    place to
-                                    stay; it's a vibrant community waiting to welcome you.</p>
-                            </div>
-                            <button type="button" class="collapsible">Hidden Benefits of Housr Coliving: More Than Just
-                                a Home</button>
-                            <div class="content">
-                                <p style="width: 70%;">
-                                    While the luxury apartments and community events are major attractions, Housr offers
-                                    a range of hidden benefits that make your stay even more delightful. Here are some
-                                    of them: <br> <br>
-
-                                    <b> Hangout Spaces for a Weekend Movie Binge - Housr's Theatre Rooms</b> <br>
-                                    Imagine having a state-of-the-art theatre right within your living space. Housr's
-                                    theatre rooms are equipped with high-quality audiovisual systems, comfortable
-                                    seating, and every OTT subscription. It's the perfect setting for a weekend movie
-                                    binge with friends or even a solo cinematic escape. <br><br>
-
-                                    <b>Fitness Zones for a Healthy Lifestyle</b><br>
-                                    Maintaining a healthy lifestyle is made easy at Housr Luxury Coliving. Our fitness
-                                    zones are well-equipped with modern gym equipment. Whether you're a fitness
-                                    enthusiast or just looking to stay active, you'll have everything you need right at
-                                    your doorstep. <br><br>
-
-                                    <b>Rooftop for Leisure</b><br>
-                                    For those moments when you need to unwind and enjoy some fresh air, our rooftop
-                                    spaces offer the perfect solution. You can relax with a book, soak in the sun, or
-                                    simply take in the panoramic views of the city. <br><br>
-
-                                    <b>Vending Machines for Snack Cravings</b> <br>
-                                    Late-night snack cravings? No problem. Housr provides vending machines stocked with
-                                    a variety of snacks and beverages, ensuring that you have access to your favourite
-                                    treats 24/7.
-                                </p>
-                            </div>
-                            <button type="button" class="collapsible">Joining the Housr Coliving Community</button>
-                            <div class="content">
-                                <p style="width: 70%;">
-                                    When you choose Housr Luxury Coliving, you're not just renting an apartment; you're
-                                    becoming part of a vibrant and forward-thinking community. We believe in creating a
-                                    space where individuals can thrive, connect, and create lasting memories. <br><br>
-
-                                    Our community is a melting pot of cultures, professions, and backgrounds. It's a
-                                    place where you can learn, grow, and forge friendships that last a lifetime. Whether
-                                    you're new to the city or simply seeking a change of scenery, Housr welcomes you
-                                    with open arms. <br><br>
-
-                                    In conclusion, Housr is more than just a housing solution; it's a lifestyle choice.
-                                    With hassle-free luxury coliving, unmatched convenience, and a thriving community,
-                                    we offer the ultimate living experience for working professionals. Say goodbye to
-                                    the stress of setting up a new home and embrace the comfort and convenience of
-                                    Housr, your destination for luxury coliving. <br><br>
-
-                                    Discover a world where luxury and community meet seamlessly, where comfort and
-                                    convenience redefine your living experience. Choose Housr Coliving for a life that's
-                                    both extraordinary and effortless. Join us in creating a brighter and more inclusive
-                                    future, one community at a time.
-                                </p>
-                            </div>
-
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -1048,46 +682,71 @@ session_start();
 
             </div>
         </div>
+    </div>
+    <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img class="whatsapp-icon"
+            src="asset/images/whatsapp-icon1.png" alt=""></a>
 
-        <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img width="60px" height="60px"
-                class="whatsapp-icon" src="asset/images/whatsapp-icon1.png" alt=""></a>
-
-        <!-- ===== FOOTER SECTION ===== -->
-        <?php  include './header_footer/footer.php' ;      ?>
-        <!-- ===== /FOOTER SECTION ===== -->
-
-
-
-        <!-- =======JS FILES LINKS -->
-        <script src="js/side_nav.js"></script>
-        <script src="js/request-call.js"></script>
-        <script src="js/testimonCardSlide.js"></script>
-        <script src="js/cityCardSlide.js"></script>
-        <script src="js/collapsiblFAQ.js"></script>
-        <script src="js/explore_tab.js"></script>
-        <!-- <script src="js/active_class.js"></script> -->
-        <script src="js/login_info_popup.js"></script>
-        <!-- <script src="js/popupOnPageLoad.js"></script> -->
-
-        <!-- =======BOOTSTRAP JS CDN========== -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
-
-        <script src="https://code.jquery.com/jquery-3.7.1.js"
-            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- ===== FOOTER SECTION ===== -->
+    <?php  include './header_footer/footer.php' ;      ?>
+    <!-- ===== /FOOTER SECTION ===== -->
 
 
-        <script>
-        $(document).ready(function() {
-            $(".Header_ullinks__V1SBq li").click(function(event) {
 
-                $(".Header_ullinks__V1SBq li ").removeClass("nav__active"); //Remove any "active" class 
-                $("li", this).addClass("nav__active"); //Add "active" class to selected tab // 
-                // $(activeTab).show(); //Fade in the active content 
-            });
+    <!-- =======JS FILES LINKS -->
+    <script src="js/side_nav.js"></script>
+    <script src="js/request-call.js"></script>
+    <!-- <script src="js/testimonCardSlide.js"></script> -->
+    <script src="js/cityCardSlide.js"></script>
+    <script src="js/collapsiblFAQ.js"></script>
+    <script src="js/explore_tab.js"></script>
+    <!-- <script src="js/active_class.js"></script> -->
+    <script src="js/login_info_popup.js"></script>
+    <!-- <script src="js/popupOnPageLoad.js"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- =======BOOTSTRAP JS CDN========== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+    <script>
+    $(document).ready(function() {
+        $(".Header_ullinks__V1SBq li").click(function(event) {
+
+            $(".Header_ullinks__V1SBq li ").removeClass("nav__active"); //Remove any "active" class 
+            $("li", this).addClass("nav__active"); //Add "active" class to selected tab // 
+            // $(activeTab).show(); //Fade in the active content 
         });
-        </script>
+    });
+
+
+    function showDetails(city) {
+        let str = city.getAttribute("data-city-value");
+        // alert("The city is a " + str + ".");
+        if (str == "") {
+            document.getElementById("all_property").innerHTML = "";
+            return;
+        }
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("all_property").innerHTML = this.responseText;
+            }
+        }
+        xmlhttp.open("GET", "properties.php?q=" + str, true);
+        xmlhttp.send();
+
+    }
+
+    let swiper = new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
+    });
+    </script>
 
 </body>
 

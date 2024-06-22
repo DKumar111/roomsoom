@@ -124,7 +124,7 @@
                 <div class="footer_line4__xnrmZ">
                     <h2>Support</h2>
                     <ul>
-                        <li><a href="">FAQs</a></li>
+                        <li><a href="faq.php">FAQs</a></li>
                         <li><a href="terms-conditions.php">Terms &amp; Conditions</a></li>
                         <li><a href="privacy-policy.php">Privacy Policy</a></li>
                         <li><a href="cancellation-policy.php">Cancellation Policy</a></li>
