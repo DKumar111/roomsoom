@@ -1,10 +1,10 @@
 <?php
 include 'dbconnect.php';
 
-$search_value = $_POST['search'];
+$search_value = $_GET['q'];
 
 
-$sql = "SELECT * FROM `properties` WHERE city LIKE '%{$search_value}%' ";
+$sql = "SELECT * FROM `properties` WHERE locality LIKE '%{$search_value}%' ";
 
 $result = mysqli_query($conn, $sql) or die("SQL Query failed");
 $output = "";

@@ -201,24 +201,24 @@ if(isset($_GET['property_id'])){
                                         </div>
 
                                         <div class="formbold-form-step-1 active">
-                                            <div class="formbold-input-flex">
+                                            <!-- <div class="formbold-input-flex">
                                                 <div>
-                                                    <!-- <label for="firstname" class="formbold-form-label"> First name
+                                                    <label for="firstname" class="formbold-form-label"> First name
                                                     </label>
                                                     <input type="text" name="firstname" placeholder="Andrio"
-                                                        id="firstname" class="formbold-form-input" /> -->
+                                                        id="firstname" class="formbold-form-input" />
                                                     <div style="color:black;" class="">Select Sharing Type</div>
                                                 </div>
                                                 <div style="display:flex; gap: 1rem;">
-                                                    <!-- <label for="lastname" class="formbold-form-label"> Last name
+                                                    <label for="lastname" class="formbold-form-label"> Last name
                                                     </label>
                                                     <input type="text" name="lastname" placeholder="Dolee" id="lastname"
-                                                        class="formbold-form-input" /> -->
+                                                        class="formbold-form-input" />
                                                     <p class="room_type_btn" style="color:black;">Private</p>
                                                     <p class="room_type_btn" style="color:black;">Two Sharing</p>
                                                     <p class="room_type_btn" style="color:black;">Three Sharing</p>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                             <div class="formbold-input-flex">
                                                 <!-- <div>
@@ -458,17 +458,15 @@ if(isset($_GET['property_id'])){
                                 occupancy, personalised services, and additional features.</p>
                         </div>
                         <div class="details_address__Z4zCU">
-                            <div class="details_adText__2hWrK">
-                                <h4>Address
-                                </h4>
+                            <div style="display:flex;" class="details_adText__2hWrK">
+                                <p>Address :</p>
                                 <p><?php  echo $property_address   ?></p>
                             </div>
-                            <h5>Room Type : <span>Private Rooms<span>,</span></span><span>Shared
-                                    Rooms<span>,</span></span></h5>
+                            <p>Room Type : <span>Private Rooms<span>,</span></span><span>Two Sharing<span>,</span></span><span>Three Sharing</span></p>
                         </div>
                         <div class="details_address__Z4zCU">
                             <div class="details_adText__2hWrK">
-                                <h4>Room Details</h4>
+                                <p>Room <span style="color: #EF4F5F;font-size:1.3rem;">Details</span></p>
                                 <p style="font-size:0.8rem; width: 100%; padding: 1rem 0;">All room type have some
                                     variants that are larger in size or have extra Amenities.</p>
                             </div>
@@ -477,7 +475,7 @@ if(isset($_GET['property_id'])){
                                     <span>Private Room</span>
                                     <span style="font-size:0.7rem;">Starting from</span>
                                     <div style="display:flex; justify-content:center;align-items:center;" class="">
-                                        <span style="font-weight:bold;">Rs. <?php echo $solo_room_price ?>/</span>
+                                        <span>Rs. <?php echo $solo_room_price ?>/</span>
                                         <span style="font-size: 0.7rem;">month*</span>
                                     </div>
 
@@ -486,7 +484,7 @@ if(isset($_GET['property_id'])){
                                     <span>Two Sharing</span>
                                     <span style="font-size:0.7rem;">Starting from</span>
                                     <div style="display:flex; justify-content:center;align-items:center;" class="">
-                                        <span style="font-weight:bold;">Rs. <?php echo $two_sharing_price ?>/</span>
+                                        <span>Rs. <?php echo $two_sharing_price ?>/</span>
                                         <span style="font-size: 0.7rem;">month*</span>
                                     </div>
                                 </div>
@@ -494,7 +492,7 @@ if(isset($_GET['property_id'])){
                                     <span>Three Sharing</span>
                                     <span style="font-size:0.7rem;">Starting from</span>
                                     <div style="display:flex; justify-content:center;align-items:center;" class="">
-                                        <span style="font-weight:bold;">Rs. <?php echo $three_sharing_price ?>/</span>
+                                        <span>Rs. <?php echo $three_sharing_price ?>/</span>
                                         <span style="font-size: 0.7rem;">month*</span>
                                     </div>
                                 </div>
@@ -506,7 +504,7 @@ if(isset($_GET['property_id'])){
                                 <div class="privilages_container__Ox6bT">
                                     <div class="privilages_iconsSlide__7vSa_">
                                         <div class="privilages_adText__fOmum">
-                                            <h4>Amazing <span>Amenities</span></h4>
+                                            <p>Amazing <span style="color: #EF4F5F;">Amenities</span></p>
                                         </div>
                                         <div class="privilages_icons__phFcg">
 
@@ -538,7 +536,7 @@ if(isset($_GET['property_id'])){
                                                     <i class="fa-solid fa-brush"></i>
                                                 </div>
                                                 <div class="privilages_title__ROHii">
-                                                    <h3>Daily Professional Housekeeping</h3>
+                                                    <h3>Housekeeping</h3>
                                                 </div>
                                             </div>
                                             <div class="privilages_amenDiv__PVixW">
@@ -547,7 +545,7 @@ if(isset($_GET['property_id'])){
                                                     <i class="fa-solid fa-shirt"></i>
                                                 </div>
                                                 <div class="privilages_title__ROHii">
-                                                    <h3>Laundry at Your Doorstep</h3>
+                                                    <h3>Laundry</h3>
                                                 </div>
                                             </div>
                                             <div class="privilages_amenDiv__PVixW">
@@ -574,7 +572,7 @@ if(isset($_GET['property_id'])){
                                                     <i class="fa-solid fa-utensils"></i>
                                                 </div>
                                                 <div class="privilages_title__ROHii">
-                                                    <h3>Healthy Gourmet Meals</h3>
+                                                    <h3>Healthy Meals</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -660,7 +658,7 @@ if(isset($_GET['property_id'])){
         <!-- =======NEAR BY PROPERTY SECTION========= -->
         <div class="nearby_properties_section">
             <div class="nearby_section_heading">
-                <h2>Nearby Properties</h2>
+                <p>Nearby Properties</p>
             </div>
             <div class="nearby_slider_btn">
                 <button class="left_btn_property">
@@ -689,13 +687,13 @@ if(isset($_GET['property_id'])){
                 <div class="tabs__tab active" id="tab_1" data-tab-info>
                     <div class='Tabs_Content'>
                         <?php
-                    $sql = "SELECT locality FROM `properties` WHERE city LIKE '%delhi%' ";
+                    $sql = "SELECT DISTINCT locality FROM `properties` WHERE city LIKE '%delhi%' ";
                     $result = mysqli_query($conn, $sql) or die("SQL Query failed");
 
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
                             $city_area = $row['locality'];
-                           echo  " <a href='#'>$city_area</a>";
+                           echo  " <a href='properties.php?locality=$city_area'>$city_area</a>";
                         }
                     }
 
@@ -705,13 +703,13 @@ if(isset($_GET['property_id'])){
                 <div class="tabs__tab" id="tab_2" data-tab-info>
                     <div class="Tabs_Content">
                         <?php
-                    $sql = "SELECT locality FROM `properties` WHERE city LIKE '%noida%' ";
+                    $sql = "SELECT DISTINCT locality FROM `properties` WHERE city LIKE '%noida%' ";
                     $result = mysqli_query($conn, $sql) or die("SQL Query failed");
 
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
                             $city_area = $row['locality'];
-                           echo  "<a href='#'>$city_area</a> ";
+                           echo  "<a href='properties.php?locality=$city_area'>$city_area</a> ";
                         }
                     }
 
@@ -722,13 +720,13 @@ if(isset($_GET['property_id'])){
                 <div class="tabs__tab" id="tab_3" data-tab-info>
                     <div class="Tabs_Content">
                         <?php
-                    $sql = "SELECT locality FROM `properties` WHERE city LIKE '%gurgaon%' ";
+                    $sql = "SELECT DISTINCT locality FROM `properties` WHERE city LIKE '%gurgaon%' ";
                     $result = mysqli_query($conn, $sql) or die("SQL Query failed");
 
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
                             $city_area = $row['locality'];
-                           echo  "<a href='#'>$city_area</a>";
+                           echo  "<a href='properties.php?locality=$city_area'>$city_area</a>";
                         }
                     }
 
@@ -739,7 +737,7 @@ if(isset($_GET['property_id'])){
             </div>
             <!-- </div> -->
         </section>
-        <div class="connect_container__bcQb3">
+        <!-- <div class="connect_container__bcQb3">
             <div class="connect_conMain__cK61x">
                 <div class="connect_contDiv__7rJQb"><img alt="tulip"
                         src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftulip.672e4c41.png&w=1920&q=75"
@@ -775,7 +773,7 @@ if(isset($_GET['property_id'])){
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!-- SCHEDULE VISIT SECTION START HERE -->
@@ -853,6 +851,7 @@ if(isset($_GET['property_id'])){
     <script src="js/multistep_summary.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/CityWise_Tab.js"></script>
+    <script src="js/CarouselOnCard.js"></script>
     <!-- <script src="js/booking_tab.js"></script> -->
 
     <!-- =======BOOTSTRAP JS CDN========== -->

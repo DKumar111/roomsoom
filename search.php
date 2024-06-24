@@ -55,9 +55,6 @@ session_start();
     <!-- datetimepicker jQuery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
     </script>
-
-   
-
 </head>
 
 <body>
@@ -111,35 +108,68 @@ session_start();
 
                 <div id="search" class="search">
                     <form action="" method="post">
-                        <input type="search" name="search" autocomplete="off" id="Property__search"
+                        <input type="search" name="hero_search" autocomplete="off" id="Property__search"
                             placeholder="Search By Locality" onkeyup="showHint(this.value)">
                     </form>
                 </div>
             </div>
-            <div class="listing_right__KSxXz">
 
-                <div id="slider-wrap">
-                    <div>
-                        <label>Price Between:</label>
-                        <span id="price"></span>
-                    </div>
-                    <div id="slider-range"></div>
-                </div>
-
-            </div>
         </div>
         <div class="selected_items_history" id="selected_items_history">
 
         </div>
         <div class="listing_container__P9mcK">
-            <div class="listing_gridlayout__SQwz9" id="locality_wise_property">
-                <?php
-                    sector_wise_search(); 
-                ?>
-            </div><br>
             <div class="listing_gridlayout__SQwz8" id="all_property">
                 <?php
-                  // get_properties();
+              
+                        $city_result = $_POST['hero_search'];
+                        $sql = "SELECT * FROM `properties` WHERE city LIKE '%{$city_result}%' ";
+                        $sql_result = mysqli_query($conn , $sql);
+                        $num_count = mysqli_num_rows($sql_result);
+                        if($num_count == 0){
+                            echo "<h2>No Result Found</h2>";
+                        }
+                
+                        while($row = mysqli_fetch_assoc($sql_result)){
+                            $s_id = $row['s_id'];
+                            $city = $row['city'];
+                            $locality = $row['locality'];
+                            $property_type = $row['property_type'];
+                            $gender = $row['gender'];
+                            $solo_room_price = $row['solo_room_price'];
+                            $property_image = $row['property_image'];
+                
+                            echo "
+                            <a style='text-decoration: none;border: 1px solid rgb(218, 218, 218);border-radius: 7px; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 3px 0 rgba(0, 0, 0, 0.1)' href='property_details.php?property_id={$row['s_id']}&city={$row['city']}'>
+                                    <div  class='property_card_container'>
+                                        <div style='overflow:hidden;border-radius:7px;' class='card_img_section'>
+                                            <img width='100%' height='200px' src='asset/property_image/{$row['property_image']}' alt=''>
+                                        </div>
+                                        <div  class='card_desc_section'>
+                                            <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;border-bottom: 1px solid gray;' class=''>
+                                                <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
+                                                    <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}</p>
+                                                    <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
+                                                </div>
+                                                <div class=''>
+                                                    <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;' class=''>{$row['gender']}</div>
+                                                </div>
+                                            </div>
+                                            <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;' class=''>
+                                                <div class=''>
+                                                    <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
+                                                    <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span style='padding-right:0.5rem;'><i class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                </div>
+                                                <div class=''>
+                                                    <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            ";
+                        }
+                    
                 ?>
             </div>
             <div class="listing_filterPhone__Fcmrh">
@@ -286,8 +316,6 @@ session_start();
         <script src="js/active_class.js"></script>
         <script src="js/login_info_popup.js"></script>
         <script src="js/property_card_slide.js"></script>
-        <script src="js/range-slider.js"></script>
-        <script src="js/CarouselOnCard.js"></script>
 
         <!-- jquery -->
         <script src="js/jquery-1.12.4.min.js"></script>
@@ -296,72 +324,6 @@ session_start();
 
 
         <script>
-
-
-        //GENDER
-        let dropdownBtn = document.querySelector('#gender_option');
-        let menuContent = document.querySelector('.select_gender_option');
-        let genderupangle = document.querySelector(".gender_angle_arrow");
-        dropdownBtn.addEventListener('click', () => {
-            if (menuContent.style.display === "") {
-                menuContent.style.display = "flex";
-                genderupangle.innerHTML = "<i class='fa-solid fa-chevron-up'></i>";
-            } else {
-
-                menuContent.style.display = "";
-                genderupangle.innerHTML = "<i class='fa-solid fa-chevron-down'></i>";
-            }
-        })
-
-
-        //AMENITIES
-        let dropdownamenities = document.querySelector('#amenities_option');
-        let amenitiesContent = document.querySelector('.select_amenities');
-        let upangle = document.querySelector(".up_down_angle");
-        dropdownamenities.addEventListener('click', () => {
-            if (amenitiesContent.style.display === "") {
-                amenitiesContent.style.display = "flex";
-                upangle.innerHTML = "<i class='fa-solid fa-chevron-up'></i>";
-            } else {
-                amenitiesContent.style.display = "";
-                upangle.innerHTML = "<i class='fa-solid fa-chevron-down'></i>";
-            }
-        })
-
-        //LOCALITIES
-        let dropdownlocality = document.querySelector('#locality_option');
-        let localityContent = document.querySelector('.select_localities');
-        let localityupangle = document.querySelector(".locality_updown_arrow");
-        dropdownlocality.addEventListener('click', () => {
-            if (localityContent.style.display === "") {
-                localityContent.style.display = "grid";
-                localityupangle.innerHTML = "<i class='fa-solid fa-chevron-up'></i>";
-            } else {
-                localityContent.style.display = "";
-                localityupangle.innerHTML = "<i class='fa-solid fa-chevron-down'></i>";
-            }
-        })
-
-
-
-        //SEARCH FILTER BY LOCALITY
-        function showHint(str,e) {
-
-            if (str.length == 0) {
-                document.getElementById("all_property").innerHTML = "";
-                return;
-            } else {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("all_property").innerHTML = this.responseText;
-                    }
-                };
-                xmlhttp.open("GET", "phpScript/ajax_live_search.php?q=" + str, true);
-                xmlhttp.send();
-            }
-        }
-
         //FILTER BY GENDER
         function showUser(str) {
             if (str == "") {
@@ -378,21 +340,6 @@ session_start();
             xmlhttp.send();
         }
 
-        //FILTER BY LOCATION
-        function ShowLocality(str) {
-            if (str == "") {
-                document.getElementById("all_property").innerHTML = "";
-                return;
-            }
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("all_property").innerHTML = this.responseText;
-                }
-            }
-            xmlhttp.open("GET", "phpScript/ajax_locality_search.php?q=" + str, true);
-            xmlhttp.send();
-        }
         //FILTER BY AMENITIES
         function ShowAmenities(str) {
             if (str == "") {
@@ -409,24 +356,23 @@ session_start();
             xmlhttp.send();
         }
 
-        function showDetails(city) {
-            let str = city.getAttribute("data-city-value");
-            // alert("The city is a " + str + ".");
-            if (str == "") {
-                document.getElementById("all_property").innerHTML = "";
-                return;
-            }
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("all_property").innerHTML = this.responseText;
-                }
-            }
-            xmlhttp.open("GET", "phpScript/ajax_cityWise_search.php?q=" + str, true);
-            xmlhttp.send();
-        }
+        //SEARCH FILTER BY LOCALITY
+        // function showHint(str, e) {
 
-        
+        //     if (str.length == 0) {
+        //         document.getElementById("all_property").innerHTML = "";
+        //         return;
+        //     } else {
+        //         var xmlhttp = new XMLHttpRequest();
+        //         xmlhttp.onreadystatechange = function() {
+        //             if (this.readyState == 4 && this.status == 200) {
+        //                 document.getElementById("all_property").innerHTML = this.responseText;
+        //             }
+        //         };
+        //         xmlhttp.open("GET", "phpScript/ajax_live_search.php?q=" + str, true);
+        //         xmlhttp.send();
+        //     }
+        // }
         </script>
 </body>
 

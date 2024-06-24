@@ -32,7 +32,7 @@
                             <p>Or</p>
                         </li>
                         <li class="Header_btnMain__yY24_" onclick="openCallSlide()"><button>
-                                <p>Request a Call</p>
+                                <p>Request a Callback</p>
                             </button></li>
                         <?php 
                             if(!isset($_SESSION['username'])){  

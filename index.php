@@ -65,10 +65,13 @@ session_start();
                             </div>
                             <h2>Rent the best of managed living</h2>
                             <div class="hero_cta__7ndSC">
-                                <input type="search" placeholder="Find a roomsoom near your place" name="hero_search"
-                                    id="hero_search" class="hero_SearchBar">
-                                <button type="submit" class="hero_search_btn"><i
-                                        class="fa-solid fa-magnifying-glass"></i></button>
+                                <form style="display:flex;width:100%;" action="search.php" method="post">
+                                    <input type="search" placeholder="Find a roomsoom near your place"
+                                        name="hero_search" id="hero_search" class="hero_SearchBar">
+                                    <button type="submit" class="hero_search_btn"><i
+                                            class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -81,7 +84,7 @@ session_start();
         <div class="card_container__Klf5R">
             <div class="card_cityMain__lBQrv">
                 <div class="card_title__TdvwU">
-                    <h2>Here. There. <b>Roomsoom</b> Everywhere!</h2>
+                    <h2>Here. There. <span style="color: #EF4F5F;">Roomsoom</span> Everywhere!</h2>
                 </div>
                 <div class="card_cardBox__uU7lZ">
                     <div class="city_wise_search_section">
@@ -128,7 +131,8 @@ session_start();
                     <div class="welcome_welCont__ObR_l">
                         <div class="welcome_welHead__zeGSA">
                             <div class="welcome_title__0_xRo">
-                                <h3 class="welcome_heading">Easy on the pocket, <span class="welcome_heading_subtitle">Easy on the mind.</span></h3>
+                                <h3 class="welcome_heading">Easy on the pocket, <span
+                                        class="welcome_heading_subtitle">Easy on the mind.</span></h3>
                             </div>
                             <div class="welcome_content__3AXBX">
                                 <div class="welcome_content_sub_small_text">
@@ -158,13 +162,14 @@ session_start();
                         <div class="easy__find_text" style="font-size:4rem;font-weight:lighter;">STAY</div>
                         <div class="easy_text">EASY</div>
                     </div>
-                    <div style="background-color: #e4fcb9;" class="welcome_welImage__mZNRj"><img alt="Housr Coliving" src="asset/images/roomies6.png"
-                            width="700" height="700" decoding="async" data-nimg="1" loading="lazy"
-                            style="color:transparent"></div>
+                    <div style="background-color: #e4fcb9;" class="welcome_welImage__mZNRj"><img alt="Housr Coliving"
+                            src="asset/images/roomies6.png" width="700" height="700" decoding="async" data-nimg="1"
+                            loading="lazy" style="color:transparent"></div>
                     <div class="welcome_welCont__ObR_l">
                         <div class="welcome_welHead__zeGSA">
                             <div class="welcome_title__0_xRo">
-                                <h3 class="welcome_heading">Perfect for working, <span class="welcome_heading_subtitle">More so for unwinding
+                                <h3 class="welcome_heading">Perfect for working, <span
+                                        class="welcome_heading_subtitle">More so for unwinding
                                         after</span></h3>
                             </div>
                             <div class="welcome_content__3AXBX">
@@ -206,13 +211,14 @@ session_start();
                         </svg>
                     </div> -->
                     <!-- /polygon -->
-                    <div style="background-color: #cbccfd;" class="welcome_welImage__mZNRj"><img alt="Housr Coliving" src="asset/images/roomies4.png"
-                            width="800" height="800" decoding="async" data-nimg="1" loading="lazy"
-                            style="color:transparent"></div>
+                    <div style="background-color: #cbccfd;" class="welcome_welImage__mZNRj"><img alt="Housr Coliving"
+                            src="asset/images/roomies4.png" width="800" height="800" decoding="async" data-nimg="1"
+                            loading="lazy" style="color:transparent"></div>
                     <div class="welcome_welCont__ObR_l">
                         <div class="welcome_welHead__zeGSA">
                             <div class="welcome_title__0_xRo">
-                                <h3 class="welcome_heading">Join & vibe <span class="welcome_heading_subtitle">with a vibrant colourful
+                                <h3 class="welcome_heading">Join & vibe <span class="welcome_heading_subtitle">with a
+                                        vibrant colourful
                                         community.</span></h3>
                             </div>
                             <div class="welcome_content__3AXBX">
@@ -328,6 +334,7 @@ session_start();
                                     </blockquote>
                                     <div></div>
                                     <p style="color:black;">
+                                        <span style="padding-right:0.5rem;"><i class="fa-regular fa-user"></i></span>
                                         Rajendra Gupta &mdash; Uttar Pradesh, India
                                     </p>
                                 </div>
@@ -345,6 +352,7 @@ session_start();
                                     </blockquote>
                                     <div></div>
                                     <p style="color:black;">
+                                        <span style="padding-right:0.5rem;"><i class="fa-regular fa-user"></i></span>
                                         Simran Kaur &mdash; Punjab, India
                                     </p>
                                 </div>
@@ -362,6 +370,7 @@ session_start();
                                     </blockquote>
                                     <div></div>
                                     <p style="color:black;">
+                                        <span style="padding-right:0.5rem;"><i class="fa-regular fa-user"></i></span>
                                         Sameer Jain &mdash; Rajasthan, India
                                     </p>
                                 </div>
@@ -379,6 +388,7 @@ session_start();
                                     </blockquote>
                                     <div></div>
                                     <p style="color:black;">
+                                        <span style="padding-right:0.5rem;"><i class="fa-regular fa-user"></i></span>
                                         Ram Kumar &mdash; Delhi, India
                                     </p>
                                 </div>
