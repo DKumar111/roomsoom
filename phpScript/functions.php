@@ -15,7 +15,7 @@ function get_properties(){
         $property_type = $row['property_type'];
         $gender = $row['gender'];
         $discount = $row['discount'];
-        $solo_room_price = $row['solo_room_price'];
+        $rent_price = $row['rent_price'];
         $property_image = $row['property_image'];
         $property_image2 = $row['property_image2'];
         $property_image3 = $row['property_image3'];
@@ -66,10 +66,10 @@ function get_properties(){
                                          <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
                                          <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
                                                  style='padding-right:0.5rem;'><i
-                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                                      </div>
                                      <div class=''>
-                                         <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                        <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                      </div>
                                  </div>
                              </div>
@@ -83,14 +83,14 @@ function sort_property(){
     global $conn;
 
     if(isset($_POST['low_to_high'])){
-        $sort_sql = "SELECT * FROM `properties` ORDER BY 'twin_sharing_price','solo_room_price' ASC";
+        $sort_sql = "SELECT * FROM `properties` ORDER BY 'twin_sharing_price','rent_price' ASC";
         $sql_to_high_result = mysqli_query($conn, $sort_sql);
         while($row = mysqli_fetch_assoc($sql_to_high_result)){
             $city = $row['city'];
             $locality = $row['locality'];
             $property_type = $row['property_type'];
             $twin_sharing_price = $row['twin_sharing_price'];
-            $solo_room_price = $row['solo_room_price'];
+            $rent_price = $row['rent_price'];
             $property_image = $row['property_image'];
             
             echo "
@@ -139,10 +139,10 @@ function sort_property(){
                                          <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
                                          <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
                                                  style='padding-right:0.5rem;'><i
-                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                                      </div>
                                      <div class=''>
-                                         <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                         <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                      </div>
                                  </div>
                              </div>
@@ -152,7 +152,7 @@ function sort_property(){
         }
     }
     elseif (isset($_POST['high_to_low'])) {
-        $sort_to_low_sql = "SELECT * FROM `properties` ORDER BY 'twin_sharing_price','solo_room_price' DESC";
+        $sort_to_low_sql = "SELECT * FROM `properties` ORDER BY 'twin_sharing_price','rent_price' DESC";
         $result_to_low_query = mysqli_query($conn, $sort_to_low_sql);
 
         while($row = mysqli_fetch_assoc($result_to_low_query)){
@@ -160,7 +160,7 @@ function sort_property(){
             $locality = $row['locality'];
             $property_type = $row['property_type'];
             $twin_sharing_price = $row['twin_sharing_price'];
-            $solo_room_price = $row['solo_room_price'];
+            $rent_price = $row['rent_price'];
             $property_image = $row['property_image'];
             
             echo "
@@ -209,10 +209,10 @@ function sort_property(){
                                          <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
                                          <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
                                                  style='padding-right:0.5rem;'><i
-                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                                      </div>
                                      <div class=''>
-                                         <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                         <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                      </div>
                                  </div>
                              </div>
@@ -240,7 +240,7 @@ function get_searched_result(){
             $city = $row['city'];
             $locality = $row['locality'];
             $property_type = $row['property_type'];
-            $solo_room_price = $row['solo_room_price'];
+            $rent_price = $row['rent_price'];
             $property_image = $row['property_image'];
 
             echo "
@@ -289,10 +289,10 @@ function get_searched_result(){
                                          <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
                                          <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
                                                  style='padding-right:0.5rem;'><i
-                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                                      </div>
                                      <div class=''>
-                                         <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                        <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                      </div>
                                  </div>
                              </div>
@@ -321,7 +321,7 @@ function search_by_city(){
             $locality = $row['locality'];
             $property_type = $row['property_type'];
             $gender = $row['gender'];
-            $solo_room_price = $row['solo_room_price'];
+            $rent_price = $row['rent_price'];
             $property_image = $row['property_image'];
 
             echo "
@@ -370,10 +370,10 @@ function search_by_city(){
                                          <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
                                          <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
                                                  style='padding-right:0.5rem;'><i
-                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                                      </div>
                                      <div class=''>
-                                         <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                        <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                      </div>
                                  </div>
                              </div>
@@ -405,7 +405,7 @@ function search_by_city(){
                 $locality = $row['locality'];
                 $property_type = $row['property_type'];
                 $gender = $row['gender'];
-                $solo_room_price = $row['solo_room_price'];
+                $rent_price = $row['rent_price'];
                 $property_image = $row['property_image'];
                 $property_image2 = $row['property_image2'];
                 $property_image3 = $row['property_image3'];
@@ -456,10 +456,10 @@ function search_by_city(){
                                          <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
                                          <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
                                                  style='padding-right:0.5rem;'><i
-                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                                      </div>
                                      <div class=''>
-                                         <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                         <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                      </div>
                                  </div>
                              </div>
@@ -492,7 +492,7 @@ function get_nearby_property(){
             $locality = $row['locality'];
             $property_type = $row['property_type'];
             $gender = $row['gender'];
-            $solo_room_price = $row['solo_room_price'];
+            $rent_price = $row['rent_price'];
             $property_image = $row['property_image'];
             $property_image2 = $row['property_image2'];
             $property_image3 = $row['property_image3'];
@@ -544,10 +544,10 @@ function get_nearby_property(){
                                          <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
                                          <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
                                                  style='padding-right:0.5rem;'><i
-                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                     class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                                      </div>
                                      <div class=''>
-                                         <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                         <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                      </div>
                                  </div>
                              </div>

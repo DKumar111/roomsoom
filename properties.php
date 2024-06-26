@@ -139,7 +139,7 @@ session_start();
             </div><br>
             <div class="listing_gridlayout__SQwz8" id="all_property">
                 <?php
-                  // get_properties();
+                   get_properties();
                 ?>
             </div>
             <div class="listing_filterPhone__Fcmrh">

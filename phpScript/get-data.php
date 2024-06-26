@@ -7,7 +7,7 @@ include 'dbconnect.php';
     $min = $_POST['range1'];
     $max = $_POST['range2'];
 
-    $sql = "SELECT * FROM `properties` WHERE solo_room_price BETWEEN {$min} AND {$max}";
+    $sql = "SELECT * FROM `properties` WHERE rent_price BETWEEN {$min} AND {$max}";
  }else{
     $min = '';
     $max = '';
@@ -25,7 +25,7 @@ include 'dbconnect.php';
                                      <div class='property_card_container'>
                                          <div style='overflow:hidden;border-radius:7px;' class='card_img_section'>
                                              <div class='slider'>
-                                                 <div class='inner'>
+                                                 <div class='inner' id='product_card_img_slider'>
                                                      <div class='item active'>
                                                          <div class=' image'>
                                                             <img width='100%' height='200px' src='asset/property_image/{$row['property_image']}' alt=''>
@@ -42,8 +42,8 @@ include 'dbconnect.php';
                                                          </div>
                                                      </div>
                                                  </div>
-                                                <button id='Previous_button' class='button' class='prev'>&lt;</button>
-                                                 <button id='Next_button'     class='button' class='next'>&gt;</button>
+                                                <!------<button id='Previous_button' class='button' class='prev'>&lt;</button>
+                                                 <button id='Next_button'     class='button' class='next'>&gt;</button>------>
                                              </div>
                                          </div>
                                          <div class='card_desc_section'>
@@ -64,11 +64,13 @@ include 'dbconnect.php';
                                                  <div class=''>
                                                      <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
                                                      <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
-                                                             style='padding-right:0.5rem;'><i
-                                                                 class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                             style='padding-right:0.5rem;'>
+                                                             <i class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*
+                                                        </div>
+                                                     
                                                  </div>
                                                  <div class=''>
-                                                     <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                                     <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                                  </div>
                                              </div>
                                          </div>

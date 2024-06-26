@@ -15,7 +15,8 @@ include '../phpScript/dbconnect.php';
 </head>
 
 <body>
-
+   
+    
 <div class="admin_header d-flex justify-content-center p-4 bg-info   ">
     <nav class="">
         <a class="text-decoration-none text-white fs-5 fw-bold  m-3" href="admin_index.php?show_all">SHOW ALL PROPERTY</a>
@@ -27,7 +28,7 @@ include '../phpScript/dbconnect.php';
 
 
 <div class="admin_main_section mt-5 ">
-    <div class="main_content">
+    <div style="padding:0 2.5rem;" class="main_content">
         <?php
 
             if(isset($_GET['show_all'])){
@@ -47,7 +48,6 @@ include '../phpScript/dbconnect.php';
     </div>
 </div>
 
-   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

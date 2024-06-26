@@ -167,28 +167,7 @@ button{
 
 <body >
     <a style="position: absolute; left: 1rem; top: 1rem;" class="text-decoration-none px-3 py-2 bg-danger border rounded-1  text-white" href="index.php">HOME</a>
-    <!-- <div class="text-black m-5 mt-0 fw-bold fs-5 border-bottom shadow p-2 border-4   ">
-        <h3>Roomsoom Login</h3>
-    </div> -->
-
-    <!-- <form action="" method="post"
-        class=" d-flex justify-content-center align-items-center flex-column w-100 h-50 rounded-4   text-dark"
-        style="background: rgba(255, 255, 255, 0.4) ;">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" required="required" name="username" id="exampleInputEmail1"
-                aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" required="required" name="password" id="exampleInputPassword1">
-        </div>
-        <button type="submit" name="login" class="shadow btn btn-danger border-0 px-4 py-2">Login</button>
-        <div id="emailHelp" class="form-text fw-semibold ">Don't have an account? <a class="text-black"
-                href="register.php">Register</a></div>
-        <div id="emailHelp" class="form-text fw-semibold "><a class="text-black"
-                href="forgot-password.php">Forgot Password?</a></div>
-    </form> -->
+  
 
     <!-- STYLED LOGIN FORM -->
     <div class="background">

@@ -31,10 +31,10 @@ if(mysqli_num_rows($result) > 0){
                 <div style='display: flex;justify-content: space-between;align-items: center;padding: 0.5rem 1rem;' class=''>
                     <div class=''>
                         <div style='color: rgb(129, 129, 129);' class=''>Rent starts at</div>
-                        <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span style='padding-right:0.5rem;'><i class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                        <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span style='padding-right:0.5rem;'><i class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                     </div>
                     <div class=''>
-                        <div style='color: rgb(59, 59, 59);' class=''>{$row['discount']}</div>
+                       <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                     </div>
                 </div>
             </div>

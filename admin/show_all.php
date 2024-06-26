@@ -7,8 +7,8 @@
       <th scope="col">City</th>
       <th scope="col">Locality</th>
       <th scope="col">Property Type</th>
-      <th scope="col">Twin Sharing Price</th>
-      <th scope="col">Solo Room Price</th>
+      <th scope="col">Two Sharing Price</th>
+      <th scope="col">Rent Price</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
@@ -24,23 +24,24 @@
         $city = $row['city'];
         $locality = $row['locality'];
         $propery_type = $row['property_type'];
-        $twin_sharing_price = $row['twin_sharing_price'];
-        $solo_room_price = $row['solo_room_price'];
+        $two_sharing_price = $row['two_sharing_price'];
+        $three_sharing_price = $row['three_sharing_price'];
+        $rent_price = $row['rent_price'];
         $number++;
-    ?>
-    <tr>
-      <th scope="row"><?php  echo  $number  ?></th>
-      <td><?php  echo  $city  ?></td>
-      <td><?php  echo $locality;  ?></td>
-      <td><?php  echo $propery_type  ?></td>
-      <td><?php  echo $twin_sharing_price  ?></td>
-      <td><?php  echo $solo_room_price  ?></td>
-      <td><a href='admin_index.php?edit_property=<?php echo $property_id ?>'>Edit</a></td>
-      <td><a href='admin_index.php?delete_property=<?php echo $property_id ?>'>Delete</a></td>
-      
+        echo "
+          <tr>
+      <th scope='row'> $number </th>
+      <td> $city </td>
+      <td>$locality; </td>
+      <td>$propery_type </td>
+      <td>$two_sharing_price </td>
+      <td>$rent_price </td>
+      <td><a href='admin_index.php?edit_property= $property_id '>Edit</a></td>
+      <td><a href='admin_index.php?delete_property= $property_id '>Delete</a></td>
     </tr>
-    <?php
+        ";
     }
     ?>
+    
   </tbody>
 </table>

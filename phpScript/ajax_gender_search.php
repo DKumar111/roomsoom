@@ -34,8 +34,8 @@ if(mysqli_num_rows($result) > 0){
                                                          </div>
                                                      </div>
                                                  </div>
-                                                <button id='Previous_button' class='button' class='prev'>&lt;</button>
-                                                 <button id='Next_button'     class='button' class='next'>&gt;</button>
+                                               <!------- <button id='Previous_button' class='button' class='prev'>&lt;</button>
+                                                 <button id='Next_button'  class='button' class='next'>&gt;</button>------>
                                              </div>
                                          </div>
                                          <div class='card_desc_section'>
@@ -57,10 +57,10 @@ if(mysqli_num_rows($result) > 0){
                                                      <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
                                                      <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
                                                              style='padding-right:0.5rem;'><i
-                                                                 class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                                 class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                                                  </div>
                                                  <div class=''>
-                                                     <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                                     <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                                  </div>
                                              </div>
                                          </div>

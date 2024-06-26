@@ -136,7 +136,7 @@ session_start();
                             $locality = $row['locality'];
                             $property_type = $row['property_type'];
                             $gender = $row['gender'];
-                            $solo_room_price = $row['solo_room_price'];
+                            $rent_price = $row['rent_price'];
                             $property_image = $row['property_image'];
                 
                             echo "
@@ -158,10 +158,10 @@ session_start();
                                             <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;' class=''>
                                                 <div class=''>
                                                     <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
-                                                    <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span style='padding-right:0.5rem;'><i class='fa-solid fa-indian-rupee-sign'></i></span>{$row['solo_room_price']}*</div>
+                                                    <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span style='padding-right:0.5rem;'><i class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
                                                 </div>
                                                 <div class=''>
-                                                    <div style='color: rgb(59, 59, 59);' class=''><span> {$row['discount']}</span></div>
+                                                   <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
                                                 </div>
                                             </div>
                                         </div>

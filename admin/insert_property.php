@@ -9,7 +9,10 @@ $locality = $_POST['locality'];
 $property_type = $_POST['property_type'];
 $gender = $_POST['gender'];
 $address = $_POST['address'];
-$solo_price = $_POST['solo_price'];
+$rent_price = $_POST['rent_price'];
+$discount = $_POST['discount'];
+$two_sharing_price = $_POST['two_sharing_price'];
+$three_sharing_price = $_POST['three_sharing_price'];
 
 //accessing images
 $property_image = $_FILES['image']['name'];
@@ -23,7 +26,8 @@ $temp_property_image3 = $_FILES['image3']['tmp_name'];
 
 // checking empty condition
 
-if($property_owner == '' || $city == '' || $locality == '' || $property_type =='' || $gender == '' || $address =='' ||  $solo_price == ''){
+if($property_owner == '' || $city == '' || $locality == '' || $property_type =='' || $gender == '' || $address =='' 
+||  $rent_price == '' || $two_sharing_price == '' || $three_sharing_price == ''){
     echo "<script>alert('Please fill all the field')</script>";
     echo "<script>window.open('admin_index.php?insert_property', '_self')</script>";
     exit();
@@ -33,8 +37,11 @@ if($property_owner == '' || $city == '' || $locality == '' || $property_type =='
     move_uploaded_file($temp_property_image3, "../asset/property_image/$property_image3");
 
     //insert qurey
-    $insert_property = "INSERT INTO `properties`(`property_owner`, `city`, `locality`, `property_type`,  `gender`, `property_address`, `solo_room_price`, `property_image` , `property_image2`, `property_image3`) 
-    VALUES ('$property_owner','$city','$locality','$property_type','$gender','$address','$solo_price','$property_image','$property_image2','$property_image3')";
+    $insert_property = "INSERT INTO `properties`(`property_owner`, `city`, `locality`, `property_type`, `gender`, 
+    `property_address`, `discount`, `rent_price`,`two_sharing_price`, `three_sharing_price`,
+     `property_image`, `property_image2`, `property_image3`) 
+    VALUES ('$property_owner','$city','$locality','$property_type','$gender','$address','$discount','$rent_price',
+    '$two_sharing_price','$three_sharing_price','$property_image','$property_image2','$property_image3')";
 
     $result_query = mysqli_query($conn, $insert_property);
     if($result_query){
@@ -76,8 +83,20 @@ if($property_owner == '' || $city == '' || $locality == '' || $property_type =='
             <input type="text" class="form-control" id="validationTooltip02" name="address" placeholder ="address" required>
         </div>
         <div class="col-md-4 position-relative">
-            <label for="validationTooltip02" class="form-label">Solo Room Price</label>
-            <input type="text" class="form-control" id="validationTooltip02" name="solo_price" placeholder ="Solo Room Price" required>
+            <label for="validationTooltip02" class="form-label">Rent Price</label>
+            <input type="text" class="form-control" id="validationTooltip02" name="rent_price" placeholder ="Rent Price" required>
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label">Discount</label>
+            <input type="text" class="form-control" id="validationTooltip02" name="discount" placeholder ="Discount">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label">Two Sharing Price</label>
+            <input type="text" class="form-control" id="validationTooltip02" name="two_sharing_price" placeholder ="Two Sharing Price" required>
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label">Three Sharing Price</label>
+            <input type="text" class="form-control" id="validationTooltip02" name="three_sharing_price" placeholder ="Three Sharing Price" required>
         </div>
         <div class="col-md-4 position-relative">
             <label for="validationTooltip02" class="form-label">Property image</label>

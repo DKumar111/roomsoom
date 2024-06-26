@@ -17,9 +17,10 @@ if(isset($_GET['property_id'])){
     $property_type = $row['property_type'];
     $property_address = $row['property_address'];
     $gender = $row['gender'];
-    $solo_room_price = $row['solo_room_price'];
+    $rent_price = $row['rent_price'];
     $two_sharing_price = $row['two_sharing_price'];
     $three_sharing_price = $row['three_sharing_price'];
+    $discount = $row['discount'];
     $property_image = $row['property_image'];
     $property_image2 = $row['property_image2'];
     $property_image3 = $row['property_image3'];
@@ -239,7 +240,7 @@ if(isset($_GET['property_id'])){
                                                         <div style="padding-right:8rem;display:flex;justify-content:center;align-items:center;gap:0.4rem;"
                                                             class="">
                                                             <span class=""><input type="radio" name="room_price"
-                                                                    value="<?php  echo $solo_room_price ?>" id="price1"
+                                                                    value="<?php  echo $rent_price ?>" id="price1"
                                                                     required="required"></span>
                                                             <div class="">
                                                                 <p class="price_para" style="">Private</p>
@@ -248,7 +249,7 @@ if(isset($_GET['property_id'])){
                                                         </div>
                                                         <div id="private" style="color:black;"
                                                             class="rent_price tab-content">Rs.
-                                                            <?php  echo $solo_room_price ?>/month*
+                                                            <?php  echo $rent_price ?>/month*
                                                         </div>
                                                     </div>
                                                     <div class="price_tag">
@@ -452,7 +453,7 @@ if(isset($_GET['property_id'])){
                             <h4>Pricing</h4>
                             <div class="details_priceDiv__mMDd0">
                                 <h2>Rent Starting at</h2>
-                                <h3>Rs. <?php echo $solo_room_price ?><span>/mo*</span></h3>
+                                <h3>Rs. <?php echo $rent_price ?><span>/mo*</span></h3>
                             </div>
                             <p>*The starting price shown excludes GST. Final prices maylety depending on room
                                 occupancy, personalised services, and additional features.</p>
@@ -475,7 +476,7 @@ if(isset($_GET['property_id'])){
                                     <span>Private Room</span>
                                     <span style="font-size:0.7rem;">Starting from</span>
                                     <div style="display:flex; justify-content:center;align-items:center;" class="">
-                                        <span>Rs. <?php echo $solo_room_price ?>/</span>
+                                        <span>Rs. <?php echo $rent_price ?>/</span>
                                         <span style="font-size: 0.7rem;">month*</span>
                                     </div>
 

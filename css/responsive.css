@@ -5684,6 +5684,11 @@ li {
     justify-content: center;
     align-items: center;
 }
+
+.swiper-cards {
+  overflow: hidden !important;
+}
+
 .swiper-slide{
     display: flex;
     justify-content: center;

@@ -1204,7 +1204,7 @@ a {
 .welcome_container__xDG9q .welcome_welMain__A1HlB .welcome_welImage__mZNRj img {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 .welcome_container__xDG9q .welcome_welMain__A1HlB .welcome_welImage__mZNRj{
   width: 500px;
@@ -8560,11 +8560,13 @@ select option:nth-child(1) {
  background-color: #f97683;
  cursor: pointer;
  border: none;
+ appearance: none;
 }
 #amenities_option{
  background-color: #f97683;
  cursor: pointer;
  border: none;
+ appearance: none;
 }
 
 #locality_option option{
@@ -10951,7 +10953,7 @@ font-size:0.7rem;
 }
 
 img {
-    /* width: 100%; */
+    width: 100%;
 }
 
 .active {

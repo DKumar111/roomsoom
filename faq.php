@@ -44,7 +44,7 @@ session_start();
     <!-- ===== /HEADER SECTION ===== -->
 
 <!-- FAQ SECTION STARTS HERE -->
-<div style="margin-top:4rem;" class="faqs_faqscontainer__on7i_">
+<div  class="faqs_faqscontainer__on7i_">
                 <div class="faqs_faqtitle__pTGTz">
                     <h3>FAQs</h3>
                 </div>
