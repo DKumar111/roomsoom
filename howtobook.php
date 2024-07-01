@@ -127,50 +127,6 @@ session_start();
         </div>
         <div class="goals_container__VmbxY">
             <div class="goals_goalsMain__FDzqE">
-                <!-- <div class="mission_how_book">
-                    <div class="mission_how_book_sub_section">
-                        <div class="">
-                        <p class="mission_img_text" >Get in touch with us</p>
-                            <img width="70px" height="70px" src="asset/images/howtobook/touchWith.jpg" alt="">
-                        </div>
-                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
-                    </div>
-                    <div class="mission_how_book_sub_section">
-                        <div class="">
-                        <p class="mission_img_text" >Shortlist your options</p>
-                            <img width="70px" height="70px" src="asset/images/howtobook/shortlist.webp" alt="">
-                        </div>
-                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
-                    </div>
-                    <div class="mission_how_book_sub_section">
-                        <div class="">
-                        <p class="mission_img_text" >Virtual Tour</p>
-                            <img width="70px" height="70px" src="asset/images/howtobook/virtualTour.png" alt="">
-                        </div>
-                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
-                    </div>
-                    <div class="mission_how_book_sub_section">
-                        <div class="">
-                        <p class="mission_img_text" >Pay Token</p>
-                            <img width="70px" height="70px" src="asset/images/howtobook/token.jpg" alt="">
-                        </div>
-                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
-                    </div>
-                    <div class="mission_how_book_sub_section">
-                        <div class="">
-                        <p class="mission_img_text" >Move in</p>
-                            <img width="70px" height="70px" src="asset/images/howtobook/movein.jpg" alt="">
-                        </div>
-                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
-                    </div>
-                    <div class="mission_how_book_sub_section">
-                        <div class="">
-                        <p class="mission_img_text" >Move Out</p>
-                            <img width="70px" height="70px" src="asset/images/howtobook/moveout.jpg" alt="">
-                        </div>
-                        <div class="mission_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, aspernatur.</div>
-                    </div>
-                </div> -->
                 <main>
                     <p class="Progress__timeline">
                         <span class="progress_timeline_heading">Get in touch with</span>

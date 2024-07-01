@@ -2619,7 +2619,7 @@ a {
   align-items: center;
   background-color: #f0f0f0;
   box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
-  padding: 1rem 0rem;
+  padding: 0rem 0rem;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -10561,11 +10561,11 @@ textarea {
   width: 100%;
   background-color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 2rem;
   overflow-x: auto;
-  word-wrap: nowrap !important;
+  white-space: nowrap !important;
   gap: 1rem;
 }
 .nearby_properties_section .property_card_slider_section .property_card{
@@ -10652,6 +10652,13 @@ textarea {
   max-width: 550px;
   width: 100%;
   background: white;
+}
+
+.formbold-form-step-1::-webkit-scrollbar{
+  display: none;
+}
+.formbold-form-step-3::-webkit-scrollbar{
+  display: none;
 }
 
 .formbold-steps {
@@ -10953,7 +10960,7 @@ font-size:0.7rem;
 }
 
 img {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .active {
@@ -10966,6 +10973,26 @@ img {
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+.left_right_btn{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.4rem;
+
+}
+
+.addtowishlist{
+  position: absolute;
+  top: 6%;
+  right: 1rem;
+  z-index: 10;
+  font-size: 1.5rem;
+}
+
+.card_img_section{
+  position: relative;
+
 }
 
 .item-next,
@@ -11041,3 +11068,33 @@ img {
 }
 
 /* CSS FOR CAROUSEL INSIDE CARD ENDS HERE */
+
+.spotlight_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spotlight_content_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spotlight_first_sec{
+  text-align: center;
+}
+.spotlight_first_sec h1{
+  font-size: 2.5rem;
+}
+
+.spotlight_readmore_btn a{
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #EF4F5F;
+  color: white;
+}

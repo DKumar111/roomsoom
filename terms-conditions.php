@@ -8,7 +8,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <title>Payment Terms and Conditions</title>
+    <title>Terms and Conditions</title>
     <link rel="shortcut icon" href="asset/images/logo.png" type="image/x-icon">
     <meta charset="UTF-8">
 
@@ -52,7 +52,7 @@ session_start();
         <div class="pay_container__6NCRs">
             <div class="pay_mainCont__sfA0S">
                 <div class="pay_Head__Kxe0H">
-                    <h1>Payment Terms and Conditions</h1>
+                    <h1>Terms and Conditions</h1>
                 </div>
                 <div class="pay_content__RQmiR">
                     <ul>

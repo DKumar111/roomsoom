@@ -106,52 +106,8 @@ session_start();
                                         width="192" height="192" decoding="async" data-nimg="1" loading="lazy"
                                         style="color: transparent;"></div>
                                 <div  class="cbanner_textBox__nC31na">
-                                    <a style="color:blue;" href="" class="cbanner_titleMain__jj0xp">Location</a>
-                                    <!-- <p>5th Floor, DLF Two Horizon Centre, DLF Phase-5, Gurugram, Haryana, India, 122002
-                                    </p> -->
                                 </div>
                             </div>
-                            <!-- <div class="cbanner_card__51iL9" id="cbanner_hide__TzsP1">
-                                <div class="cbanner_imgCont__2joef"><img alt="Socials"
-                                        src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSocial.ed116ada.png&w=384&q=75"
-                                        width="192" height="192" decoding="async" data-nimg="1" loading="lazy"
-                                        style="color: transparent;"></div>
-                                <div class="cbanner_textBox__nC31n">
-                                    <h3>Socials</h3>
-                                    <div class="cbanner_soIcons__b6YKe">
-                                        <div class="cbanner_svgI__dLf8m"><a
-                                                href="https://www.linkedin.com/in/himani-sharma-02224b128/"
-                                                target="_blank" rel="noreferrer" aria-label="Housr facebook"><img
-                                                    alt="Facebook"
-                                                    srcset="https://housr.in/_next/static/media/LinkedInWte.51be6c59.svg 1x, https://housr.in/_next/static/media/LinkedInWte.51be6c59.svg 2x"
-                                                    src="https://housr.in/_next/static/media/LinkedInWte.51be6c59.svg"
-                                                    width="100" height="100" decoding="async" data-nimg="1"
-                                                    loading="lazy" style="color: transparent;"></a></div>
-                                        <div class="cbanner_svgI__dLf8m"><a
-                                                href="https://www.instagram.com/roomsoomindia/" target="_blank"
-                                                rel="noreferrer" aria-label="Housr facebook"><img alt="Facebook"
-                                                    srcset="https://housr.in/_next/static/media/InstagramWhite.266b1c4b.svg 1x, https://housr.in/_next/static/media/InstagramWhite.266b1c4b.svg 2x"
-                                                    src="https://housr.in/_next/static/media/InstagramWhite.266b1c4b.svg"
-                                                    width="100" height="100" decoding="async" data-nimg="1"
-                                                    loading="lazy" style="color: transparent;"></a></div>
-                                        <div class="cbanner_svgI__dLf8m"><a
-                                                href="https://www.facebook.com/roomsoomindia" target="_blank"
-                                                rel="noreferrer" aria-label="Housr facebook"><img alt="Facebook"
-                                                    srcset="https://housr.in/_next/static/media/FacebookWhite.1ba8c7a0.svg 1x, https://housr.in/_next/static/media/FacebookWhite.1ba8c7a0.svg 2x"
-                                                    src="https://housr.in/_next/static/media/FacebookWhite.1ba8c7a0.svg"
-                                                    width="100" height="100" decoding="async" data-nimg="1"
-                                                    loading="lazy" style="color: transparent;"></a></div>
-                                        <div class="cbanner_svgI__dLf8m"><a
-                                                href="https://twitter.com/roomsoomindia/status/1787354317600538684"
-                                                target="_blank" rel="noreferrer" aria-label="Housr facebook"><img
-                                                    alt="Facebook"
-                                                    srcset="https://housr.in/_next/static/media/TwitterWhite.7287d7c7.svg 1x, https://housr.in/_next/static/media/TwitterWhite.7287d7c7.svg 2x"
-                                                    src="https://housr.in/_next/static/media/TwitterWhite.7287d7c7.svg"
-                                                    width="100" height="100" decoding="async" data-nimg="1"
-                                                    loading="lazy" style="color: transparent;"></a></div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <div class="cbanner_formCont__hJXHT">
@@ -180,11 +136,8 @@ session_start();
         </div>
         <div class="info_container__7clhk">
             <div class="info_mapCont__LyO3H">
-                <!-- <h4>Corporate Office</h4> -->
                 <section class="contact-page-map">
                     <div class="map-image">
-                        <!-- <iframe src="//maps.google.com/maps?q=28.45118,77.0965144&amp;z=15&amp;output=embed" title="maps"
-                            loading="lazy" width="100%" height="460" style="border: 0px;"> -->
                         </iframe>
                     </div>
                 </section>

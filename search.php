@@ -80,31 +80,12 @@ session_start();
                 <div class="">
                     <select name="amenities" onchange="ShowAmenities(this.value)" id="amenities_option"
                         class="multifilter_option">
-                        <option hidden>Amenities</option>
-                        <option disabled value="ac">AC</option>
-                        <option disabled value="fridge">Fridge</option>
-                        <option disabled value="gym">Gym</option>
-                        <option disabled value="parking">Parking</option>
-                        <option disabled value="power backup">Power Backup</option>
+                        <option hidden>By Type</option>
+                        <option disabled value="pg">PG</option>
+                        <option disabled value="flate">Flate</option>
+                        <option disabled value="fullyfurnished">Fully Furnished Room</option>
                     </select>
                 </div>
-
-                <!-- <div class="">
-                    <select name="locality" id="locality_option" class="multifilter_option"
-                        onchange="ShowLocality(this.value)">
-                        <option>Locality</option>
-                        <option value="Noida Sector 1">Noida Sector 1</option>
-                        <option value="Noida Sector 2">Noida Sector 2</option>
-                        <option value="Noida Sector 3">Noida Sector 3</option>
-                        <option value="Noida Sector 4">Noida Sector 4</option>
-                        <option value="Noida Sector 5">Noida Sector 5</option>
-                        <option value="Noida Sector 6">Noida Sector 6</option>
-                        <option value="Noida Sector 7">Noida Sector 7</option>
-                        <option value="Noida Sector 8">Noida Sector 8</option>
-                        <option value="Noida Sector 9">Noida Sector 9</option>
-                        <option value="Noida Sector 10">Noida Sector 10 </option>
-                    </select>
-                </div> -->
 
                 <div id="search" class="search">
                     <form action="" method="post">
@@ -123,7 +104,8 @@ session_start();
                 <?php
               
                         $city_result = $_POST['hero_search'];
-                        $sql = "SELECT * FROM `properties` WHERE city LIKE '%{$city_result}%' ";
+                        $city_str = trim(preg_replace('/[\t\n\r\s]+/', ' ', $city_result));
+                        $sql = "SELECT * FROM `properties` WHERE locality LIKE '%$city_str%' ";
                         $sql_result = mysqli_query($conn , $sql);
                         $num_count = mysqli_num_rows($sql_result);
                         if($num_count == 0){
@@ -140,33 +122,63 @@ session_start();
                             $property_image = $row['property_image'];
                 
                             echo "
-                            <a style='text-decoration: none;border: 1px solid rgb(218, 218, 218);border-radius: 7px; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 3px 0 rgba(0, 0, 0, 0.1)' href='property_details.php?property_id={$row['s_id']}&city={$row['city']}'>
-                                    <div  class='property_card_container'>
-                                        <div style='overflow:hidden;border-radius:7px;' class='card_img_section'>
-                                            <img width='100%' height='200px' src='asset/property_image/{$row['property_image']}' alt=''>
-                                        </div>
-                                        <div  class='card_desc_section'>
-                                            <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;border-bottom: 1px solid gray;' class=''>
-                                                <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
-                                                    <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}</p>
-                                                    <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
-                                                </div>
-                                                <div class=''>
-                                                    <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;' class=''>{$row['gender']}</div>
-                                                </div>
-                                            </div>
-                                            <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;' class=''>
-                                                <div class=''>
-                                                    <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
-                                                    <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span style='padding-right:0.5rem;'><i class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*</div>
-                                                </div>
-                                                <div class=''>
-                                                   <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                           <a style='text-decoration: none;border: 1px solid rgb(218, 218, 218);border-radius: 7px; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 3px 0 rgba(0, 0, 0, 0.1)'
+                                     href='property_details.php?property_id={$row['s_id']}&city={$row['city']}'>
+                                     <div class='property_card_container'>
+                                         <div style='overflow:hidden;border-radius:7px;' class='card_img_section'>
+                                             <div class='slider'>
+                                                 <div class='inner' id='product_card_img_slider'>
+                                                     <div class='item active'>
+                                                         <div class=' image'>
+                                                            <img width='100%' height='200px' src='asset/property_image/{$row['property_image']}' alt=''>
+                                                         </div>
+                                                     </div>
+                                                     <div class='item'>
+                                                         <div class='image'>
+                                                             <img width='100%' height='200px' src='asset/property_image/{$row['property_image2']}' alt=''>
+                                                         </div>
+                                                     </div>
+                                                     <div class='item '>
+                                                         <div class=' image'>
+                                                           <img width='100%' height='200px' src='asset/property_image/{$row['property_image3']}' alt=''>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                <button id='Previous_button' class='button' class='prev'>&lt;</button>
+                                                 <button id='Next_button'     class='button' class='next'>&gt;</button>
+                                             </div>
+                                         </div>
+                                         <div class='card_desc_section'>
+                                         <div class='like_btn' id='like_Btn'><i style='padding-left:1rem;' class='fa-regular fa-heart'></i></div>
+                                             <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;border-bottom: 1px solid gray;'
+                                                 class=''>
+                                                 <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
+                                                     <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}
+                                                     </p>
+                                                     <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>{$row['property_type']} in {$row['city']}</p>
+                                                 </div>
+                                                 <div class=''>
+                                                     <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;'
+                                                         class=''>{$row['gender']}</div>
+                                                 </div>
+                                             </div>
+                                             <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;'
+                                                 class=''>
+                                                 <div class=''>
+                                                     <div style='color: rgb(129, 129, 129);font-size:0.7rem;' class=''>Rent starts at</div>
+                                                     <div style='color: rgb(59, 59, 59);font-weight: bold;' class=''><span
+                                                             style='padding-right:0.5rem;'>
+                                                             <i class='fa-solid fa-indian-rupee-sign'></i></span>{$row['rent_price']}*
+                                                        </div>
+                                                     
+                                                 </div>
+                                                 <div class=''>
+                                                     <div style='color: rgb(59, 59, 59);' class=''><span class='discount_section'> {$row['discount']}</span></div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                            </a>
                             ";
                         }
                     
@@ -316,6 +328,7 @@ session_start();
         <script src="js/active_class.js"></script>
         <script src="js/login_info_popup.js"></script>
         <script src="js/property_card_slide.js"></script>
+        <script src="js/CarouselOnCard.js"></script>
 
         <!-- jquery -->
         <script src="js/jquery-1.12.4.min.js"></script>

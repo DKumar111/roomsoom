@@ -100,10 +100,10 @@
         <div class="footer_footRight__fn44v">
             <div class="footer_links__L6fEL">
                 <div class="footer_line1__on_q7">
-                    <h2>Rent</h2>
+                    <h2>Book</h2>
                     <ul>
                         <li><a href="properties.php">By location</a></li>
-                        <li><a href="properties.php">By Property type</a></li>
+                        <li><a href="properties.php">By Gender</a></li>
                     </ul>
                 </div>
                 <div class="footer_line2__dQUqQ">
@@ -115,10 +115,10 @@
                     </ul>
                 </div>
                 <div class="footer_line3__pGjQ2">
-                    <h2>Services</h2>
+                    <h2>Learn More</h2>
                     <ul>
-                        <li><a href="">Roomsoom Coliving</a></li>
-                        <li><a href="properties.php">Roomsoom Homes</a></li>
+                        <li><a href="">Refer & Earn</a></li>
+                        <li><a href="properties.php">Partner with us</a></li>
                     </ul>
                 </div>
                 <div class="footer_line4__xnrmZ">

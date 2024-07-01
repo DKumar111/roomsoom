@@ -6113,7 +6113,7 @@ li {
 .community_container__tbwMr
   .community_comMain__56zqT
   .community_comSection__XMsum {
-  width: 62%;
+  width: 100%;
   height: 100%;
   display: flex;
   overflow-y: scroll;
@@ -12896,8 +12896,7 @@ li {
   .cancel_container__gCNQD .cancel_mainCont__HUDPg .cancel_Head__Mowl_ {
     width: 100%;
     height: 150px;
-    /* background-image: url(https://housr.in/_next/static/media/policyGrad.22df6890.jpg); */
-    background: linear-gradient( to right, red , #f16e7c);
+    background-color: #EF4F5F;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
@@ -12916,7 +12915,7 @@ li {
     width: 100%;
     height: 150px;
     /* background-image: url(/_next/static/media/policyGrad.22df6890.jpg); */
-    background: linear-gradient( to right, red , #f16e7c);
+    background: linear-gradient( to right, #EF4F5F  , #EF4F5F );
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
@@ -13205,8 +13204,7 @@ li {
   .pay_container__6NCRs .pay_mainCont__sfA0S .pay_Head__Kxe0H {
     width: 100%;
     height: 150px;
-    /* background-image: url(https://housr.in/_next/static/media/policyGrad.22df6890.jpg); */
-    background: linear-gradient( to right, red , #f16e7c);
+    background-color: #EF4F5F;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;

@@ -56,7 +56,7 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
     </script>
 
-   
+
 
 </head>
 
@@ -83,31 +83,12 @@ session_start();
                 <div class="">
                     <select name="amenities" onchange="ShowAmenities(this.value)" id="amenities_option"
                         class="multifilter_option">
-                        <option hidden>Amenities</option>
-                        <option disabled value="ac">AC</option>
-                        <option disabled value="fridge">Fridge</option>
-                        <option disabled value="gym">Gym</option>
-                        <option disabled value="parking">Parking</option>
-                        <option disabled value="power backup">Power Backup</option>
+                        <option hidden>By Type</option>
+                        <option disabled value="pg">PG</option>
+                        <option disabled value="flate">Flate</option>
+                        <option disabled value="fullyfurnished">Fully Furnished Room</option>
                     </select>
                 </div>
-
-                <!-- <div class="">
-                    <select name="locality" id="locality_option" class="multifilter_option"
-                        onchange="ShowLocality(this.value)">
-                        <option>Locality</option>
-                        <option value="Noida Sector 1">Noida Sector 1</option>
-                        <option value="Noida Sector 2">Noida Sector 2</option>
-                        <option value="Noida Sector 3">Noida Sector 3</option>
-                        <option value="Noida Sector 4">Noida Sector 4</option>
-                        <option value="Noida Sector 5">Noida Sector 5</option>
-                        <option value="Noida Sector 6">Noida Sector 6</option>
-                        <option value="Noida Sector 7">Noida Sector 7</option>
-                        <option value="Noida Sector 8">Noida Sector 8</option>
-                        <option value="Noida Sector 9">Noida Sector 9</option>
-                        <option value="Noida Sector 10">Noida Sector 10 </option>
-                    </select>
-                </div> -->
 
                 <div id="search" class="search">
                     <form action="" method="post">
@@ -116,8 +97,7 @@ session_start();
                     </form>
                 </div>
             </div>
-            <div class="listing_right__KSxXz">
-
+            <div style="display:none;" class="listing_right__KSxXz">
                 <div id="slider-wrap">
                     <div>
                         <label>Price Between:</label>
@@ -125,7 +105,6 @@ session_start();
                     </div>
                     <div id="slider-range"></div>
                 </div>
-
             </div>
         </div>
         <div class="selected_items_history" id="selected_items_history">
@@ -286,20 +265,18 @@ session_start();
         <script src="js/active_class.js"></script>
         <script src="js/login_info_popup.js"></script>
         <script src="js/property_card_slide.js"></script>
-        <script src="js/range-slider.js"></script>
+        <!-- <script src="js/range-slider.js"></script> -->
         <script src="js/CarouselOnCard.js"></script>
 
         <!-- jquery -->
         <script src="js/jquery-1.12.4.min.js"></script>
-        <!-- jquery ui -->
+
         <script src="js/jquery-ui-1.12.1.min.js"></script>
 
-
         <script>
-
-
         //GENDER
         let dropdownBtn = document.querySelector('#gender_option');
+        ṇ
         let menuContent = document.querySelector('.select_gender_option');
         let genderupangle = document.querySelector(".gender_angle_arrow");
         dropdownBtn.addEventListener('click', () => {
@@ -345,7 +322,7 @@ session_start();
 
 
         //SEARCH FILTER BY LOCALITY
-        function showHint(str,e) {
+        function showHint(str, e) {
 
             if (str.length == 0) {
                 document.getElementById("all_property").innerHTML = "";
@@ -426,7 +403,10 @@ session_start();
             xmlhttp.send();
         }
 
-        
+        // $(".addtowishlist").live("click",function(e){
+        //     let wishlist = $(this).data('data');
+        //     console.log(wishlist);
+        // })
         </script>
 </body>
 

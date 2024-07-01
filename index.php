@@ -196,21 +196,6 @@ session_start();
             </div>
             <div style="direction:ltr;" class="welcome_container_subsection__xDG9q3">
                 <div class="welcome_welMain__A1HlB">
-                    <!-- polygon -->
-                    <!-- <div class="box_parent">
-                        <div class="box2"></div>
-                        <svg class="flt_svg" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <filter id="flt_tag">
-                                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-                                    <feColorMatrix in="blur" mode="matrix"
-                                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="flt_tag" />
-                                    <feComposite in="SourceGraphic" in2="flt_tag" operator="atop" />
-                                </filter>
-                            </defs>
-                        </svg>
-                    </div> -->
-                    <!-- /polygon -->
                     <div style="background-color: #cbccfd;" class="welcome_welImage__mZNRj"><img alt="Housr Coliving"
                             src="asset/images/roomies4.png" width="800" height="800" decoding="async" data-nimg="1"
                             loading="lazy" style="color:transparent"></div>
@@ -400,6 +385,23 @@ session_start();
             </div>
         </section>
 
+        <section class="spotlight_container">
+            <div class="spotlight_content_container">
+                <div class="spotlight_first_sec">
+                    <h1>The <span style="color: #EF4F5F;">Spotlight</span> on us</h1>
+                    <p>We don't just make second homes. We make headlines as well.</p>
+                </div>
+                <div class="spotlight_second_sec">
+                    <div class="#"></div>
+                    <div class="#"></div>
+                    <div class="#"></div>
+                </div>
+                <div class="spotlight_readmore_btn">
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </section>
+
         <div class="card_container__Klf5R">
             <div class="community_container__tbwMr">
                 <div class="community_comMain__56zqT">
@@ -479,96 +481,6 @@ session_start();
                             </div>
                         </div>
                     </div>
-                    <div class="community_formSection__6clMG">
-                        <div class="community_formMain__hYfPg">
-                            <div class="community_title___HjXP">
-                                <h3>Get going in a few <br> clicks</h3>
-                            </div>
-                            <div class="community_formData__B9A6L">
-                                <form>
-                                    <div>
-                                        <div class="community_flexBox__z_x40">
-                                            <h4>Location</h4>
-                                            <div class="community_form_group__7GK3Y">
-                                                <div class=" css-b62m3t-container"><span id="react-select-2-live-region"
-                                                        class="css-7pg0cj-a11yText"></span><span aria-live="polite"
-                                                        aria-atomic="false" aria-relevant="additions text"
-                                                        class="css-7pg0cj-a11yText"></span>
-                                                    <div class="head-select-search__control css-1s2u09g-control">
-                                                        <div class="head-select-search__value-container css-1d8n9bt">
-                                                            <div class="head-select-search__placeholder css-14el2xx-placeholder"
-                                                                id="react-select-2-placeholder">Select...</div>
-                                                            <div class="head-select-search__input-container css-ackcql"
-                                                                data-value=""><input class="head-select-search__input"
-                                                                    autocapitalize="none" autocomplete="off"
-                                                                    autocorrect="off" id="react-select-2-input"
-                                                                    spellcheck="false" tabindex="0" type="text"
-                                                                    aria-autocomplete="list" aria-expanded="false"
-                                                                    aria-haspopup="true" role="combobox"
-                                                                    aria-describedby="react-select-2-placeholder"
-                                                                    value=""
-                                                                    style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;">
-                                                            </div>
-                                                        </div>
-                                                        <div class="head-select-search__indicators css-1wy0on6"><span
-                                                                class="head-select-search__indicator-separator css-1okebmr-indicatorSeparator"></span>
-                                                            <div class="head-select-search__indicator head-select-search__dropdown-indicator css-tlfecz-indicatorContainer"
-                                                                aria-hidden="true"><svg height="20" width="20"
-                                                                    viewBox="0 0 20 20" aria-hidden="true"
-                                                                    focusable="false" class="css-8mmkcg">
-                                                                    <path
-                                                                        d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                                                    </path>
-                                                                </svg></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="community_flexBox__z_x40">
-                                            <h4>Property type</h4>
-                                            <div class="community_form_group__7GK3Y">
-                                                <div class=" css-b62m3t-container"><span id="react-select-3-live-region"
-                                                        class="css-7pg0cj-a11yText"></span><span aria-live="polite"
-                                                        aria-atomic="false" aria-relevant="additions text"
-                                                        class="css-7pg0cj-a11yText"></span>
-                                                    <div class="head-select-search__control css-1s2u09g-control">
-                                                        <div class="head-select-search__value-container css-1d8n9bt">
-                                                            <div class="head-select-search__placeholder css-14el2xx-placeholder"
-                                                                id="react-select-3-placeholder">Select...</div>
-                                                            <div class="head-select-search__input-container css-ackcql"
-                                                                data-value=""><input class="head-select-search__input"
-                                                                    autocapitalize="none" autocomplete="off"
-                                                                    autocorrect="off" id="react-select-3-input"
-                                                                    spellcheck="false" tabindex="0" type="text"
-                                                                    aria-autocomplete="list" aria-expanded="false"
-                                                                    aria-haspopup="true" role="combobox"
-                                                                    aria-describedby="react-select-3-placeholder"
-                                                                    value=""
-                                                                    style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;">
-                                                            </div>
-                                                        </div>
-                                                        <div class="head-select-search__indicators css-1wy0on6"><span
-                                                                class="head-select-search__indicator-separator css-1okebmr-indicatorSeparator"></span>
-                                                            <div class="head-select-search__indicator head-select-search__dropdown-indicator css-tlfecz-indicatorContainer"
-                                                                aria-hidden="true"><svg height="20" width="20"
-                                                                    viewBox="0 0 20 20" aria-hidden="true"
-                                                                    focusable="false" class="css-8mmkcg">
-                                                                    <path
-                                                                        d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                                                    </path>
-                                                                </svg></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="community_searchWrap__difqL"><button>Find my Roomsoom</button></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <section>
@@ -579,7 +491,7 @@ session_start();
             <div class="connect_container__bcQb3">
                 <div class="connect_conMain__cK61x">
                     <div class="connect_contDiv__7rJQb"><img alt="tulip"
-                            src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftulip.672e4c41.png&w=750&q=75"
+                            src="https://img.freepik.com/free-photo/green-sofa-white-living-room-with-free-space_43614-834.jpg"
                             width="689" height="608" decoding="async" data-nimg="1" loading="lazy"
                             style="color: transparent;">
                         <div class="connect_content__pCbDN">
@@ -615,82 +527,70 @@ session_start();
                     </div>
                 </div>
             </div>
-            <div class="faqs_faqscontainer__on7i_">
-                <div class="faqs_faqtitle__pTGTz">
-                    <h3>FAQs</h3>
-                </div>
+            <section class="testimonials_containerMain__M_1ES">
 
-                <button type="button" class="collapsible">What is Roomsoom Coliving all about?</button>
-                <div class="content">
-                    <p>At Roomsoom, we've combined equal parts innovation, convenience, community and opulence to create
-                        an
-                        extraordinary living experience for India’s working professionals.</p>
-                </div>
-                <button type="button" class="collapsible">How does Roomsoom Coliving set itself apart from traditional
-                    housing options?</button>
-                <div class="content">
-                    <p>Roomsoom Luxury Coliving stands out by offering fully furnished and ready-to-move-in properties.
-                        Unlike traditional housing, you don't have to worry about purchasing furniture, setting up
-                        utilities, or dealing with complicated paperwork. With Roomsoom, you can enjoy a comfortable and
-                        hassle-free living space from day one!</p>
-                </div>
-                <button type="button" class="collapsible">What does a Roomsoom membership include?</button>
-                <div class="content">
-                    <p>As a Housr member, you get access to beautifully designed, fully-furnished spaces managed to
-                        perfection and other irresistible privileges. Roomsoom Homies (our residents) enjoy an array of
-                        all-inclusive amenities, premium services, priority access to Roomsoom’s latest launches,
-                        personalised assistance from IHM-trained resident managers, special offers and discounts, and
-                        invitations to exclusive community events.</p>
-                </div>
-                <button type="button" class="collapsible">What are the locations where Roomsoom Coliving is currently
-                    available?</button>
-                <div class="content">
-                    <p>Roomsoom is omnipresent across almost all the major metropolitans of the country, including
-                        Gurugram, Hyderabad, Pune, Bangalore and Vizag.</p>
-                </div>
-                <button type="button" class="collapsible">How do I book a Roomsoom Coliving or apartments for
-                    rent?</button>
-                <div class="content">
-                    <p>To book Roomsoom’s Luxury Coliving, apartments/house for rent, simply visit our website or get in
-                        touch with us at +918810107070. You can browse available modern luxury apartments, house for
-                        rent or flats for rent; choose your preferred location, and complete the booking process online.
-                    </p>
-                </div>
-                <button type="button" class="collapsible">Are the apartments/flats at Roomsoom Co living
-                    pet-friendly?</button>
-                <div class="content">
-                    <p>We understand that pets are part of the family. While not all Roomsoom spaces are pet-friendly,
-                        Roomsoom Homes allows pets. Please check the specific apartment listing for more details.
-                    </p>
-                </div>
-                <button type="button" class="collapsible">What is the duration of stay required at Roomsoom Luxury
-                    Coliving?</button>
-                <div class="content">
-                    <p>Roomsoom offers flexible stay options including modern luxury apartments, house/flats for rent
-                        and
-                        Luxury Coliving. Our minimum lock-in period is as short as three months while it can be as long
-                        as several months, depending on your needs.
-                    </p>
-                </div>
-                <button type="button" class="collapsible">Do I need to bring my own furniture and appliances to stay at
-                    Roomsoom Co living?</button>
-                <div class="content">
-                    <p>No, you don't need to bring anything with you, just a bag of clothes and rest we’ve got covered.
-                        Roomsoom Co living and apartments/flats for rent come fully furnished and equipped with
-                        everything
-                        you need for a comfortable stay.
-                    </p>
-                </div>
-                <button type="button" class="collapsible">How is security ensured at Roomsoom properties?</button>
-                <div class="content">
-                    <p>Your safety is our priority. We follow 3-tier security procedures at Roomsoom Co living &
-                        Roomsoom
-                        Homes. We have advanced security measures in place, including secure access control & CCTV
-                        surveillance, to ensure a safe living environment for our residents.
-                    </p>
-                </div>
+<!-- Tabs Detail -->
+<div class="tabs">
+    <span data-tab-value="#tab_1">Delhi</span>
+    <span data-tab-value="#tab_2">Noida</span>
+    <span data-tab-value="#tab_3">Gurgaon</span>
+</div>
 
-            </div>
+<!-- Tab content -->
+<div class="tab-content">
+    <div class="tabs__tab active" id="tab_1" data-tab-info>
+        <div class='Tabs_Content'>
+            <?php
+        $sql = "SELECT DISTINCT locality FROM `properties` WHERE city LIKE '%delhi%' ";
+        $result = mysqli_query($conn, $sql) or die("SQL Query failed");
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $city_area = $row['locality'];
+               echo  " <a href='properties.php?locality=$city_area'>$city_area</a>";
+            }
+        }
+
+        ?>
+        </div>
+    </div>
+    <div class="tabs__tab" id="tab_2" data-tab-info>
+        <div class="Tabs_Content">
+            <?php
+        $sql = "SELECT DISTINCT locality FROM `properties` WHERE city LIKE '%noida%' ";
+        $result = mysqli_query($conn, $sql) or die("SQL Query failed");
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $city_area = $row['locality'];
+               echo  "<a href='properties.php?locality=$city_area'>$city_area</a> ";
+            }
+        }
+
+        ?>
+        </div>
+
+    </div>
+    <div class="tabs__tab" id="tab_3" data-tab-info>
+        <div class="Tabs_Content">
+            <?php
+        $sql = "SELECT DISTINCT locality FROM `properties` WHERE city LIKE '%gurgaon%' ";
+        $result = mysqli_query($conn, $sql) or die("SQL Query failed");
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $city_area = $row['locality'];
+               echo  "<a href='properties.php?locality=$city_area'>$city_area</a>";
+            }
+        }
+
+        ?>
+        </div>
+
+    </div>
+</div>
+<!-- </div> -->
+</section>
         </div>
     </div>
     <a class="whatsapp-link" href="https://wa.me/+918810107070" target="_blank"><img class="whatsapp-icon"
@@ -736,7 +636,6 @@ session_start();
 
     function showDetails(city) {
         let str = city.getAttribute("data-city-value");
-        // alert("The city is a " + str + ".");
         if (str == "") {
             document.getElementById("all_property").innerHTML = "";
             return;

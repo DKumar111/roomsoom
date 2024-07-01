@@ -70,9 +70,9 @@ if(isset($_GET['property_id'])){
     <script>
     $(document).ready(function() {
         $("#apply-coupon").click(function() {
-            $(".principle-amount").after(
+            $("#Coupon_Section").after(
                 "<div style='display:flex; justify-content:space-between;padding-top:1rem;' class=''><div style='color:#e86d66; font-style: italic;' class=''>Coupon Amount</div> <div style='color:#e86d66; font-style: italic;' class='coupon-value'>Rs. 600</div> </div>"
-            );
+            ).remove();
         });
     });
     </script>
@@ -202,37 +202,7 @@ if(isset($_GET['property_id'])){
                                         </div>
 
                                         <div class="formbold-form-step-1 active">
-                                            <!-- <div class="formbold-input-flex">
-                                                <div>
-                                                    <label for="firstname" class="formbold-form-label"> First name
-                                                    </label>
-                                                    <input type="text" name="firstname" placeholder="Andrio"
-                                                        id="firstname" class="formbold-form-input" />
-                                                    <div style="color:black;" class="">Select Sharing Type</div>
-                                                </div>
-                                                <div style="display:flex; gap: 1rem;">
-                                                    <label for="lastname" class="formbold-form-label"> Last name
-                                                    </label>
-                                                    <input type="text" name="lastname" placeholder="Dolee" id="lastname"
-                                                        class="formbold-form-input" />
-                                                    <p class="room_type_btn" style="color:black;">Private</p>
-                                                    <p class="room_type_btn" style="color:black;">Two Sharing</p>
-                                                    <p class="room_type_btn" style="color:black;">Three Sharing</p>
-                                                </div>
-                                            </div> -->
-
                                             <div class="formbold-input-flex">
-                                                <!-- <div>
-                                                    <label for="dob" class="formbold-form-label"> Date of Birth </label>
-                                                    <input type="date" name="dob" id="dob"
-                                                        class="formbold-form-input" />
-                                                </div> -->
-                                                <!-- <div>
-                                                    <label for="email" class="formbold-form-label"> Email Address
-                                                    </label>
-                                                    <input type="email" name="email" placeholder="example@mail.com"
-                                                        id="email" class="formbold-form-input" />
-                                                </div> -->
                                                 <div style="color:black;" class="">Select Product Plan</div>
                                                 <div class="">
                                                     <div class="price_tag">
@@ -244,7 +214,6 @@ if(isset($_GET['property_id'])){
                                                                     required="required"></span>
                                                             <div class="">
                                                                 <p class="price_para" style="">Private</p>
-                                                                <!-- <p class="price_para" style="">Get 13% off on Rent</p> -->
                                                             </div>
                                                         </div>
                                                         <div id="private" style="color:black;"
@@ -261,7 +230,6 @@ if(isset($_GET['property_id'])){
                                                                     id="price2" required="required"></span>
                                                             <div class="">
                                                                 <p class="price_para" style="">Two Sharing</p>
-                                                                <!-- <p class="price_para" style="">Get 8% off on Rent</p> -->
                                                             </div>
                                                         </div>
                                                         <div id="two_sharing" style="color: black;"
@@ -278,7 +246,6 @@ if(isset($_GET['property_id'])){
                                                                     id="price3" required="required"></span>
                                                             <div class="">
                                                                 <p class="price_para" style="">Three Sharing</p>
-                                                                <!-- <p class="price_para" style="">Get 4% off on Rent</p> -->
                                                             </div>
                                                         </div>
                                                         <div id="three_sharing" style="color: black;"
@@ -286,15 +253,6 @@ if(isset($_GET['property_id'])){
                                                             <?php  echo $three_sharing_price ?>/month*
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="price_tag">
-                                                        <div style="padding-right:8rem;" class="">
-                                                        <span class=""><input type="radio" name="room_price" value="5000" id="price4" required="required"></span>
-                                                            <p class="price_para" style="">Basic package</p>
-                                                            <p class="price_para" style="">Basic Plan</p>
-                                                        </div>
-                                                        <div id="" style="color: black;" class="rent_price">Rs. 5000/month*
-                                                        </div>
-                                                    </div> -->
                                                 </div>
                                                 <div class="coupon">
                                                     <div style="color:black;" class="coupon_heading">Available Coupons
@@ -303,13 +261,13 @@ if(isset($_GET['property_id'])){
                                                         class="coupon_details">
                                                         <div style="display:flex;flex-direction:column;"
                                                             class="coupon_left">
-                                                            <p style="color:black;">Save Rs. <span
+                                                            <p style="color:black;font-size:0.9rem;">Save Rs. <span
                                                                     id="couponAmount">600</span><span
-                                                                    style="padding-left:0.4rem; color: red;"
+                                                                    style="padding-left:0.4rem;font-size:0.9rem; color: red;"
                                                                     id="available-coupon">ROOMSOOMSAFENOI</span></p>
-                                                            <span style="color:black;">Rs. 600 off on
+                                                            <span style="color:black;font-size:0.9rem;">Rs. 600 off on
                                                                 pre-booking.</span>
-                                                            <span style="color:black;">T & C </span>
+                                                            <span style="color:black;font-size:0.9rem;">T & C </span>
                                                         </div>
                                                         <div style="color:black;cursor:pointer;font-size:0.7rem;color:red;font-weight:600;"
                                                             class="coupon_right" onclick="changeText()"
@@ -317,13 +275,6 @@ if(isset($_GET['property_id'])){
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <!-- <div>
-                                                <label for="address" class="formbold-form-label"> Address </label>
-                                                <input type="text" name="address" id="address"
-                                                    placeholder="Flat 4, 24 Castle Street, Perth, PH1 3JY"
-                                                    class="formbold-form-input" />
-                                            </div> -->
                                         </div>
 
                                         <div class="formbold-form-step-2">
@@ -333,10 +284,6 @@ if(isset($_GET['property_id'])){
                                                 <input type="date" name="date" id="myDate" placeholder="dd-mm-yyyy"
                                                     class="formbold-form-input" onclick="disablePastDates()"
                                                     required="required" />
-                                                <!-- <label for="message" class="formbold-form-label"> Message </label>
-                                                <textarea rows="6" name="message" id="message"
-                                                    placeholder="Type your message"
-                                                    class="formbold-form-input"></textarea> -->
                                             </div>
                                         </div>
 
@@ -346,14 +293,12 @@ if(isset($_GET['property_id'])){
                                                 <div class="price_tag">
                                                     <div class="">
                                                         <p style="color:black;font-size: 01rem;">Plan</p>
-                                                        <!-- <p style="color:black;font-size: 0.7rem;">Book for 12Months. Get
-                                                            18% of on Rent</p> -->
                                                     </div>
                                                     <div style="color: black;font-size:0.7rem;" id="selected_room_price"
                                                         class="">
                                                     </div>
                                                 </div>
-                                                <div style="display:flex;justify-content:space-between;align-items:center;padding:0.5rem; border:1px solid gray; border-radius:6px; margin-bottom: 0.4rem;"
+                                                <div style="display:flex;justify-content:space-between;align-items:center;padding:0.5rem; border:1px solid #dfdfdf; border-radius:6px; margin-bottom: 0.4rem;"
                                                     class="applied_coupon_details">
                                                     <span style="color:black;">Applied Coupon</span>
                                                     <span id="coupon-in-summary" style="color:red;"></span>
@@ -397,6 +342,7 @@ if(isset($_GET['property_id'])){
                                                             <div style="color:black;" class="principle-value">Rs. <span
                                                                     id="principle-value">1000</span></div>
                                                         </div>
+                                                        <div id="Coupon_Section"></div>
                                                         <div style="display:flex; justify-content:space-between;padding-top:1rem;padding-bottom:0.5rem;"
                                                             class="">
                                                             <div style="color:black; font-size:0.7rem" class="">
@@ -424,7 +370,7 @@ if(isset($_GET['property_id'])){
                                             </button>
 
                                             <button name="requesting_booking" class="formbold-btn">
-                                                CONFIRM DETAILS
+                                                PROCEED TO BOOK    
                                             </button>
                                         </div>
                                     </form>
@@ -738,43 +684,6 @@ if(isset($_GET['property_id'])){
             </div>
             <!-- </div> -->
         </section>
-        <!-- <div class="connect_container__bcQb3">
-            <div class="connect_conMain__cK61x">
-                <div class="connect_contDiv__7rJQb"><img alt="tulip"
-                        src="https://housr.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftulip.672e4c41.png&w=1920&q=75"
-                        width="689" height="608" decoding="async" data-nimg="1" loading="lazy"
-                        style="color: transparent;">
-                    <div class="connect_content__pCbDN">
-                        <h2>Connect with Roomsoom</h2>
-                        <p>Drop your concern, query or <br> feedback and we will get back <br> to you in no time.</p>
-                    </div>
-                </div>
-                <div class="connect_formDiv__8Vdin">
-                    <div class="connect_content__pCbDN">
-                        <h2>Connect with Roomsoom</h2>
-                        <p>Drop your concern, query or <br> feedback and we will get back <br> to you in no time.</p>
-                    </div>
-                    <div class="connect_formSec__aDH2S">
-                        <form action="phpScript/email_msg.php" method="post">
-                            <input type="text" placeholder="Name" class="connect_first__fZlm4" name="name" required=""
-                                id="name">
-                            <input type="text" placeholder="Phone Number" name="phone" required="" id="phone">
-                            <input type="text" placeholder="Query/Concern" class="undefined connect_textarea__8_xfI"
-                                name="message" id="message">
-                            <input type="hidden" id="gclid_field" name="gclid_field" value="">
-                            <div class="connect_btn__ywWeC">
-                                <input type="submit" class="connect_btnVal__bocrs" name="send_message"
-                                    value="Send message">
-                            </div>
-                        </form>
-                        <div class="connect_support__UbvMq">
-                            <p>**You’d hear from us in the next 24 hours, but if you don’t, reach out at
-                                contact@roomsoom.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 
     <!-- SCHEDULE VISIT SECTION START HERE -->

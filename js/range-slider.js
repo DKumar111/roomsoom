@@ -1,7 +1,4 @@
 $(document).ready(function () {
- 
-  
-
   var v1 = 1000;
   var v2 = 50000;
 
@@ -25,22 +22,18 @@ $(document).ready(function () {
   );
 
   function loadTable(range1, range2) {
-  
-      $.ajax({
-        url: "phpScript/get-data.php",
-        type: "POST",
-        data: { range1: range1, range2: range2 },
-        success: function (data) {
-          $("#all_property").html(data);
-        },
-      });
-   
+    $.ajax({
+      url: "phpScript/get-data.php",
+      type: "POST",
+      data: { range1: range1, range2: range2 },
+      success: function (data) {
+        $("#all_property").html(data);
+        
+      },
+    });
   }
 
   loadTable(v1, v2);
-
-
-
 });
 
 /*===================================================================================================================*/

@@ -43,17 +43,20 @@ function get_properties(){
                                              </div>
                                          </div>
                                      </div>
-                                     <button id='Previous_button' class='button'  class='prev'>&lt;</button>
-                                     <button id='Next_button'     class='button' class='next'>&gt;</button>
+                                     <div class='left_right_btn'>
+                                     <button  id='Previous_button' class='button'  class='prev'>&lt;</button>
+                                     <button  id='Next_button'     class='button' class='next'>&gt;</button>
+                                     </div>
+                                    <p class='addtowishlist' data-data='{$row['s_id']}'><i class='fa-regular fa-heart'></i></p>
                                  </div>
                              </div>
                              <div class='card_desc_section'>
-                                 <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;border-bottom: 1px solid gray;'
-                                     class=''>
+                                 <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;border-bottom: 1px solid gray;' class=''>
+                                        
                                      <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
                                          <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}
                                          </p>
-                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
+                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>{$row['property_type']} in {$row['city']}</p>
                                      </div>
                                      <div class=''>
                                          <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;'
@@ -126,7 +129,7 @@ function sort_property(){
                                      <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
                                          <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}
                                          </p>
-                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
+                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>{$row['property_type']} in {$row['city']}</p>
                                      </div>
                                      <div class=''>
                                          <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;'
@@ -196,7 +199,7 @@ function sort_property(){
                                      <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
                                          <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}
                                          </p>
-                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
+                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>{$row['property_type']} in {$row['city']}</p>
                                      </div>
                                      <div class=''>
                                          <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;'
@@ -276,7 +279,7 @@ function get_searched_result(){
                                      <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
                                          <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}
                                          </p>
-                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
+                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>{$row['property_type']} in {$row['city']}</p>
                                      </div>
                                      <div class=''>
                                          <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;'
@@ -357,7 +360,7 @@ function search_by_city(){
                                      <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
                                          <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}
                                          </p>
-                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
+                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>{$row['property_type']} in {$row['city']}</p>
                                      </div>
                                      <div class=''>
                                          <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;'
@@ -443,7 +446,7 @@ function search_by_city(){
                                      <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
                                          <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}
                                          </p>
-                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
+                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>{$row['property_type']} in {$row['city']}</p>
                                      </div>
                                      <div class=''>
                                          <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;'
@@ -526,12 +529,13 @@ function get_nearby_property(){
                                  </div>
                              </div>
                              <div class='card_desc_section'>
+                             <div class='like_btn' id='like_Btn'><i id='icon' onclick='return like()' style='padding-left:1rem;' class='fa-regular fa-heart'></i></div>
                                  <div style='display: flex;justify-content: space-between;align-items: center;padding: 1rem 1rem;border-bottom: 1px solid gray;'
                                      class=''>
                                      <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
                                          <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}
                                          </p>
-                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
+                                         <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>{$row['property_type']} in {$row['city']}</p>
                                      </div>
                                      <div class=''>
                                          <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;'

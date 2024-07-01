@@ -44,7 +44,7 @@ if(mysqli_num_rows($result) > 0){
                                                  <div style='display:flex;flex-direction:column;gap:0.4rem;' class=''>
                                                      <p style='color: rgb(59, 59, 59);font-size:1rem;font-weight:bold;'>Roomsoom {$row['locality']}
                                                      </p>
-                                                     <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>PG in {$row['city']}</p>
+                                                     <p style='color: rgb(129, 129, 129);font-size:0.8rem;'>{$row['property_type']} in {$row['city']}</p>
                                                  </div>
                                                  <div class=''>
                                                      <div style='color: rgb(59, 59, 59);padding: 0.9rem;color: rgb(53 52 52);background-color: #edc2af;clip-path: xywh(0 5px 100% 75% round 15% 0);font-weight: 700;font-size: 0.7rem;'

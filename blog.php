@@ -39,8 +39,6 @@ session_start();
     <div class="wrapperTop">
         <div class="blog_container__WbXps">
             <div>
-                <!-- <p class="breadcrumb"><span class="breadcrumb-item"><a href="/">Home</a></span><span
-                        class="breadcrumb-item"><span>Blog</span></span></p> -->
             </div>
             <div class="blog_blogMain__8sP2n">
                 <div class="blog_leftBlog___1VsD">
